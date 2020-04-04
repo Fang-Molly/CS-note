@@ -37,3 +37,6 @@ pushd, popd
 touch
 # make empty files
 touch me.txt
+
+cp
+# copy a file from one location to anther

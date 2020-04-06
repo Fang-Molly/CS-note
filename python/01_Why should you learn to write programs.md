@@ -85,4 +85,18 @@ Hello world!
 
 # 1.8 What is a program?
 
+# 1.9 The building blocks of programs
+
+# 1.10 What could possibly go wrong?
+
+* syntax errors
+* logic errors
+* semantic errors
+
+# 1.11 Debugging
+
+# 1.12 The learning journey
+
+# 1.13 Glossary
+
 

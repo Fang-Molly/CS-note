@@ -1,6 +1,6 @@
 # 2.1 Values and types
-* value: a letter or a number
-* types
++ value: a letter or a number
++ types
    + **integer**: type ```int```; 2
    + **string**: type ```str```; enclosed in quotation marks.
       * "Hello, World!"; "17"; "3.2"
@@ -33,3 +33,4 @@
    >>> type('3.2') 
    <class 'str'>
    ```
+# 2.2 Variables

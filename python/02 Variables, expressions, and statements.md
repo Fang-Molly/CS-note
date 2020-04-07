@@ -55,6 +55,8 @@
 
 + **assignment statement** : create new variables and give them values
 
++ **assignment operator =**
+
 ```
 # assign a string to a new variable named message
 >>> message = 'And now for something completely different' 
@@ -181,10 +183,12 @@ print(x)
 ```
 >>> first = 10
 >>> second = 15
->>> print(first+second) 25
+>>> print(first+second) 
+25
 >>> first = '100'
 >>> second = '150'
->>> print(first + second) 100150
+>>> print(first + second) 
+100150
 ```
 
 + the * operator also works with strings by multiplying the content of a string by an integer.

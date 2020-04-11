@@ -60,9 +60,14 @@ Hello world!
 
 * The proper way to say "goodbye" to Python
 
-```
->>> quit()
-```
+   * quit()
+
+   ```
+   >>> quit()
+   ```
+   * Hit CTRL-Z(^Z)
+   
+   * Hit CTRL-D(^D)
 
 # 1.6 Terminology: Interpreter and compiler
 

@@ -139,7 +139,7 @@ print(x)
    
 # 2.7 Order of operations
 
-+ **the rules of precedence**
++ **PEMDAS** : parentheses, exponents, multiplication, division, addtion, subtraction
    + **Parentheses** have the highest precedence
    + **Exponentiation** has the next highest precedence
    + **Multiplication** and **Division** have the same precedence, higher than **Addition** and **Subtraction**

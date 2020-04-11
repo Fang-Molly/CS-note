@@ -2,7 +2,11 @@
 ' ' , single-quote
 " " , double-quote
 ^ , caret
+_ , underscore
+* ,
 
+
+operators
 
 + plus
 - minus
@@ -11,5 +15,7 @@
 % percent
 < less-than
 > greater-than
+= single-equal
+== double-equal
 <= less-than-equal
 >= greater-than-equal

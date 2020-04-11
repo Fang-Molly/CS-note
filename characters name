@@ -1,11 +1,11 @@
 # , octothorpe, pound, hash, mesh
 ' ' , single-quote
-* " " , double-quote
-* ^ , caret
+" " , double-quote
+^ , caret
 
 
-* **+** plus
-* **-** minus
++ plus
+- minus
 / slash
 * asterisk
 % percent

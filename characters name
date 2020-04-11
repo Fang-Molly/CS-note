@@ -1,0 +1,15 @@
+# , octothorpe, pound, hash, mesh
+' ' , single-quote
+* " " , double-quote
+* ^ , caret
+
+
+* **+** plus
+* **-** minus
+/ slash
+* asterisk
+% percent
+< less-than
+> greater-than
+<= less-than-equal
+>= greater-than-equal

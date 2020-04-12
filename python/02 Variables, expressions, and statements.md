@@ -19,6 +19,12 @@
    Hello, World!
    >>> Print('Hello, World!')
    Hello, World!
+   
+   # use "end" with empty string in print statement
+   print("Hello", end = ' ')
+   print("World")
+   
+   Hello World
    ```
    
    ```

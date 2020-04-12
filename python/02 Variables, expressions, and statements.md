@@ -53,7 +53,7 @@
    * print in one line
 
    ```
-   # use "end" with empty string in print statement
+   # put **end=' '** at the end of print line to tell us not end the line with a newline character and go to the next line.
    print("Hello", end = ' ')
    print("World")
    Hello World

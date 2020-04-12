@@ -23,8 +23,16 @@
    # use "end" with empty string in print statement
    print("Hello", end = ' ')
    print("World")
-   
    Hello World
+   
+   # print multiple lines
+   >>> print(
+   ...     "I had this thing.",
+   ...     "That you could type up right.",
+   ...     "But it didn't sing.",
+   ...     "So I said goodnight."
+   ... )
+   I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
    ```
    
    ```

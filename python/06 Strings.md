@@ -213,6 +213,8 @@ True
    >>> "In %d years I have spotted %g %s." % (3, 0.1, 'camels')
    'In 3 years I have spotted 0.1 camels.'
    ```
+   *  multiple formats: put in parentheses (), separated by commas(,)
+   
    * The number of elements in the tuple must match the number of format sequences in the string. The types of the elements also must match the format sequences
    
    ```

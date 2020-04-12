@@ -19,22 +19,7 @@
    Hello, World!
    >>> Print('Hello, World!')
    Hello, World!
-   
-   # use "end" with empty string in print statement
-   print("Hello", end = ' ')
-   print("World")
-   Hello World
-   
-   # print multiple lines
-   >>> print(
-   ...     "I had this thing.",
-   ...     "That you could type up right.",
-   ...     "But it didn't sing.",
-   ...     "So I said goodnight."
-   ... )
-   I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
    ```
-   
    ```
    # type() can tell you what type a value has
    >>> type(17)
@@ -63,7 +48,64 @@
    >>> print('the number is : ' + str(3))
    the number is : 3
    ```
+* **print()**
+
+   * print in one line
+
+   ```
+   # use "end" with empty string in print statement
+   print("Hello", end = ' ')
+   print("World")
+   Hello World
    
+   # print multiple lines
+   >>> print(
+   ...     "I had this thing.",
+   ...     "That you could type up right.",
+   ...     "But it didn't sing.",
+   ...     "So I said goodnight."
+   ... )
+   I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
+   ```
+   * new line character
+   
+   ```
+   # \n (backslash n): start a new line
+   >>> days = "\nMon\nTue\nWed\nThu\nFri\nSat\nSun"
+   >>> print("Here are the days: ", days)
+   Here are the days:  
+   Mon
+   Tue
+   Wed
+   Thu
+   Fri
+   Sat
+   Sun
+   
+   # three double-quotes(triple-quotes, """): start a new line
+   >>> days = """
+   ... Mon
+   ... Tue
+   ... Wed
+   ... """
+   >>> print("Here are the days: ", days)
+   Here are the days:  
+   Mon
+   Tue
+   Wed
+   ```
+   * escape sequences
+   
+   
+   
+   
+   
+   
+   
+```
+>>> print("I am 6'2\" tall.")
+I am 6'2" tall.
+```
 # 2.2 Variables
 
 + **variale** : a name refers to a value

@@ -2,7 +2,8 @@
 + **value** : a letter or a number
 + **types**
    + **integer**: type ```int```; 2
-   + **string**: type ```str```; enclosed in quotation marks.
+   + **string**: type ```str```; 
+      * enclosed in " double-quotes or ' single-quotes.
       * "Hello, World!"; "17"; "3.2"
    + **floating point**: type ```float```; 3.2
    

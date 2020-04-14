@@ -1,12 +1,96 @@
 # 8.1 A list is a sequence
 
+* list : a sequence of values
+   * element or item : the values can be any type
+
+* create a new list
+   * enclose the elements in square brackets([ ])
+      * a list of four integers [10, 20, 30, 40]
+      * a list of strings ['crunchy frog', 'ram bladder', 'lark vomit']
+      * a list of multiple types ['spam', 2.0, 5, [10, 20]]
+   * nested : a list within another list
+   * an empty list: a list contains no elements, with empty brackets []
+
+* assign list values to variables
+```
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda'] 
+>>> numbers = [17, 123]
+>>> empty = []
+>>> print(cheeses, numbers, empty) 
+['Cheddar', 'Edam', 'Gouda'] [17, 123] []
+```      
 # 8.2 Lists are mutable
+
+* access the elements of a list
+   * the index of a list start at 0
+
+```
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda']
+>>> print(cheeses[0])
+Cheddar
+```
+* reassign an item in a list
+
+```
+>>> numbers = [17, 123]
+>>> numbers[1] = 5
+>>> print(numbers)
+[17, 5]
+```
+* **in operator**
+
+```
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda']
+>>> 'Edam' in cheeses
+True
+>>> 'Brie' in cheeses
+False
+```
 
 # 8.3 Traversing a list
 
+* **for loop** : read the elements of the list
+
+```
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda']
+>>> for cheese in cheeses:
+...     print(cheese)
+... 
+Cheddar
+Edam
+Gouda
+
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda']
+>>> print(cheeses)
+['Cheddar', 'Edam', 'Gouda']
+```
+* write or update the elements, need the indices, combine the functions range and len
+
+
+
+
+
 # 8.4 List operations
 
+* **+ operator** concatenates lists
+
+```
+>>> a = [1, 2, 3]
+>>> b = [4, 5, 6]
+>>> c = a + b
+>>> print(c)
+[1, 2, 3, 4, 5, 6]
+```
+* ** * operator** repeats a list 
+
 # 8.5 List slices
+
+
+
+
+
+
+
 
 # 8.6 List methods
 

@@ -36,53 +36,46 @@
 and; as; assert; break; class; continue; def; del; elif; else; expect; inally; for; from; global; if; import; in;       
 is; lambda; nonlocal; not; or; pass; raise; return; try; while; with; yield    
 
-* variables
+* **variables**
 
-* function print
-
-   * enclosed in quotes
-   * single quotes and double quotes do the same thing
+* **function print**
+   * print( )
+   * enclosed in quotes, single quotes and double quotes do the same thing
       * print('Hello world!') 
       * print("Hello world!")
    * most people use single quotes
    * use double quotes when apostrophe appears in the string
       * print("It's a dog.")
    
-
-
 # 1.5 Conversing with Python
 
-* Open your **terminal** and type **Python3**, the **Python interpreter** will start executing in **interactive mode**.
+## start python
 
+* Open your **terminal** 
+   * The "$" is the operating system prompt
+* type **Python3** and press **enter**
+
+* execute **Python interpreter** in **interactive mode**.
+   * The `>>>` prompt showed up
+   * pype python commands after >>> prompt
+   
 ```
 liufangdeMacBook-Pro:~ FangLiu$ python3
 Python 3.8.1 (v3.8.1:1b293b6006, Dec 18 2019, 14:08:53) 
 [Clang 6.0 (clang-600.0.57)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
-
-# You can type python commands after the interactive chevron >>> prompt
-
-```
-* The "$" is the operating system prompt
-
-* The `>>>` prompt is the Python interpreter's way of asking you, “What do you want me to do next?”
-
-```
 >>> print ('Hello world!')
 Hello world!
 ```
 
-* The proper way to say "goodbye" to Python
+## end python
 
-   * quit()
+* quit()
 
-   ```
-   >>> quit()
-   ```
-   * Hit CTRL-Z(^Z)
+* Hit CTRL-Z(^Z)
    
-   * Hit CTRL-D(^D)
+* Hit CTRL-D(^D)
 
 # 1.6 Terminology: Interpreter and compiler
 

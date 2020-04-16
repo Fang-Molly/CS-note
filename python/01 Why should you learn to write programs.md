@@ -2,24 +2,24 @@
 
 # 1.2 Computer hardwarre architecture
 
-* Central Processing Unit (CPU)
+* **Central Processing Unit (CPU)**
    * CPU is built to be obsessed with “what is next?”
    
-* Main Memory
+* **Main Memory**
    * Store information that the CPU needs in a hurry.
    * Nearly as fast as the CPU
    * The information stored in the main memory vanishes when the computer is turned off.
    
-* Secondary Memory
+* **Secondary Memory**
    * Store information
    * Much slower than the main memory
    * It can store information even when there is no power to the computer.
    * Disk drives or flash memory 
 
-* Input and Output Devices
+* **Input and Output Devices**
    * screen, keyboard, mouse, microphone, speaker, touchpad, etc.
    
-* Network Connection
+* **Network Connection**
    * retrieve information
    * a slower and at times unreliable form of secondary memory.
 
@@ -31,9 +31,24 @@
 
 # 1.4 Words and sentences
 
-* reserved words
+* **reserved words**
+
+and; as; assert; break; class; continue; def; del; elif; else; expect; inally; for; from; global; if; import; in;       
+is; lambda; nonlocal; not; or; pass; raise; return; try; while; with; yield    
 
 * variables
+
+* function print
+
+   * enclosed in quotes
+   * single quotes and double quotes do the same thing
+      * print('Hello world!') 
+      * print("Hello world!")
+   * most people use single quotes
+   * use double quotes when apostrophe appears in the string
+      * print("It's a dog.")
+   
+
 
 # 1.5 Conversing with Python
 

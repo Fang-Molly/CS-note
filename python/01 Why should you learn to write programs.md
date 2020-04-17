@@ -78,6 +78,15 @@ Hello world!
    * print("It's a dog.")
 ------------------------------------
 
+* comma "," present space
+
+```
+>>> print("Hello","World!")
+Hello World!
+>>> print("Hello""World")
+HelloWorld
+```
+
 * print in one line
 
    * put **end=' '** at the end of print line to tell us not end the line with a newline character and go to the next line.

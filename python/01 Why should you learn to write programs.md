@@ -78,13 +78,15 @@ Hello world!
    * print("It's a dog.")
 ------------------------------------
 
-* comma "," present space
+* comma-separated sequence print with space between
 
 ```
 >>> print("Hello","World!")
 Hello World!
 >>> print("Hello""World")
 HelloWorld
+>>> print(1,000,000)
+1 0 0
 ```
 
 * print in one line
@@ -108,9 +110,9 @@ Hello World
 I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
 ```
 
-* new line character
+* newline character
 
-   * \n (backslash n): start a new line
+   * \n (backslash n): start a new line, cause a line break
    
 ```
 >>> days = "\nMon\nTue\nWed\nThu\nFri\nSat\nSun"

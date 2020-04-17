@@ -38,14 +38,7 @@ is; lambda; nonlocal; not; or; pass; raise; return; try; while; with; yield
 
 * **variables**
 
-* **function print**
-   * print( )
-   * enclosed in quotes, single quotes and double quotes do the same thing
-      * print('Hello world!') 
-      * print("Hello world!")
-   * most people use single quotes
-   * use double quotes when apostrophe appears in the string
-      * print("It's a dog.")
+
    
 # 1.5 Conversing with Python
 
@@ -76,6 +69,84 @@ Hello world!
 * Hit CTRL-Z(^Z)
    
 * Hit CTRL-D(^D)
+
+## **print() function**
+
+   * print( )
+   * enclosed in quotes, single quotes and double quotes do the same thing
+      * print('Hello world!') 
+      * print("Hello world!")
+   * most people use single quotes
+   * use double quotes when apostrophe appears in the string
+      * print("It's a dog.")
+   * print in one line
+
+   ```
+   # put **end=' '** at the end of print line to tell us not end the line with a newline character and go to the next line.
+   print("Hello", end = ' ')
+   print("World")
+   Hello World
+   
+   # print multiple lines
+   >>> print(
+   ...     "I had this thing.",
+   ...     "That you could type up right.",
+   ...     "But it didn't sing.",
+   ...     "So I said goodnight."
+   ... )
+   I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
+   ```
+   * new line character
+   
+   ```
+   # \n (backslash n): start a new line
+   >>> days = "\nMon\nTue\nWed\nThu\nFri\nSat\nSun"
+   >>> print("Here are the days: ", days)
+   Here are the days:  
+   Mon
+   Tue
+   Wed
+   Thu
+   Fri
+   Sat
+   Sun
+   
+   # three double-quotes(triple-quotes, """): start a new line
+   >>> days = """
+   ... Mon
+   ... Tue
+   ... Wed
+   ... """
+   >>> print("Here are the days: ", days)
+   Here are the days:  
+   Mon
+   Tue
+   Wed
+   ```
+   * escape sequences
+   
+   Escape | What it does
+   |:---|:---|
+   \\ | Backslash (\)
+   \' | Single-quote (')
+   \" | Double-quote (")   
+   \a | ASCII bell (BEL)
+   \b | ASCII backspace (BS)
+   \f | ASCII formfeed (FF)
+   \n | ASCII linefeed (LF)
+   \N{name} | Character named name in the Unicode database (Unicode only) 
+   \r | ASCII carriage return (CR)
+   \t | ASCII horizontal tab (TAB)
+   \uxxxx | Character with 16-bit hex value xxxx (Unicode only) 
+   \Uxxxxxxxx | Character with 32-bit hex value xxxxxxxx (Unicode  only) 
+   \v | ASCII vertical tab (VT)
+   \ooo | Character with octal value oo
+   \xhh | Character with hex value hh
+   
+```
+>>> print("I am 6'2\" tall.")
+I am 6'2" tall.
+```
 
 # 1.6 Terminology: Interpreter and compiler
 

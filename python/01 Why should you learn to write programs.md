@@ -76,16 +76,20 @@ Hello world!
 * most people use single quotes
 * use double quotes when apostrophe appears in the string
    * print("It's a dog.")
+------------------------------------
 
 * print in one line
 
+   * put **end=' '** at the end of print line to tell us not end the line with a newline character and go to the next line.
+
 ```
-# put **end=' '** at the end of print line to tell us not end the line with a newline character and go to the next line.
 print("Hello", end = ' ')
 print("World")
 Hello World
-   
-# print multiple lines
+```
+   * print multiple lines, each line end with ","
+
+```
 >>> print(
 ...     "I had this thing.",
 ...     "That you could type up right.",
@@ -94,10 +98,12 @@ Hello World
 ... )
 I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
 ```
+
 * new line character
+
+   * \n (backslash n): start a new line
    
 ```
-# \n (backslash n): start a new line
 >>> days = "\nMon\nTue\nWed\nThu\nFri\nSat\nSun"
 >>> print("Here are the days: ", days)
 Here are the days:  
@@ -108,8 +114,11 @@ Thu
 Fri
 Sat
 Sun
+```
+
+   * three double-quotes(triple-quotes, """): start a new line
    
-# three double-quotes(triple-quotes, """): start a new line
+```
 >>> days = """
 ... Mon
 ... Tue
@@ -121,6 +130,7 @@ Mon
 Tue
 Wed
 ```
+
 * escape sequences
    
 Escape | What it does

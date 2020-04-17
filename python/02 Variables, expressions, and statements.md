@@ -1,142 +1,97 @@
 # 2.1 Values and types
-+ **value** : a letter or a number
-+ **types**
-   + **integer**: type ```int```; 2
-   + **string**: type ```str```; 
-      * enclosed in " double-quotes or ' single-quotes.
+
+* **value**
+   * one of the basic things a program works with, like a letter or a number
+   
+* **types**
+   + **integer**
+      * type **int**
+      * 2
+   + **floating point**
+      * type **float**
+      * 3.2
+   + **string**: 
+      * type str
+      * enclosed in quotation marks, " double-quotes or ' single-quotes
       * "Hello, World!"; "17"; "3.2"
-   + **floating point**: type ```float```; 3.2
-   
-   ----
-   
-   ```
-   # print() for integers
-   >>> print(4)
-   4
-   
-   # print() for strings
-   >>> print("Hello, World!")
-   Hello, World!
-   >>> Print('Hello, World!')
-   Hello, World!
-   ```
-   ```
-   # type() can tell you what type a value has
-   >>> type(17)
-   <class 'int'>
-   >>> type(3.2) 
-   <class 'float'>
-   >>> type('Hello, World!') 
-   <class 'str'>
-   >>> type('17') 
-   <class 'str'> 
-   >>> type('3.2') 
-   <class 'str'>
-   ```
-   ```
-   # int() function can convert value to integer
-   >>> int(3.2)
-   3
-   ```
-   ```
-   # round() function can round value to two decimal places
-   >>> round(8.45)
-   8
-   ```
-   ```
-   # str() function can convert value to string
-   >>> print('the number is : ' + str(3))
-   the number is : 3
-   ```
-* **print()**
-
-   * print in one line
-
-   ```
-   # put **end=' '** at the end of print line to tell us not end the line with a newline character and go to the next line.
-   print("Hello", end = ' ')
-   print("World")
-   Hello World
-   
-   # print multiple lines
-   >>> print(
-   ...     "I had this thing.",
-   ...     "That you could type up right.",
-   ...     "But it didn't sing.",
-   ...     "So I said goodnight."
-   ... )
-   I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
-   ```
-   * new line character
-   
-   ```
-   # \n (backslash n): start a new line
-   >>> days = "\nMon\nTue\nWed\nThu\nFri\nSat\nSun"
-   >>> print("Here are the days: ", days)
-   Here are the days:  
-   Mon
-   Tue
-   Wed
-   Thu
-   Fri
-   Sat
-   Sun
-   
-   # three double-quotes(triple-quotes, """): start a new line
-   >>> days = """
-   ... Mon
-   ... Tue
-   ... Wed
-   ... """
-   >>> print("Here are the days: ", days)
-   Here are the days:  
-   Mon
-   Tue
-   Wed
-   ```
-   * escape sequences
-   
-   Escape | What it does
-   |:---|:---|
-   \\ | Backslash (\)
-   \' | Single-quote (')
-   \" | Double-quote (")   
-   \a | ASCII bell (BEL)
-   \b | ASCII backspace (BS)
-   \f | ASCII formfeed (FF)
-   \n | ASCII linefeed (LF)
-   \N{name} | Character named name in the Unicode database (Unicode only) 
-   \r | ASCII carriage return (CR)
-   \t | ASCII horizontal tab (TAB)
-   \uxxxx | Character with 16-bit hex value xxxx (Unicode only) 
-   \Uxxxxxxxx | Character with 32-bit hex value xxxxxxxx (Unicode  only) 
-   \v | ASCII vertical tab (VT)
-   \ooo | Character with octal value oo
-   \xhh | Character with hex value hh
    
 ```
->>> print("I am 6'2\" tall.")
-I am 6'2" tall.
+# print() for integers/float
+>>> print(4)
+4
+>>> print(3.2)
+3.2
+   
+# print() for strings
+>>> print("Hello, World!")
+Hello, World!
 ```
+
+* **type()** can tell you what type a value has
+
+```
+>>> type(17)
+<class 'int'>
+>>> type(3.2) 
+<class 'float'>
+>>> type('Hello, World!') 
+<class 'str'>
+>>> type('17') 
+<class 'str'> 
+>>> type('3.2') 
+<class 'str'>
+```
+
+* **int()** function can convert value to integer
+
+```
+>>> int(3.9)
+3
+```
+
+* **round()** function can round value
+   
+```
+>>> round(3.9)
+4
+```
+
+* **float()** function can convert value to float
+
+```
+>>> float(9)
+9.9
+```
+   
+* **str()** function can convert value to string
+
+```
+>>> print('the number is : ' + str(3))
+the number is : 3
+```
+
 # 2.2 Variables
 
 + **variale** : a name refers to a value
 
 + **assignment statement** : create new variables and give them values
-
-+ **assignment operator =**
+   * **operator**: **=**
 
 ```
 # assign a string to a new variable named message
 >>> message = 'And now for something completely different' 
+
 # assign the integer 17 to n
 >>> n = 17
+
 # assign the approximate value of π to pi
 >>> pi = 3.1415926535897931
 
+# display the value of a variable with a print statement
 >>> print(n)
 17
->>> print(pi) 3.141592653589793
+>>> print(pi) 
+3.141592653589793
 
 >>> type(message) 
 <class 'str'>
@@ -151,8 +106,7 @@ I am 6'2" tall.
 + **variable names**
    + can contain both letters and numbers
    + can't start with a number
-   + can contain a uppercase letters
-   + it is better to begin with a lowercase letter 
+   + case sensitive. can contain a uppercase letters, but better to begin with a lowercase letter 
    + can contain the underscore character ( _ ) 
    + avoid starting with an underscore character unless we are writing library code for others to use
    + can't use Python keywords
@@ -167,22 +121,17 @@ I am 6'2" tall.
 # 2.4 Statements
 
 + **statement**: a unit of code that the Python interpreter can execute
-
-+ A script usually contains a sequence of statements. If there is more than one statement, the results appear one at a time as the statements execute.
-
-```
-print(1) 
-x=2 
-print(x)
-
-1
-2
-```
+   * print: an expression statement
+   * assignment: produce no output
 
 # 2.5 Operators and operands
 
-+ **operators** : + addition, - subtraction, * multiplication, / division and ** exponentiation
-+ **operands** : the values the operator is applied to
++ **operators**
+   * special symbols represent computations
+   * computations : + addition, - subtraction, * multiplication, / division and ** exponentiation
+   
++ **operands** 
+   * the values the operator is applied to
 
 ```
 # the division result is a floating point
@@ -205,10 +154,15 @@ print(x)
 
 + **expression** : a combination of values, variables, and operators
 
+```
+>>> x = 5
+>>> x + 1
+6
+```
    
 # 2.7 Order of operations
 
-+ **PEMDAS** : parentheses, exponents, multiplication, division, addtion, subtraction
++ **rules of precedence** : (PEMDAS) parentheses, exponents, multiplication, division, addtion, subtraction
    + **Parentheses** have the highest precedence
    + **Exponentiation** has the next highest precedence
    + **Multiplication** and **Division** have the same precedence, higher than **Addition** and **Subtraction**
@@ -246,8 +200,7 @@ print(x)
    
 # 2.9 String operations
 
-+ The **+ operator** works with strings and performs concatenation
-+ **concatenation** : join the strings by linking them end to end
++ The **+ operator** performs **concatenation**, join the strings by linking them end to end
 
 ```
 >>> first = 10
@@ -260,7 +213,7 @@ print(x)
 100150
 ```
 
-+ the * operator also works with strings by multiplying the content of a string by an integer.
++ the * operator multiplies the content of a string by an integer
 
 ```
 >>> first = 'Test'
@@ -271,16 +224,19 @@ Test Test Test
 
 # 2.10 Asking the user for input
 
-* input() function
-* press Return or Enter, the program resumes and input returns
+* input() : built-in function
+   * take the value for a variable from the user
+   * the type of user typed is a **string**
 
 ```
 >>> inp = input() 
 Some silly stuff 
 >>> print(inp) 
 Some silly stuff
+>>> type(inp)
+<class 'str'>
 ```
-* print a prompt telling teh user what to input
+* print a prompt telling the user what to input
 
 ```
 >>> name = input('What is your name?\n') 
@@ -320,4 +276,60 @@ What...is the airspeed velocity of an unladen swallow?
 
 # 2.13 Debugging
 
+* illegal variable name
+
 # 2.14 Glossary
+
+* assignment 
+   * A statement that assigns a value to a variable.
+   
+* concatenate 
+   * To join two operands end to end.
+   
+* comment 
+   * Information in a program that is meant for other programmers (or anyone reading the source code) and has no effect on the execution of the program.
+   
+* evaluate 
+   * To simplify an expression by performing the operations in order to yield a single value.
+   
+* expression 
+   * A combination of variables, operators, and values that represents a single result value.
+   
+* floating point
+   * A type that represents numbers with fractional parts.
+   
+* integer 
+   * A type that represents whole numbers.
+   
+* keyword 
+   * A reserved word that is used by the compiler to parse a program; you cannot use keywords like if, def, and while as variable names. 
+   
+* mnemonic
+   * A memory aid. We often give variables mnemonic names to help us remember what is stored in the variable.
+   
+* modulus operator 
+   * An operator, denoted with a percent sign (%), that works on integers and yields the remainder when one number is divided by another. operand One of the values on which an operator operates.
+   
+* operator 
+   * A special symbol that represents a simple computation like addition, multiplication, or string concatenation.
+
+* rules of precedence 
+   * The set of rules governing the order in which expressions involving multiple operators and operands are evaluated.
+
+* statement 
+   * A section of code that represents a command or action. So far, the statements we have seen are assignments and print expression statement.
+
+* string 
+   * A type that represents sequences of characters.
+
+* type 
+   * A category of values. The types we have seen so far are integers (type int), floating-point numbers (type float), and strings (type str).
+   
+* value 
+   * One of the basic units of data, like a number or string, that a program manipulates.
+
+* variable 
+   * A name that refers to a value.
+
+
+

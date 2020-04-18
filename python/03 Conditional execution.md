@@ -1,6 +1,8 @@
 # 3.1 Boolean expressions
-* either true or false
-* operator == compare two operands and produce True if they are equal and False otherwise
+
+* an expression : either true or false
+* operator == : compare two operands and produce True if they are equal and False otherwise
+
 ```
 >>> 5 == 5 
 True

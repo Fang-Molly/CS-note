@@ -44,7 +44,8 @@ True
 * **if statement**
 
    * the condition : the boolean expression after the if statement
-   * if statement : end with a colon character (:)
+   * if statement : 
+      * a header line : end with a colon character (:) followed by an indented block
    * the line(s) after the if statement are indented
    
 ```
@@ -73,7 +74,7 @@ Small
 * the prompt change from three chevrons (<<<) to three dots (...) to indicate you are in the middle of a block of statements
 * leave a blank line at the end of a block, otherwise Python will return an error.
 
-* pass statement
+* **pass statement**
    * have a body with no statement
    * as a place holder for code you haven't written yet
 
@@ -133,7 +134,6 @@ else:
 
 * Handling an exception with a try statement is called catching an exception.
 
-
 ```
 inp = input('Enter Fahrenheit Temperature:') 
 try:
@@ -150,7 +150,10 @@ except:
 # 3.8 Short-circuit evaluation of logical expressions
 
 * short-circuit rule
-* a guard
+
+When Python detects that there is nothing to be gained by evaluating the rest of a logical expression, it stops its evaluation and does not do the computations in the rest of the logical expression. 
+
+* guardian pattern : a guard evaluation
 
 # 3.9 Debugging
 
@@ -164,19 +167,44 @@ except:
 
 # 3.10 Glossary
 
-* **body** The sequence of statements within a compound statement.
-* **boolean expression** An expression whose value is either True or False. 
-* **branch** One of the alternative sequences of statements in a conditional statement.
-* **chained conditional** A conditional statement with a series of alternative branches.
-* **comparison operator** One of the operators that compares its operands: ==, !=, >, <, >=, and <=.
-* **conditional statement** A statement that controls the flow of execution depend- ing on some condition.
-* **condition** The boolean expression in a conditional statement that determines which branch is executed.
-* **compound statement** A statement that consists of a header and a body. The header ends with a colon (:). The body is indented relative to the header.
-* **guardian pattern** Where we construct a logical expression with additional com- parisons to take advantage of the short-circuit behavior.
-* **logical operator** One of the operators that combines boolean expressions: and, or, and not.
-* **nested conditional** A conditional statement that appears in one of the branches of another conditional statement.
-* **traceback** A list of the functions that are executing, printed when an exception occurs.
-* **short circuit** When Python is part-way through evaluating a logical expression and stops the evaluation because Python knows the final value for the ex- pression without needing to evaluate the rest of the expression.
+* **body** 
+   * The sequence of statements within a compound statement.
+   
+* **boolean expression** 
+   * An expression whose value is either True or False. 
+   
+* **branch** 
+   * One of the alternative sequences of statements in a conditional statement.
+   
+* **chained conditional** 
+   * A conditional statement with a series of alternative branches.
+   
+* **comparison operator** 
+   * One of the operators that compares its operands: ==, !=, >, <, >=, and <=.
+   
+* **conditional statement** 
+   * A statement that controls the flow of execution depending on some condition.
+   
+* **condition** 
+   * The boolean expression in a conditional statement that determines which branch is executed.
+   
+* **compound statement** 
+   * A statement that consists of a header and a body. The header ends with a colon (:). The body is indented relative to the header.
+   
+* **guardian pattern** 
+   * Where we construct a logical expression with additional comparisons to take advantage of the short-circuit behavior.
+   
+* **logical operator** 
+   * One of the operators that combines boolean expressions: and, or, and not.
+   
+* **nested conditional** 
+   * A conditional statement that appears in one of the branches of another conditional statement.
+   
+* **traceback** 
+   * A list of the functions that are executing, printed when an exception occurs.
+   
+* **short circuit** 
+   * When Python is part-way through evaluating a logical expression and stops the evaluation because Python knows the final value for the expression without needing to evaluate the rest of the expression.
 
 
  

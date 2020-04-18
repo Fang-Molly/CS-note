@@ -6,10 +6,10 @@
 >>> type(32) 
 <class 'int'>
 ```
-* type function
+* type() function
    * function name: type
    * function argument: 32
-   * function result: <class 'int'>
+   * function result: <class 'int'>, return value
 
 # 4.2 Built-in functions
 

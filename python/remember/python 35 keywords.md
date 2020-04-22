@@ -9,19 +9,24 @@
 
 -----------------------------------
 
-# marks
+# characters
 
 * prompt 
 * quotes
    * single quotes ---- 'hello'
    * double quotes ---- "hello"
-   * triple quotes ---- '''hello'''
-   
+   * triple quotes ---- '''hello'''   
 * apostrophe ---- I'm
-* chevron ---- >>>
+* colon ---- :
+* chevron ---- >, ^
+   * three chevrons : >>>
+* dot ---- .
+   * three dots : ...
 * parenthesis ---- (hello)
 * round bracket ---- (hello)
-
+* equal 
+   * single equal ---- x=y （assignment operator)
+   * double equal ---- x==y  (comparison operator)
 
 --------------------------------
 # operators
@@ -37,6 +42,20 @@
 |%      | remainder
 
 ----------------
+# comparison operators
+
+|symbol    | meaning
+| :---:    | :---:       |
+|x==y      |x is equal to y
+|x!=y      |x is not equal to y
+|x>y       |x is greater than y
+|x<y       |x is less than y
+|x>=y      |x is greater than or equal to y
+|x<=y      |x is less than or equal to y
+|x is y    |x is the same as y
+|x is not y|x is not the same as y
+
+-----------------------
 #  escape sequences
    
 Escape | What it does
@@ -56,3 +75,25 @@ Escape | What it does
 \v | ASCII vertical tab (VT)
 \ooo | Character with octal value oo
 \xhh | Character with hex value hh
+
+--------------------
+
+function
+type()
+
+* Built-in functions
+   * max() and min()
+   * len()
+   * type conversion functions
+      * int(), float(), str()
+   
+* Math functions
+   * import math
+   * math.log10()
+   * math.sqrt()
+   * math.sin()
+   * math.pi
+   
+* Random numbers
+   * import random
+   * 

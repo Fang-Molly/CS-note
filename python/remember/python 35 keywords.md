@@ -9,7 +9,7 @@
 
 -----------------------------------
 
-# characters
+# Symbols
 
 * prompt 
 * quotes
@@ -18,6 +18,8 @@
    * triple quotes ---- '''hello'''   
 * apostrophe ---- I'm
 * colon ---- :
+* octothorpe/hash ---- #
+* caret ---- ^
 * chevron ---- >, ^
    * three chevrons : >>>
 * dot ---- .

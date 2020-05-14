@@ -111,6 +111,8 @@ the number is : 3
    + avoid starting with an underscore character unless we are writing library code for others to use
    + can't use Python keywords
    + case sensitive
+   + popular variable names include i ,x and j.
+   
 + **Python reserves 35 keywords**
    + and as assert break class continue def 
    + del elif else except False finally for 
@@ -129,7 +131,7 @@ the number is : 3
 + **operators**
    * special symbols represent computations
    * computations : + addition, - subtraction, * multiplication, / division and ** exponentiation
-   
+   * You should add space around operators like x = 100 so that it’s easier to read.
 + **operands** 
    * the values the operator is applied to
 

@@ -106,7 +106,7 @@ the number is : 3
 + **variable names**
    + can contain both letters and numbers
    + can't start with a number
-   + case sensitive. can contain a uppercase letters, but better to begin with a lowercase letter 
+   + case sensitive, can contain a uppercase letters, but better to begin with a lowercase letter 
    + can contain the underscore character ( _ ) 
    + avoid starting with an underscore character unless we are writing library code for others to use
    + can't use Python keywords

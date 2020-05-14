@@ -223,6 +223,13 @@ True
    TypeError: %d format: a number is required, not str
    ```
 
+* format string: special {} sequence
+   * start the string with the letter f
+```
+my_name = 'Alice'
+Print(f"Let's talk about {my_name}.")
+
+```
 
 # 6.12 Debugging
 

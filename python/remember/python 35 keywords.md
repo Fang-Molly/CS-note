@@ -17,6 +17,7 @@
    * double quotes ---- "hello"
    * triple quotes ---- '''hello'''   
 * apostrophe ---- I'm
+* underscore ---- _
 * colon ---- :
 * octothorpe/hash ---- #
 * caret ---- ^
@@ -33,15 +34,15 @@
 --------------------------------
 # operators
 
-|symbol | computation  
-| :---: | :---:       |
-|+      | addition
-|-      | subtraction
-|*      | multiplication
-|/      | division
-|**     | exponentiation
-|//     | integer division
-|%      | remainder
+|symbol | computation      | name            |
+| :---: | :---:            | :---:           |
+|+      | addition         | plus            |
+|-      | subtraction      | minus           |
+|*      | multiplication   | asterisk        |
+|/      | division         | slash           |
+|**     | exponentiation   | double asterisk |
+|//     | integer division | double slash    |
+|%      | remainder        | percent         |
 
 ----------------
 # comparison operators

@@ -11,7 +11,7 @@
       * type **float**
       * 3.2
    + **string**: 
-      * type str
+      * type **str**
       * enclosed in quotation marks, " double-quotes or ' single-quotes
       * "Hello, World!"; "17"; "3.2"
    
@@ -123,7 +123,7 @@ the number is : 3
 # 2.4 Statements
 
 + **statement**: a unit of code that the Python interpreter can execute
-   * print: an expression statement
+   * expression statement : print()
    * assignment: produce no output
 
 # 2.5 Operators and operands
@@ -202,7 +202,7 @@ the number is : 3
    
 # 2.9 String operations
 
-+ The **+ operator** performs **concatenation**, join the strings by linking them end to end
++ The ** + operator** performs **concatenation**, join the strings by linking them end to end
 
 ```
 >>> first = 10
@@ -215,7 +215,7 @@ the number is : 3
 100150
 ```
 
-+ the * operator multiplies the content of a string by an integer
++ the ** * operator** multiplies the content of a string by an integer
 
 ```
 >>> first = 'Test'
@@ -275,6 +275,7 @@ What...is the airspeed velocity of an unladen swallow?
 * it has no effect on the program
 
 # 2.12 Choosing mnemonic variable names
+
 
 # 2.13 Debugging
 

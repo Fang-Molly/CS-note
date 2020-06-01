@@ -32,7 +32,7 @@
    * double equal ---- x==y  (comparison operator)
 
 --------------------------------
-# operators
+# computation operators
 
 |symbol | computation      | name            |
 | :---: | :---:            | :---:           |
@@ -43,6 +43,12 @@
 |**     | exponentiation   | double asterisk |
 |//     | integer division | double slash    |
 |%      | remainder        | percent         |
+
+
+# Order of operations
+
+* **rules of precedence**
+* **PEMDAS** : parentheses, exponents, multiplication, division, addtion, subtraction
 
 ----------------
 # comparison operators

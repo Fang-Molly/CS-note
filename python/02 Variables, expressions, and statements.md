@@ -334,5 +334,67 @@ What...is the airspeed velocity of an unladen swallow?
 * variable 
    * A name that refers to a value.
 
+-------------
+
+# 2.15 Exercises
 
 
+**Exercise 2: Write a program that uses input to prompt a user for their name and then welcomes them.**  
+
+```python
+Enter your name: Chuck  
+Hello Chuck  
+```
+**Answer:**  
+
+```python
+name = input('Enter your name: ')
+print('Hello',name)
+```
+
+**Exercise 3: Write a program to prompt the user for hours and rate per hour to compute gross pay.**  
+
+```
+Enter Hours: 35  
+Enter Rate: 2.75  
+Pay: 96.25  
+```
+
+We won’t worry about making sure our pay has exactly two digits after the decimal place for now. If you want, you can play with the built-in Python round function to properly round the resulting pay to two decimal places.
+
+**Answer:**
+
+```python
+hour = input('Enter Hours: ')
+rate = input('Enter Rates: ')
+pay = int(hour) * float(rate)
+print('Pay:',pay)
+```
+
+
+**Exercise 4: Assume that we execute the following assignment statements:**
+
+width = 17  
+height = 12.0  
+
+For each of the following expressions, write the value of the expression and the type (of the value of the expression).  
+
+1. width//2  
+2. width/2.0  
+3. height/3  
+4. 1 + 2 * 5
+
+Use the Python interpreter to check your answers.
+
+**Answer:**
+1. 8;  2. 8.5;  3. 4.0;  4. 11
+
+**Exercise 5: Write a program which prompts the user for a Celsius tem- perature, convert the temperature to Fahrenheit, and print out the converted temperature.**
+
+**Answer: **  
+
+```python
+cel = input('Enter the Celsius temperature : ')
+fah = float(cel) * 1.8 + 32
+print('The Fahrenheit temperature : ',fah)
+```

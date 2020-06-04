@@ -303,18 +303,21 @@ b) Retrieve web pages over the Internet
 c) Store information for the long term, even beyond a power cycle  
 d) Take input from the user  
 
-**Answer:** C
+**Answer:**  
+C
 
 
 **Exercise 2: What is a program?**
 
-**Answer:** A set of instructions that specifies a computation.
+**Answer:**   
+A program is a sequence of Python statements that have been crafted to do something.
 
 
 **Exercise 3: What is the difference between a compiler and an interpreter?**  
 
-**Answer:** 
-
+**Answer:**   
+An interpreter reads the source code of the program as written by the programmer, parses the source code, and interprets the instructions on the fly.
+A compiler needs to be handed the entire program in a file, and then it runs a process to translate the high-level source code into machine language and then the compiler puts the rusulting machine language into a file for later execution.
 
 
 **Exercise 4: Which of the following contains “machine code”?**  
@@ -323,31 +326,58 @@ b) The keyboard
 c) Python source file  
 d) A word processing document  
 
-**Answer:** A
+**Answer:**  
+A
 
 
 **Exercise 5: What is wrong with the following code:**
 
-'''
+```python
 >>> primt 'Hello world!'  
 File "<stdin>", line 1  
 	primt 'Hello world!'  
-                       ^
+                           ^
 SyntaxError: invalid syntax
 >>>
-'''
+```
+**Answer:**
+The function print() wasn't writen correctly. It was written by "Primt". The print statement should enclosed in quotes and in parentheses. print('Hello world!')
+
   
-Exercise 6: Where in the computer is a variable such as “x” stored after the following Python line finishes?
+**Exercise 6: Where in the computer is a variable such as “x” stored after the following Python line finishes?**
+
 x = 123
-a) Central processing unit b) Main Memory
-c) Secondary Memory
-d) Input Devices
-e) Output Devices
-Exercise 7: What will the following program print out:
-x = 43 x=x+1 print(x)
-a) 43
-b) 44
-c) x + 1
-d) Error because x = x + 1 is not possible mathematically
-Exercise 8: Explain each of the following using an example of a hu- man capability: (1) Central processing unit, (2) Main Memory, (3) Secondary Memory, (4) Input Device, and (5) Output Device. For ex- ample, “What is the human equivalent to a Central Processing Unit”?
-Exercise 9: How do you fix a “Syntax Error”?
+
+a) Central processing unit  
+b) Main Memory  
+c) Secondary Memory  
+d) Input Devices  
+e) Output Devices  
+
+**Answer:**  
+B
+
+
+**Exercise 7: What will the following program print out:**  
+
+x = 43  
+x=x+1  
+print(x)   
+
+a) 43  
+b) 44  
+c) x + 1  
+d) Error because x = x + 1 is not possible mathematically  
+
+**Answer: B**
+
+**Exercise 8: Explain each of the following using an example of a human capability: (1) Central processing unit, (2) Main Memory, (3) Secondary Memory, (4) Input Device, and (5) Output Device. For example, “What is the human equivalent to a Central Processing Unit”?**
+
+**Answer:**
+(1) Central processing unit likes human brain; (2) Main Memory likes our short-term memory; (3) Secondary Memory likes our long-term memory; (4) Input Device likes our ears when listening and (5) Output Device likes our mouth when speaking
+
+
+**Exercise 9: How do you fix a “Syntax Error”?**\
+
+**Answer:**  
+Examine your code, read it back to yourself, and check that it says what you meant to say. Check your python grammer.

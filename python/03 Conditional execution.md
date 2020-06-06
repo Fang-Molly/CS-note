@@ -1,22 +1,25 @@
-# 3.1 Boolean expressions
+# Chapter 3 Conditional execution 
 
-* an expression : either true or false
-* operator == : compare two operands and produce True if they are equal and False otherwise
+## 3.1 Boolean expressions
 
-```
+* **Boolean expression: either true or false**
+
+```python
 >>> 5 == 5 
 True
 >>> 5 == 6 
 False
 ```
-* True and False belong to the **class bool**
-```
+* **True and False belong to the class bool**
+
+```python
 >>> type(True) 
 <class 'bool'> 
 >>> type(False) 
 <class 'bool'>
 ```
-* comparison operators
+* **comparison operators**: compare two operands and produce True if they are equal and False otherwise
+
    * x==y ------ x is equal to y
    * x!=y------ x is not equal to y
    * x>y ------ x is greater than y
@@ -26,13 +29,14 @@ False
    * x is y ------  x is the same as y
    * x is not y ------ x is not the same as y
    
-# 3.2 Logical operators
+## 3.2 Logical operators
 
-* logical operators : and, or and not
+* **logical operators : and, or and not**
    * and : both are true
    * or : either is true
-   * not : 
-* any nonzero number is interpreted as "true"
+   * not : false
+   
+* **any nonzero number is interpreted as "true"**
 
 ```
 >>> 17 and True
@@ -41,22 +45,41 @@ True
 
 # 3.3 Conditional execution
 
+* **Conditional statements**: check conditions and change the behavior of the program accordingly
+
+   * if it is true, thestatement gets executed.
+   * if it is false, the statement is skipped.
+
 * **if statement**
 
-   * the condition : the boolean expression after the if statement
-   * if statement : 
-      * a header line : end with a colon character (:) followed by an indented block
-   * the line(s) after the if statement are indented
+   * head line
+      * start with if
+      * condition : the boolean expression after the if statement
+      * end with a colon character (:) 
+   * body
+      * indented block : the line(s) after the if statement
+      * the number of statements : no limit, at least one
+      * pass statement: no statement, as a place holder, does nothing
    
-```
+```python
+# syntax of the if statement
 if x > 0 :
     print('x is positive')
 ```
 
-   * if the logical condition is true, indented statement gets executed.
-   * if the logical condition is false, indented statement is skipped.
-   
+```python
+# pass statement
+if x < 0:
+    pass     # need to handle nagetive values!
 ```
+* **If you enter an if statement in the Python interpreter...**
+
+   * the prompt change from three chevrons (<<<) to three dots (...)
+      * indicate you are in the middle of a block of statements
+      
+   * leave a blank line at the end of a block, otherwise Python will return an error.
+   
+```python
 >>> x = 3
 >>> if x < 10:
 ...    print('Small') 
@@ -64,33 +87,22 @@ if x > 0 :
 Small
 >>>
 ```
-```
+```python
 >>> x = 12
 >>> if x < 10 :
 ...    print('Small')
 ... 
 >>> 
 ```
-* the prompt change from three chevrons (<<<) to three dots (...) to indicate you are in the middle of a block of statements
-* leave a blank line at the end of a block, otherwise Python will return an error.
-
-* **pass statement**
-   * have a body with no statement
-   * as a place holder for code you haven't written yet
-
-```
-if x < 0 :
-   pass     # need to handle negative values!
-```
-   
    
 # 3.4 Alternative execution
 
-* if statement
-* there are two possibilities and the condition determines which one gets executed
-* branches
+* **Alternative execution**: there are two possibilities and the condition determines which one gets executed
+* **if statement**: if...else...
+* **branches**: the alternatives
 
 ```
+# syntax of the if statement for alternative execution
 if x%2 == 0 :
    print('x is even')
 else :
@@ -99,10 +111,10 @@ else :
 
 # 3.5 Chained conditionals
 
-* there are more than two possibilities
-* elif is an abbreviation of "else if"
-* there is no limit on the number of elif statements
-* else clause is at the end, but there doesn't have to be done.
+* **Chained conditionals**: there are more than two possibilities
+* **if statement**: if...elif(else if)...else...
+   * no limit on the number of elif statements
+   * else clause is at the end, but there doesn't have to be done.
 
 ```
 if x < y:
@@ -113,10 +125,7 @@ else:
    print('x and y are equal')
 ```
 
-* Each condition is checked in order. 
-* If the first is false, the next is checked, and so on. 
-* If one of them is true, the corresponding branch executes, and the statement ends. 
-* Even if more than one condition is true, only the first true branch executes.
+* Each condition is checked in order. If the first is false, the next is checked, and so on. If one of them is true, the corresponding branch executes, and the statement ends. Even if more than one condition is true, only the first true branch executes.
 
 # 3.6 Nested conditionals
 

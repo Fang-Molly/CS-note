@@ -43,7 +43,7 @@ False
 True
 ```
 
-# 3.3 Conditional execution
+## 3.3 Conditional execution
 
 * **Conditional statements**: check conditions and change the behavior of the program accordingly
 
@@ -95,7 +95,7 @@ Small
 >>> 
 ```
    
-# 3.4 Alternative execution
+## 3.4 Alternative execution
 
 * **Alternative execution**: there are two possibilities and the condition determines which one gets executed
 * **if statement**: if...else...
@@ -109,7 +109,7 @@ else :
    print('x is odd')
 ```
 
-# 3.5 Chained conditionals
+## 3.5 Chained conditionals
 
 * **Chained conditionals**: there are more than two possibilities
 * **if statement**: if...elif(else if)...else...
@@ -127,7 +127,7 @@ else:
 
 * Each condition is checked in order. If the first is false, the next is checked, and so on. If one of them is true, the corresponding branch executes, and the statement ends. Even if more than one condition is true, only the first true branch executes.
 
-# 3.6 Nested conditionals
+## 3.6 Nested conditionals
 
 ```
 if x == y:
@@ -139,11 +139,14 @@ else:
       print('x is greater than y')
 ```
 
-# 3.7 Catching exceptions using try and except
+## 3.7 Catching exceptions using try and except
+
+* **try / except** : "insurance policy"
+
 
 * Handling an exception with a try statement is called catching an exception.
 
-```
+```python
 inp = input('Enter Fahrenheit Temperature:') 
 try:
    fahr = float(inp)
@@ -151,12 +154,17 @@ try:
    print(cel)
 except:
    print('Please enter a number')
-```
-* Python starts by executing the sequence of statements in the try block. 
-* If all goes well, it skips the except block and proceeds. 
-* If an exception occurs in the try block, Python jumps out of the try block and executes the sequence of statements in the except block.
+   
+# If all goes well, it skips the except block and proceeds.   
+python fahren2.py
+Enter Fahrenheit Temperature:72 22.22222222222222
 
-# 3.8 Short-circuit evaluation of logical expressions
+# If an exception occurs, python jumps out of the try block and executes the except block.
+python fahren2.py
+Enter Fahrenheit Temperature:fred Please enter a number
+```
+
+## 3.8 Short-circuit evaluation of logical expressions
 
 * short-circuit rule
 
@@ -164,7 +172,9 @@ When Python detects that there is nothing to be gained by evaluating the rest of
 
 * guardian pattern : a guard evaluation
 
-# 3.9 Debugging
+* evaluate (x/y) and y was zero, causes a runtime error.
+
+## 3.9 Debugging
 
 * what kind of error it was
    * syntax errors
@@ -174,7 +184,7 @@ When Python detects that there is nothing to be gained by evaluating the rest of
    * error messages indicate where the problem was discovered, but that is often not where it was caused.
    * the actual error might be earlier in the code, sometimes on a previous line.
 
-# 3.10 Glossary
+## 3.10 Glossary
 
 * **body** 
    * The sequence of statements within a compound statement.
@@ -215,7 +225,101 @@ When Python detects that there is nothing to be gained by evaluating the rest of
 * **short circuit** 
    * When Python is part-way through evaluating a logical expression and stops the evaluation because Python knows the final value for the expression without needing to evaluate the rest of the expression.
 
+----------------
 
- 
+## 3.11 Exercises
 
+**Exercise 1: Rewrite your pay computation to give the employee 1.5 times the hourly rate for hours worked above 40 hours.**
+
+Enter Hours: 45  
+Enter Rate: 10  
+Pay: 475.0
+
+**Answer:**
+
+```python
+
+inp_hour = input('Enter Hours: ')
+hour = int(inp_hour)
+inp_rate = input('Enter Rate: ')
+rate = int(inp_rate)
+if hour <= 40:
+    pay = hour * rate
+    print('Pay: ', pay)
+else:
+    pay = 40 * rate + (hour - 40) * rate * 1.5
+    print('Pay: ', pay)
+    
+```
+
+**Exercise 2: Rewrite your pay program using try and except so that your program handles non-numeric input gracefully by printing a message and exiting the program. The following shows two executions of the program:**
+
+Enter Hours: 20  
+Enter Rate: nine  
+Error, please enter numeric input  
+
+Enter Hours: forty  
+Error, please enter numeric input
+
+**Answer:**  
+
+```python
+hour = input('Enter Hours: ')
+try:
+    int(hour)
+    rate = input('Enter Rate: ')
+    int(rate)
+    pay = int(hour) * int(rate)
+    print('Pay: ', pay)
+except:
+    print('Error, please enter numeric input')
+```
+
+**Exercise 3: Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error message. If the score is between 0.0 and 1.0, print a grade using the following table:**
+
+Score    Grade  
+>= 0.9     A   
+>= 0.8     B   
+>= 0.7     C   
+>= 0.6     D  
+<0.6       F  
+
+Enter score: 0.95  
+A
+
+Enter score: perfect  
+Bad score
+
+Enter score: 10.0   
+Bad score
+
+Enter score: 0.75   
+C
+
+Enter score: 0.5  
+F
+
+Run the program repeatedly as shown above to test the various different values for input.
+
+**Answer:**  
+
+```python
+score = input('Please enter a score between 0.0 and 1.0: ')
+try:
+    float(score)
+    if float(score) >= 0.9 and float(score) <= 1.0:
+        print('A')
+    elif float(score) >= 0.8 and float(score) < 0.9:
+        print('B')
+    elif float(score) >= 0.7 and float(score) < 0.8:
+        print('C')
+    elif float(score) >= 0.6 and float(score) < 0.7:
+        print('D')
+    elif float(score) < 0.6 and float(score) >= 0.0:
+        print('F')
+    else:
+        print('Bad score')
+except:
+    print('Bad score')
+```
 

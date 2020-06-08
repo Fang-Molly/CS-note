@@ -338,6 +338,21 @@ What...is the airspeed velocity of an unladen swallow?
 
 # 2.15 Exercises
 
+**Exercise 1: Type the following statements in the Python interpreter to see what they do:**
+
+5  
+x=5  
+x+1
+
+**Answer:**
+
+```python
+>>> 5
+5
+>>> x = 5
+>>> x + 1
+6
+```
 
 **Exercise 2: Write a program that uses input to prompt a user for their name and then welcomes them.**  
 

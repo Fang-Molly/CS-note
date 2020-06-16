@@ -118,12 +118,58 @@ These loops are generally constructed by:
 
  ### 5.6.1 Counting and summing loops
  
- * count the
+ * counting loop: count the number of items in a list
+    * built-in function len()
+ 
+ ```python
+ count = 0
+for itervar in [3, 41, 12, 9, 74, 15]:
+    count = count + 1
+print('Count: ', count)
+
+Count: 6
+```
+
+* summing loop: compute the total of a set of numbers
+   * built-in function sum()
+
+```python
+total = 0
+for itervar in [3, 41, 12, 9, 74, 15]:
+    total = total + itervar
+print('Total: ', total)
+
+Total: 154
+```
 
 ### 5.6.2 Maximum and minimum loops
 
+* Maxium loop: find the largest value in a list or sequence
+   * built-in function max()
+
+```python
+largest = None
+print('Before:', largest)
+for itervar in [3, 41, 12, 9, 74, 15]:
+    if largest is None or itervar > largest :
+        largest = itervar
+    print('Loop:', itervar, largest)
+print('Largest:', largest)
+
+Before: None
+Loop: 3 3
+Loop: 41 41
+Loop: 12 41
+Loop: 9 41
+Loop: 74 74
+Loop: 15 74
+```
+* Minium loop: find the smallest value in a list or sequence
+   * built-in function min()
+
 # 5.7 Debugging
 
+* the mid-point check
 
 
 ## 5.8 Glossary
@@ -149,9 +195,98 @@ calls itself or a loop.
 
 Enter a number: 4  
 Enter a number: 5  
-Enter a number: bad data Invalid input  
+Enter a number: bad data    
+Invalid input  
 Enter a number: 7  
 Enter a number: done  
 16 3 5.333333333333333  
 
+**Answer:**
+
+```python
+count = 0
+total = 0
+average = 0
+
+while True:
+    number = input("Enter a number: ")
+    try:
+        value = float(number)
+        count = count + 1
+        total = total + value
+        average = total / count
+    except:
+        if number == "done":
+            break
+        else:
+            print("Invalid Input")
+            continue
+print(total, count, average)
+```
+```python
+total = 0
+count = 0
+average = 0
+
+while True:
+    try:
+        number = input("Enter a number: ")
+        if (number == 'done'):
+            break
+        value = float(number)
+        total = value + total
+        count = count + 1
+        average = total / count
+    except:
+        print('Invalid input')
+print(total, count, average)
+```
+
 **Exercise 2: Write another program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers instead of the average.**
+
+**Answer:**
+
+```python
+count = 0
+total = 0
+average = 0
+largest = None
+smallest = None
+
+while True:
+    number = input("Enter a number: ")
+    try:
+        number = float(number)
+        count = count + 1
+        total = total + number
+        average = total / count
+        if smallest is None or number < smallest:
+            smallest = number
+        if largest is None or number > largest:
+            largest = number
+    except:
+        if number == 'done':
+            break
+        else:
+            print('Invalid Input')
+            continue
+print(count, largest, smallest)
+```
+```python
+count = 0
+total = 0
+average = 0
+list = [ ]
+
+while True:
+    number = input("Enter a number: ")
+    if (number == 'done'):
+        break
+    number = float(number)
+    total = total + number
+    count = count + 1
+    average = total / count
+    list.append(number)
+
+print(average, max(list), min(list))
+```

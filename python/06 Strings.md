@@ -34,18 +34,19 @@ a
 a
 ```
 
-# 6.3 Traversal through a string with a loop
+## 6.3 Traversal through a string with a loop
 
-* **traversal** 
+* **traversal**: A lot of computations involve processing a string one character at a time. Often they start at the beginning, select each character in turn, do something to it, and continue until the end. This pattern of processing is called a traversal.   
 
-    * while loop
+    * **while loop**
 
-   ```
-   >>> index=0
-   >>> while index<len(fruit):
-   ...    letter=fruit[index]
+   ```python
+   >>> fruit = 'banana'
+   >>> index = 0
+   >>> while index < len(fruit):
+   ...    letter = fruit[index]
    ...    print(letter)
-   ...    index=index+1
+   ...    index = index + 1
    ... 
    b
    a
@@ -56,9 +57,10 @@ a
    >>> 
    ```
   
-   * for loop
+   * **for loop**
    
-   ```
+   ```python
+   >>> fruit = 'banana'
    >>> for char in fruit:
    ...     print(char)
    ... 
@@ -71,13 +73,13 @@ a
    >>>
    ```
 
-# 6.4 String slices
+## 6.4 String slices
 
-* slice : a segment of a string
+* **slice : a segment of a string**
 
-* The operator returns the part of the string from the “n-th” character to the “m-th” character, including the first but excluding the last.
+* The operator returns the part of the string from the “n-th” character to the “m-th” character, including the first but excluding the last
 
-```
+```python
 >>> s = 'Monty Python'
 >>> print(s[0:5])
 Monty
@@ -86,8 +88,9 @@ Python
 ```
 * omit the first index, the slice starts at the beginning
 * omit the second index, the slice goes to the end
+* omit the first and second index, the slice starts at the beginning and goes to the end
 
-```
+```python
 >>> fruit = 'banana'
 >>> fruit[:3]
 'ban'
@@ -97,7 +100,7 @@ Python
 'banana'
 ```
 
-* if the first index >= the second, the result is an empty string.
+* if the first index >= the second, the result is an empty string, represented by two quotation marks.
 * empty string 
    * contain no characters
    * length 0
@@ -108,18 +111,22 @@ Python
 ''
 ```
 
-# 6.5 Strings are immutable
+## 6.5 Strings are immutable
 
-* Strings are immutable, which means you can't change an existing string.
+* Strings are immutable, you can't change an existing string.
 
 ```
+>>> greeting = 'Hello, world!'
+>>> greeting[0] = 'J'
+TypeError: 'str' object does not support item assignment
+
 >>> greeting = 'Hello, world!'
 >>> new_greeting = 'J' + greeting[1:]
 >>> print(new_greeting)
 Jello, world!
 ```
 
-# 6.6 Looping and counting
+## 6.6 Looping and counting
 
 * count the number of times the letter appears in a string
 
@@ -132,22 +139,34 @@ for letter in word:
 print(count)
 ```
 
-# 6.7 The in operator
+## 6.7 The in operator
 
-* word in is a boolean operator, returns True
+* The word in is a boolean operator that takes two strings and returns True if the first appears as a substring in the second
 
-```
+```python
 >>> 'a' in 'banana'
 True
 >>> 'seed' in 'banana'
 False
 ```
 
+## 6.8 String comparison
 
-# 6.8 String comparison
+* The comparison operators work on strings. Be useful for putting words in alphabetical order
 
+* thon does not handle uppercase and lowercase letters the same way that people do. All the uppercase letters come before all the lowercase letters
 
-
+```python
+word = input('Enter your word: ')
+if word == 'banana':
+    print('All right, bananas.')
+elif word < 'banana':
+    print('Your word,' + word + ', comes before banana.')
+elif word > 'banana':
+    print('Your word,' + word + ', comes after banana.')
+else:
+    print('Please rerun again')
+```
 
 # 6.9 String methods
 
@@ -273,3 +292,44 @@ Print(f"Let's talk about {my_name}.")
 * **slice** A part of a string specified by a range of indices.
 
 * **traverse** To iterate through the items in a sequence, performing a similar operation on each.
+
+
+**Exercise 1: Write a while loop that starts at the last character in the string and works its way backwards to the first character in the string, printing each letter on a separate line, except backwards.**
+
+**Answer:**
+
+```python
+fruit = 'banana'
+index = -1
+while index >= (0 - len(fruit)):
+    letter = fruit[index]
+    print(letter)
+    index = index - 1   
+```
+
+**Exercise 2: Given that fruit is a string, what does fruit[:] mean?**
+
+**Answer:**
+
+```python
+>>> fruit = 'banana'
+>>> fruit[:]
+'banana'
+```
+**Exercise 3: Encapsulate this code in a function named count, and gen- eralize it so that it accepts the string and the letter as arguments.**
+
+**Answer:**
+
+```python
+
+def count(string, letter):
+    counter = 0
+    for character in string:
+        if character == letter:
+            counter = counter + 1
+    print(counter)
+
+input_string = input('Enter the word: ')
+input_letter = input('Enter the letter: ')
+count(input_string, input_letter)
+```

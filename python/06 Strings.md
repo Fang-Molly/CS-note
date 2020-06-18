@@ -1,4 +1,6 @@
-# 6.1 A string is a sequence
+# Chapter 6  Strings
+
+## 6.1 A string is a sequence
 
 * **string** : a sequence of characters
 * **extract the character** at index position n with the bracket operator [n]
@@ -14,13 +16,18 @@
 >>> print(letter)
 a
 ```
+* b | a | n | a | n | a    
+ [0] [1] [2] [3] [4] [5]   
+ [-6][-5][-4][-3][-2][-1]
 
-# 6.2 Getting the length of a string using len
+## 6.2 Getting the length of a string using len
 
 * **len()** : show the number of characters in a string
 
 ```
 >>> fruit = 'banana'
+>>> len(fruit)
+>>> 6
 >>> length = len(fruit)
 >>> last = fruit[length-1]
 >>> print(last)

@@ -168,7 +168,7 @@ else:
     print('Please rerun again')
 ```
 
-# 6.9 String methods
+## 6.9 String methods
 
 * dir function : list the methods available for an object.
 * type function : show the type of an object

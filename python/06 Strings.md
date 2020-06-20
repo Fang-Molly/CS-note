@@ -10,7 +10,7 @@
       * index[0] is the first letter, index[1] is the second
       * index[-1] is the last letter, index[-2] is the second to last
       
-```
+```python
 >>> fruit = 'banana'
 >>> letter = fruit[1]
 >>> print(letter)
@@ -24,7 +24,7 @@ a
 
 * **len()** : show the number of characters in a string
 
-```
+```python
 >>> fruit = 'banana'
 >>> len(fruit)
 >>> 6
@@ -105,7 +105,7 @@ Python
    * contain no characters
    * length 0
 
-```
+```python
 >>> fruit = 'banana' 
 >>> fruit[3:3]
 ''
@@ -115,7 +115,7 @@ Python
 
 * Strings are immutable, you can't change an existing string.
 
-```
+```python
 >>> greeting = 'Hello, world!'
 >>> greeting[0] = 'J'
 TypeError: 'str' object does not support item assignment
@@ -130,7 +130,7 @@ Jello, world!
 
 * count the number of times the letter appears in a string
 
-```
+```python
 word = 'banana' 
 count = 0
 for letter in word:
@@ -170,41 +170,62 @@ else:
 
 ## 6.9 String methods
 
-* dir function : list the methods available for an object.
-* type function : show the type of an object
-```
+* **object** : Strings are an example of Python objects. An object contains both data and methods, which are effectively functions that are built into the object and are available to any instance of the object.
+
+* **dir function** : show the availabel methods of an object
+
+* **type function** : show the type of an object
+
+```python
 >>> stuff = 'Hello world'
 >>> type(stuff)
 <class 'str'>
 >>> dir(stuff)
 ['capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
->>> help(str.capitalize) Help on method_descriptor:
-```
-* **method upper/lower** takes a string and returns a new string with all uppercase letters
+>>> help(str.capitalize) 
 
+Help on method_descriptor:
+
+capitalize(self, /)
+    Return a capitalized version of the string.
+    
+    More specifically, make the first character have upper case and the rest lower
+    case.
 ```
+
+* **method upper/lower** takes a string and returns a new string with all uppercase or lowercase letters
+
+```python
 >>> word = 'banana'
 >>> new_word = word.upper()
 >>> print(new_word)
+BANANA
 ```
 * **methond find** search for the position of one string within another
-```
+
+```python
 >>> word = 'banana'
 >>> index = word.find('a')
 >>> print(index)
 1
+# find substring
+>>> word.find('na')
+2
+# take as a second argument the index where it should start
+>>> word.find('na', 3)
+4
 ```
 
 * **method strip** remove white space (space, tabs, or newlines) from the beginning and end or a string
 
-```
->>>line=' Herewego ' 
+```python
+>>>line=' Here we go ' 
 >>> line.strip()
 'Here we go'
 ```
-* **method startswith** return boolean values, require case to match
+* **method startswith** : return boolean values, require case to match
 
-```
+```python
 >>> line = 'Have a nice day' 
 >>> line.startswith('Have') 
 True
@@ -218,24 +239,39 @@ True
 
 # 6.10 Parsing strings
 
+* **Find, slice and extract the characters from the string**
+
+```python
+>>> data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+>>> atpos = data.find('@')
+>>> print(atpos)
+21
+>>> sppos = data.find(' ', atpos)
+>>> print(sppos)
+31
+>>> host = data[atpos+1:sppos]
+>>> print(host)
+uct.ac.za
+>>> 
+```
+
 # 6.11 Format operator
 
-* format operator: % construct strings, replacing parts of the strings with the data stored in variables.
+* **format operator (%)** : construct strings, replacing parts of the strings with the data stored in variables.
 
-   * %d : format an integer, d stands for decimal.
+   * **%d : format an integer, d stands for decimal.**
    
-   ```
+   * **%g format a floating-point number**
+   
+   * **%s format a string**
+   
+   * **%r format any you type**
+   
+   ```python
    >>> camels = 42
    >>> "I have spotted %d camels." % camels
    'I have spotted 42 camels.'
-   ```
-   * %g format a floating-point number
-   
-   * %s format a string
-   
-   * %r format any you type
-   
-   ```
+
    >>> "In %d years I have spotted %g %s." % (3, 0.1, 'camels')
    'In 3 years I have spotted 0.1 camels.'
    ```
@@ -333,3 +369,16 @@ input_string = input('Enter the word: ')
 input_letter = input('Enter the letter: ')
 count(input_string, input_letter)
 ```
+
+**Exercise 4: There is a string method called count that is similar to the function in the previous exercise. Read the documentation of this method at: https://docs.python.org/library/stdtypes.html#string-methods. Write an invocation that counts the number of times the letter a occurs in “banana”.**   
+
+**Answer:**
+
+```python
+>>> word = 'banana'
+>>> word.count('a')
+3
+>>> word.count('a', 1, 5)
+2
+```
+

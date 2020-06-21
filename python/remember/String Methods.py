@@ -45,22 +45,5 @@ b'My name is Lisa'
 True
 ```
 
-* str.expandtabs(tabsize=8)
 
-* str.find(sub[, start[, end]])
 
-* str.format(*args, **kwargs)
-
-* str.format_map(mapping)
-
-* str.index(sub[, start[, end]])
-
-str.isalnum()
-
-str.isalpha()
-
-str.isascii()
-
-str.isdecimal()
-
-str.isdigit()

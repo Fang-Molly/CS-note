@@ -237,7 +237,7 @@ False
 True
 ```
 
-# 6.10 Parsing strings
+## 6.10 Parsing strings
 
 * **Find, slice and extract the characters from the string**
 
@@ -255,7 +255,7 @@ uct.ac.za
 >>> 
 ```
 
-# 6.11 Format operator
+## 6.11 Format operator
 
 * **format operator (%)** : construct strings, replacing parts of the strings with the data stored in variables.
 
@@ -267,6 +267,14 @@ uct.ac.za
    
    * **%r format any you type**
    
+* **Format syntax** :
+   
+   * first operand: a string, the format string, specify how the second operand is formmated
+   * second operand: can be an integer, a floating-point number, a string, any type, or a tuple ()
+      * multiple formats: a tuple, put in parentheses (), separated by commas(,)
+      * the number and types of elements must match the format sequences in the string.  
+   * result : a string
+   
    ```python
    >>> camels = 42
    >>> "I have spotted %d camels." % camels
@@ -275,27 +283,20 @@ uct.ac.za
    >>> "In %d years I have spotted %g %s." % (3, 0.1, 'camels')
    'In 3 years I have spotted 0.1 camels.'
    ```
-   *  multiple formats: put in parentheses (), separated by commas(,)
-   
-   * The number of elements in the tuple must match the number of format sequences in the string. The types of the elements also must match the format sequences
-   
-   ```
-   >>> '%d %d %d' % (1, 2)
-   TypeError: not enough arguments for format string >>> '%d' % 'dollars'
-   TypeError: %d format: a number is required, not str
-   ```
-
-* format string: special {} sequence
-   * start the string with the letter f
-```
+* **Anothe format type**
+   * format string: special {} sequence
+      * start the string with the letter f
+      
+```python
 my_name = 'Alice'
 Print(f"Let's talk about {my_name}.")
-
 ```
 
-# 6.12 Debugging
+## 6.12 Debugging
 
-# 6.13 Glossary
+Ask yourself, “What could go wrong here?” or “What crazy thing might our user do to crash our (seemingly) perfect program?”
+
+## 6.13 Glossary
 
 * **counter** A variable used to count something, usually initialized to zero and then incremented.
 
@@ -329,6 +330,8 @@ Print(f"Let's talk about {my_name}.")
 
 * **traverse** To iterate through the items in a sequence, performing a similar operation on each.
 
+
+## 6.14 Exercises
 
 **Exercise 1: Write a while loop that starts at the last character in the string and works its way backwards to the first character in the string, printing each letter on a separate line, except backwards.**
 
@@ -381,4 +384,24 @@ count(input_string, input_letter)
 >>> word.count('a', 1, 5)
 2
 ```
+**Exercise 5: Take the following Python code that stores a string:**
+
+str = 'X-DSPAM-Confidence:0.8475'
+
+Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
+
+**Answer:**
+
+```python
+str = 'X-DSPAM-Confidence:0.8475'
+startpos = str.find(':')
+data = str[startpos+1:]
+print(float(data))
+```
+
+**Exercise 6: Read the documentation of the string methods at https://docs.python.org/library/stdtypes.html#string-methods You might want to experiment with some of them to make sure you understand how they work. strip and replace are particularly useful.**
+
+The documentation uses a syntax that might be confusing. For example, in find(sub[, start[, end]]), the brackets indicate optional arguments. So sub is required, but start is optional, and if you include start, then end is optional.
+
+
 

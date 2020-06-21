@@ -6,7 +6,7 @@
 'Hello world'
 ```
 
-* **str.casefold(): Return a casefolded copy of the string.**
+* **str.casefold(): Return a casefolded copy of the string. Casefolding is similar to lowercasing but more aggressive because it is intended to remove all case distinctions in a string. **
 
 ```python
 >>> str = 'Hello World'
@@ -37,6 +37,7 @@
 >>> str.encode()
 b'My name is Lisa'
 ```
+
 * **str.endswith(suffix[, start[, end]]): Return True if the string ends with the specified suffix, otherwise return False.**
 
 ```python
@@ -47,129 +48,213 @@ True
 
 * **str.expandtabs(tabsize=8)：Return a copy of the string where all tab characters are replaced by one or more spaces, depending on the current column and the given tab size.**
 
+```python
+>>> str = 'H\te\tl\tl\to'
+>>> str.expandtabs(2)
+'H e l l o'
+>>> str.expandtabs()
+'H       e       l       l       o'
+```
 
-str.find(sub[, start[, end]])
-Return the lowest index in the string where substring sub is found within the slice s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 if sub is not found.
+* **str.find(sub[, start[, end]]): Return the lowest index in the string where substring sub is found within the slice s[start:end].**
 
-str.format(*args, **kwargs)
-Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}.
+```python
+>>> str = 'Hello, welcome to my world.'
+>>> str.find('welcome')
+7
+>>> str.find('e', 5, 10)
+8
+```
 
-str.format_map(mapping)
-Similar to str.format(**mapping), except that mapping is used directly and not copied to a dict.
+* **str.format(*args, **kwargs): Perform a string formatting operation. The string on which this method is called can contain literal text or replacement fields delimited by braces {}.**
 
-str.index(sub[, start[, end]])
-Like find(), but raise ValueError when the substring is not found.
+```python
+>>> str = 'For only {price:.2f} dollars!'
+>>> print (str.format(price = 49))
+For only 49.00 dollars!
 
-str.isalnum()
-Return True if all characters in the string are alphanumeric and there is at least one character, False otherwise. A character c is alphanumeric if one of the following returns True: c.isalpha(), c.isdecimal(), c.isdigit(), or c.isnumeric().
+>>> str1 = "My name is {name}, I'm {age}"
+>>> str1.format(name = 'John', age = 36)
+"My name is John, I'm 36"
+>>> str2 = "My name is {0}, I'm {1}"
+>>> str2.format('John', 36)
+"My name is John, I'm 36"
+>>> str3 = "My name is {}, I'm {}"
+>>> str3.format('John', 36)
+"My name is John, I'm 36"
+```
 
-str.isalpha()
-Return True if all characters in the string are alphabetic and there is at least one character, False otherwise. Alphabetic characters are those characters defined in the Unicode character database as “Letter”, i.e., those with general category property being one of “Lm”, “Lt”, “Lu”, “Ll”, or “Lo”. Note that this is different from the “Alphabetic” property defined in the Unicode Standard.
+* **str.format_map(mapping): Similar to str.format(**mapping), except that mapping is used directly and not copied to a dict.**
 
-str.isascii()
-Return True if the string is empty or all characters in the string are ASCII, False otherwise. ASCII characters have code points in the range U+0000-U+007F.
+* **str.index(sub[, start[, end]]): Like find(), but raise ValueError when the substring is not found.**
 
-New in version 3.7.
+* **str.isalnum(): Return True if all characters in the string are alphanumeric and there is at least one character, False otherwise.**
 
-str.isdecimal()
-Return True if all characters in the string are decimal characters and there is at least one character, False otherwise. Decimal characters are those that can be used to form numbers in base 10, e.g. U+0660, ARABIC-INDIC DIGIT ZERO. Formally a decimal character is a character in the Unicode General Category “Nd”.
+* **str.isalpha(): Return True if all characters in the string are alphabetic and there is at least one character, False otherwise.
 
-str.isdigit()
-Return True if all characters in the string are digits and there is at least one character, False otherwise. Digits include decimal characters and digits that need special handling, such as the compatibility superscript digits. This covers digits which cannot be used to form numbers in base 10, like the Kharosthi numbers. Formally, a digit is a character that has the property value Numeric_Type=Digit or Numeric_Type=Decimal.
+* **str.isascii(): Return True if the string is empty or all characters in the string are ASCII, False otherwise.
 
-str.isidentifier()
-Return True if the string is a valid identifier according to the language definition, section Identifiers and keywords.
+* **str.isdecimal(): Return True if all characters in the string are decimal characters and there is at least one character, False otherwise.**
 
-str.islower()
-Return True if all cased characters 4 in the string are lowercase and there is at least one cased character, False otherwise.
+* **str.isdigit(): Return True if all characters in the string are digits and there is at least one character, False otherwise.
 
-str.isnumeric()
-Return True if all characters in the string are numeric characters, and there is at least one character, False otherwise. Numeric characters include digit characters, and all characters that have the Unicode numeric value property, e.g. U+2155, VULGAR FRACTION ONE FIFTH. Formally, numeric characters are those with the property value Numeric_Type=Digit, Numeric_Type=Decimal or Numeric_Type=Numeric.
+* **str.isidentifier(): Return True if the string is a valid identifier according to the language definition, section Identifiers and keywords.
 
-str.isprintable()
-Return True if all characters in the string are printable or the string is empty, False otherwise. Nonprintable characters are those characters defined in the Unicode character database as “Other” or “Separator”, excepting the ASCII space (0x20) which is considered printable. (Note that printable characters in this context are those which should not be escaped when repr() is invoked on a string. It has no bearing on the handling of strings written to sys.stdout or sys.stderr.)
+* **str.islower(): Return True if all cased characters 4 in the string are lowercase and there is at least one cased character, False otherwise.
 
-str.isspace()
-Return True if there are only whitespace characters in the string and there is at least one character, False otherwise.
+```python
+>>> str = "hello world!"
+>>> str.islower()
+True
+>>> str = "hello 123"
+>>> str.islower()
+True
+>>> str = "mynameisPeter"
+>>> str.islower()
+False
+```
+* **str.isnumeric(): Return True if all characters in the string are numeric characters, and there is at least one character, False otherwise.
 
-A character is whitespace if in the Unicode character database (see unicodedata), either its general category is Zs (“Separator, space”), or its bidirectional class is one of WS, B, or S.
+* **str.isprintable(): Return True if all characters in the string are printable or the string is empty, False otherwise. 
 
-str.istitle()
-Return True if the string is a titlecased string and there is at least one character, for example uppercase characters may only follow uncased characters and lowercase characters only cased ones. Return False otherwise.
+* **str.isspace(): Return True if there are only whitespace characters in the string and there is at least one character, False otherwise.
 
-str.isupper()
-Return True if all cased characters 4 in the string are uppercase and there is at least one cased character, False otherwise.
 
-str.join(iterable)
-Return a string which is the concatenation of the strings in iterable. A TypeError will be raised if there are any non-string values in iterable, including bytes objects. The separator between elements is the string providing this method.
+* **str.istitle(): Return True if the string is a titlecased string and there is at least one character, for example uppercase characters may only follow uncased characters and lowercase characters only cased ones. Return False otherwise.
 
-str.ljust(width[, fillchar])
-Return the string left justified in a string of length width. Padding is done using the specified fillchar (default is an ASCII space). The original string is returned if width is less than or equal to len(s).
+* **str.isupper(): Return True if all cased characters 4 in the string are uppercase and there is at least one cased character, False otherwise.**
 
-str.lower()
-Return a copy of the string with all the cased characters 4 converted to lowercase.
+* **str.join(iterable): Return a string which is the concatenation of the strings in iterable. 
 
-The lowercasing algorithm used is described in section 3.13 of the Unicode Standard.
+```python
+>>> myTuple = ("John", "Peter", "Vicky")
+>>> "#".join(myTuple)
+'John#Peter#Vicky'
+```
 
-str.lstrip([chars])
-Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed.
+* **str.ljust(width[, fillchar]): Return the string left justified in a string of length width. **
 
-static str.maketrans(x[, y[, z]])
-This static method returns a translation table usable for str.translate().
+* **str.lower(): Return a copy of the string with all the cased characters 4 converted to lowercase.**
 
-If there is only one argument, it must be a dictionary mapping Unicode ordinals (integers) or characters (strings of length 1) to Unicode ordinals, strings (of arbitrary lengths) or None. Character keys will then be converted to ordinals.
 
-If there are two arguments, they must be strings of equal length, and in the resulting dictionary, each character in x will be mapped to the character at the same position in y. If there is a third argument, it must be a string, whose characters will be mapped to None in the result.
+* **str.lstrip([chars]): Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed.**
 
-str.partition(sep)
-Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing the string itself, followed by two empty strings.
+* **static str.maketrans(x[, y[, z]]): This static method returns a translation table usable for str.translate().**
 
-str.replace(old, new[, count])
-Return a copy of the string with all occurrences of substring old replaced by new. If the optional argument count is given, only the first count occurrences are replaced.
 
-str.rfind(sub[, start[, end]])
-Return the highest index in the string where substring sub is found, such that sub is contained within s[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 on failure.
+* **str.partition(sep): Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. 
 
-str.rindex(sub[, start[, end]])
-Like rfind() but raises ValueError when the substring sub is not found.
+* **str.replace(old, new[, count]): Return a copy of the string with all occurrences of substring old replaced by new. 
 
-str.rjust(width[, fillchar])
-Return the string right justified in a string of length width. Padding is done using the specified fillchar (default is an ASCII space). The original string is returned if width is less than or equal to len(s).
+* **str.rfind(sub[, start[, end]]): Return the highest index in the string where substring sub is found, such that sub is contained within s[start:end]. 
 
-str.rpartition(sep)
-Split the string at the last occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing two empty strings, followed by the string itself.
 
-str.rsplit(sep=None, maxsplit=-1)
-Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done, the rightmost ones. If sep is not specified or None, any whitespace string is a separator. Except for splitting from the right, rsplit() behaves like split() which is described in detail below.
+* **str.rindex(sub[, start[, end]]): Like rfind() but raises ValueError when the substring sub is not found.**
 
-str.rstrip([chars])
-Return a copy of the string with trailing characters removed. 
 
-str.split(sep=None, maxsplit=-1)
-Return a list of the words in the string, using sep as the delimiter string. 
+* **str.rjust(width[, fillchar]): Return the string right justified in a string of length width. 
 
-str.splitlines([keepends])
-Return a list of the lines in the string, breaking at line boundaries. Line breaks are not included in the resulting list unless keepends is given and true.
 
-str.startswith(prefix[, start[, end]])
-Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
+* **str.rpartition(sep): Split the string at the last occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. 
 
-str.strip([chars])
-Return a copy of the string with the leading and trailing characters removed. 
+* **str.rsplit(sep=None, maxsplit=-1): Return a list of the words in the string, using sep as the delimiter string. 
 
-str.swapcase()
-Return a copy of the string with uppercase characters converted to lowercase and vice versa. Note that it is not necessarily true that s.swapcase().swapcase() == s.
+* **str.rstrip([chars]): Return a copy of the string with trailing characters removed.** 
 
-str.title()
-Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.
 
-str.translate(table)
-Return a copy of the string in which each character has been mapped through the given translation table.
+* **str.split(sep=None, maxsplit=-1): Return a list of the words in the string, using sep as the delimiter string.**
 
-str.upper()
-Return a copy of the string with all the cased characters 4 converted to uppercase. Note that s.upper().isupper() might be False if s contains uncased characters or if the Unicode category of the resulting character(s) is not “Lu” (Letter, uppercase), but e.g. “Lt” (Letter, titlecase).
+```python
+>>> str = "welcome to the jungle"
+>>> str.split()
+['welcome', 'to', 'the', 'jungle']
+>>> str = "hello, my name is Peter, I am 26 years old"
+>>> str.split(", ")
+['hello', 'my name is Peter', 'I am 26 years old']
+```
 
-The uppercasing algorithm used is described in section 3.13 of the Unicode Standard.
+* **str.splitlines([keepends]): Return a list of the lines in the string, breaking at line boundaries. Line breaks are not included in the resulting list unless keepends is given and true.**
 
-str.zfill(width)
-Return a copy of the string left filled with ASCII '0' digits to make a string of length width. 
+```python
+>>> str = "Thank you for the music\nWelcome to the jungle"
+>>> str.splitlines()
+['Thank you for the music', 'Welcome to the jungle']
+>>> str.splitlines(True)
+['Thank you for the music\n', 'Welcome to the jungle']
+```
+
+Representation | Description
+|:--           |:--             |
+\n             | Line Feed
+\r             | Carriage Return
+\r\n           | Carriage Return + Line Feed
+\v or \x0b     | Line Tabulation
+\f or \x0c     | Form Feed
+\x1c           | File Separator
+\x1d           | Group Separator
+\x1e           | Record Separator
+\x85           | Next Line (C1 Control Code)
+\u2028         | Line Separator
+\u2029         | Paragraph Separator
+
+
+* **str.startswith(prefix[, start[, end]]): Return True if string starts with the prefix, otherwise return False. **
+
+```python
+>>> str = "Hello, welcome to my world."
+>>> str.startswith("Hello")
+True
+```
+
+* **str.strip([chars]): Return a copy of the string with the leading and trailing characters removed. **
+
+```python
+>>> str = "     banana     "
+>>> str.strip()
+'banana'
+>>> str = ",,,,,rrttgg.....banana....rrr"
+>>> str.strip(",.grt")
+'banana'
+>>> str = "www.example.com"
+>>> str.strip('cmowz.')
+'example'
+>>> str = "#....... Section 3.2.1 Issue #32 ......."
+>>> str.strip('.#! ')
+'Section 3.2.1 Issue #32'
+```
+* **str.swapcase(): Return a copy of the string with uppercase characters converted to lowercase and vice versa. **
+
+```python
+>>> str = 'Hello My Name Is PETER'
+>>> str.swapcase()
+'hELLO mY nAME iS peter'
+```
+
+* **str.title(): Return a titlecased version of the string where words start with an uppercase character and the remaining characters are lowercase.**
+
+```python
+>>> str = 'Welcome to my world'
+>>> str.title()
+'Welcome To My World'
+```
+
+* **str.translate(table): Return a copy of the string in which each character has been mapped through the given translation table.**
+
+
+
+* **str.upper(): Return a copy of the string with all the cased characters 4 converted to uppercase.**
+
+```python
+>>> str = 'Hello my friends'
+>>> str.upper()
+'HELLO MY FRIENDS'
+```
+
+* **str.zfill(width): Return a copy of the string left filled with ASCII '0' digits to make a string of length width.**
+
+```python
+>>> "42".zfill(5)
+'00042'
+>>> "-42".zfill(5)
+'-0042'
+```

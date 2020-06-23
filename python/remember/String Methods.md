@@ -88,9 +88,29 @@ For only 49.00 dollars!
 
 * **str.index(sub[, start[, end]]): Like find(), but raise ValueError when the substring is not found.**
 
+```python
+>>> str = "Hello, Welcome to my world."
+>>> str.index('e')
+1
+>>> str.index('e', 5, 10)
+8
+```
+
 * **str.isalnum(): Return True if all characters in the string are alphanumeric and there is at least one character, False otherwise.**
 
+```python
+>>> str = 'Company12'
+>>> str.isalnum()
+True
+```
+
 * **str.isalpha(): Return True if all characters in the string are alphabetic and there is at least one character, False otherwise.
+
+```python
+>>> str = 'CompanyX'
+>>> str.isalpha()
+True
+```
 
 * **str.isascii(): Return True if the string is empty or all characters in the string are ASCII, False otherwise.
 

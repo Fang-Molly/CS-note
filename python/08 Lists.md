@@ -12,11 +12,11 @@
 * assign list values to variables
 
 ```python
->>> cheeses = ['Cheddar', 'Edam', 'Gouda'] 
->>> numbers = [17, 123]
->>> empty = []
->>> print(cheeses, numbers, empty) 
-['Cheddar', 'Edam', 'Gouda'] [17, 123] []
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda']   
+>>> numbers = [17, 123]  
+>>> empty = []  
+>>> print(cheeses, numbers, empty)   
+['Cheddar', 'Edam', 'Gouda'] [17, 123] []  
 ```      
 
 ## 8.2 Lists are mutable
@@ -25,21 +25,21 @@
    * bracket operator[]: the expression inside the brackets specifies the index
    * the index of a list start at 0
 
-```python
->>> cheeses = ['Cheddar', 'Edam', 'Gouda']
->>> print(cheeses[0])
-Cheddar
-```
+```python  
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda']  
+>>> print(cheeses[0])  
+Cheddar  
+``` 
 
 * Lists are mutable because you can change the order of items in a list or reassign an item in a list.
 
 * reassign an item in a list
 
-```python
->>> numbers = [17, 123]
->>> numbers[1] = 5
->>> print(numbers)
-[17, 5]
+```python  
+>>> numbers = [17, 123]  
+>>> numbers[1] = 5  
+>>> print(numbers)  
+[17, 5]  
 ```
 
 * **in operator**
@@ -47,9 +47,9 @@ Cheddar
 ```python
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
 >>> 'Edam' in cheeses
-True
+True  
 >>> 'Brie' in cheeses
-False
+False  
 ```
 
 ## 8.3 Traversing a list
@@ -225,26 +225,26 @@ c
 * **compute the average of a list of numbers entered by the user**
 
 ```
-total = 0 
-count = 0 
-while (True):
-    inp = input('Enter a number: ') 
-    if inp == 'done': break
-    value = float(inp)
-    total = total + value
-    count = count + 1 
+total = 0  
+count = 0   
+while (True):  
+    inp = input('Enter a number: ')   
+    if inp == 'done': break  
+    value = float(inp)  
+    total = total + value  
+    count = count + 1   
     
-average = total / count
-print('Average:', average)
+average = total / count  
+print('Average:', average)  
 ```
 ```python
-numlist = list() 
-while (True):
-    inp = input('Enter a number: ') 
-    if inp == 'done': break
-    value = float(inp)
-    numlist.append(value)
-average = sum(numlist) / len(numlist) 
+numlist = list()   
+while (True):  
+    inp = input('Enter a number: ')   
+    if inp == 'done': break  
+    value = float(inp)  
+    numlist.append(value)  
+average = sum(numlist) / len(numlist)  
 print('Average:', average)
 ```
 
@@ -296,10 +296,13 @@ the
 From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008  
 
 ```python
-fhand = open('mbox-short.txt') for line in fhand:
-line = line.rstrip()
-if not line.startswith('From '): continue words = line.split()
-print(words[2])
+fhand = open('mbox-short.txt')   
+for line in fhand:
+    line = line.rstrip()   
+    if not line.startswith('From '):   
+        continue   
+    words = line.split()   
+print(words[2])   
 
 Sat 
 Fri 

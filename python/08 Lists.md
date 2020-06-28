@@ -293,24 +293,119 @@ the
 
 ## 8.10 Parsing lines
 
+From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008  
+
+```python
+fhand = open('mbox-short.txt') for line in fhand:
+line = line.rstrip()
+if not line.startswith('From '): continue words = line.split()
+print(words[2])
+
+Sat 
+Fri 
+Fri 
+Fri 
+...
+```
+
+## 8.11 Objects and values
+
+```python
+# two strings refer to the same object
+>>> a = 'banana'
+>>> b = 'banana'
+>>> a is b
+True
+
+# two lists are equivalent, but not identical, not the same object
+>>> a = [1, 2, 3]
+>>> b = [1, 2, 3]
+>>> a is b
+False
+```
+
+## 8.12 Aliasing
+
+* **reference**: the association of a variable with an object  
+* **aliased**: an object with more than one reference has more than one name
+
+```python
+>>> a = [1, 2, 3]
+>>> b = a
+>>> b is a
+True
+>>> b[0] = 17
+>>> print(a)
+[17, 2, 3]
+```
+
+## 8.13 List arguments
+
+```python
+>>> def delete_head(t):
+...     del t[0]
+... 
+>>> letters = ['a', 'b', 'c']
+>>> delete_head(letters)
+>>> print(letters)
+['b', 'c']
+```
+
+```python
+>>> t1 = [1, 2]
+>>> t2 = t1.append(3)
+>>> print(t1)
+[1, 2, 3]
+>>> print(t2)
+None
+```
+
+```python
+>>> t1 = [1, 2]
+>>> t3 = t1 + [3]
+>>> print(t3)
+[1, 2, 3]
+>>> t2 is t3
+False
+```
+
+```python
+>>> def tail(t):
+...     return t[1:]
+... 
+>>> letters = [1, 2, 3, 4]
+>>> tail(letters)
+[2, 3, 4]
+```
+
+## 8.14 Debugging
+
+* Don't forget that most list methods modify the argument and return None.
+
+   * If you are used to writing string code like this: word = word.strip()
+   * It is tempting to write list code like this: t = t.sort() # WRONG!
+
+* Pick an idiom and stick with it
+
+   * t.append(x)  # right 
+   * t = t + [x]  # right 
+   
+   * t.append([x])  # wrong  
+   * t = t.append(x)  # wrong   
+   * t + [x]  # wrong   
+   * t = t + x  # wrong   
+   
+* Make copies to avoid aliasing
+
+   * orig = t[:]
+   * t.sort()
+
+* Lists, split, and files
 
 
 
 
-
-# 8.11 Objects and values
-
-
-
-
-
-# 8.12 Aliasing
-
-# 8.13 List arguments
-
-# 8.14 Debugging
-
-# 8.15 Glossary
+## 8.15 Glossary
 
 * **aliasing** A circumstance where two or more variables refer to the same object. 
 
@@ -333,3 +428,133 @@ the
 * **object** Something a variable can refer to. An object has a type and a value. 
 
 * **reference** The association between a variable and its value.
+
+
+## 8.16 Exercises
+
+**Exercise 1: Write a function called chop that takes a list and modifies it, removing the first and last elements, and returns None. Then write a function called middle that takes a list and returns a new list that contains all but the first and last elements.**
+
+```python
+
+def chop(list):
+    del list[0]
+    del list[-1]
+
+def middle(list):
+    new_list = list[1:]
+    del new_list[-1]
+    return new_list
+
+list1 = [1, 2, 3, 4]
+list2 = [1, 2, 3, 4]
+
+print(chop(list1))
+print(middle(list2))
+```
+
+
+**Exercise 2: Figure out which line of the above program is still not properly guarded. See if you can construct a text file which causes the program to fail and then modify the program so that the line is properly guarded and test it to make sure it handles your new text file.**
+
+```python
+fhand = open('exercise8_2.txt')
+for line in fhand:
+    words = line.split()
+
+    if len(words) < 3:
+        continue
+    if word[0] != 'From':
+        continue
+    print(word[2])
+```
+
+
+**Exercise 3: Rewrite the guardian code in the above example without two if statements. Instead, use a compound logical expression using the or logical operator with a single if statement.**
+
+```python
+fhand = open('exercise8_2.txt')
+for line in fhand:
+    words = line.split()
+    if len(words) < 3 or words[0] != 'From':
+        continue
+    print(word[2])
+```
+
+**Exercise 4: Download a copy of the file www.py4e.com/code3/romeo.txt. Write a program to open the file romeo.txt and read it line by line. For each line, split the line into a list of words using the split function. For each word, check to see if the word is already in a list. If the word is not in the list, add it to the list. When the program completes, sort and print the resulting words in alphabetical order.**   
+
+Enter file: romeo.txt  
+['Arise', 'But', 'It', 'Juliet', 'Who', 'already', 'and', 'breaks', 'east', 'envious', 'fair', 'grief', 'is', 'kill', 'light', 'moon', 'pale', 'sick', 'soft', 'sun', 'the', 'through', 'what', 'window','with', 'yonder']  
+
+```python
+list = []
+fhand = open ('romeo.txt')
+for line in fhand:
+    words = line.split()     # split line into words
+    for word in words:
+        if word in list:
+            continue         # discard duplicates
+        list.append(word)    # update the list
+print(sorted(list))          # alphabetical order
+```
+
+**Exercise 5: Write a program to read through the mail box data and when you find line that starts with “From”, you will split the line into words using the split function. We are interested in who sent the message, which is the second word on the From line.**  
+
+From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008  
+
+You will parse the From line and print out the second word for each From line, then you will also count the number of From (not From:) lines and print out a count at the end. This is a good sample output with a few lines removed:  
+
+python fromcount.py  
+Enter a file name: mbox-short.txt   
+stephen.marquard@uct.ac.za   
+louis@media.berkeley.edu   
+zqian@umich.edu  
+
+[...some output removed...]  
+
+ray@media.berkeley.edu   
+cwen@iupui.edu   
+cwen@iupui.edu   
+cwen@iupui.edu  
+There were 27 lines in the file with From as the first word  
+
+```python
+fhand = open('mbox-short.txt')
+count = 0
+for line in fhand:
+    words = line.split()
+    if len(words) < 3 or words[0] != 'From':
+        continue
+    print(word[1])
+    count = count + 1
+print('There were %d lines in the file with From as the first word' % count)
+```
+
+**Exercise 6: Rewrite the program that prompts the user for a list of numbers and prints out the maximum and minimum of the numbers at the end when the user enters “done”. Write the program to store the numbers the user enters in a list and use the max() and min() functions to compute the maximum and minimum numbers after the loop completes.**  
+
+Enter a number: 6   
+Enter a number: 2   
+Enter a number: 9   
+Enter a number: 3   
+Enter a number: 5   
+Enter a number: done   
+Maximum: 9.0   
+Minimum: 2.0  
+
+```python
+list = []
+while True:
+    number = 0.0
+    input_number = input('Enter a number: ')
+    if input_number == 'done':
+        break
+
+    try: 
+        number = float(input_number)
+    except ValueError:
+        print('Invalid input')
+        quit()
+
+    list.append(input_number)
+
+print('Maximum: ', max(list))
+print('Minimum: ', min(list))
+```

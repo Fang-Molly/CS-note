@@ -65,19 +65,148 @@ True
 
 ## 9.1 Dictionary as a set of counters
 
+* dictionary implementation: count how many times each letter appears in a string
 
-## 9.2
+```python
+>>> word = 'brontosaurus'
+>>> d = dict()
+>>> for c in word:
+...     if c not in d:
+...         d[c] = 1
+...     else:
+...         d[c] = d[c] + 1
+... 
+>>> print(d)
+{'b': 1, 'r': 2, 'o': 2, 'n': 1, 't': 1, 's': 2, 'a': 1, 'u': 2}
+```
+* **get() method : take a key and a default value**
+   * if the key appears in the dictionary, get returns the corresponding value;
+   * if the key doesn't appear in the dictionary, returns the default value.
+ 
+```python
+>>> counts = {'chuck' : 1, 'annie' : 42, 'jan' : 100}
+>>> print(counts.get('jan', 0))
+100
+>>> print(counts.get('trim', 0))
+0
+```
+```python
+>>> word = 'brontosaurus'
+>>> d = dict()
+>>> for c in word:
+...     d[c] = d.get(c,0) + 1
+... 
+>>> print(d)
+{'b': 1, 'r': 2, 'o': 2, 'n': 1, 't': 1, 's': 2, 'a': 1, 'u': 2}
+```
+
+## 9.2 Dictionaries and files
+
+```python
+fname = input('Enter the file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened: ', fname)
+    exit()
+
+counts = dict()
+for line in fhand:
+    words = line.split()
+    for word in words:
+        if word not in counts:
+            counts[word] = 1
+        else:
+            counts[word] += 1
+
+print(counts)
+```
+* counts[word] += 1 is equivalent to counts[word] = counts[word] + 1
+   * -=, *=, /=
 
 
-## 9.3
+## 9.3 Looping and dictionaries
 
+* for statement: traverse the keys of the dictionary
 
-## 9.4
+```python
+>>> counts = {'chuck' : 1, 'annie' : 42, 'jan' : 100}
+>>> for key in counts:
+...     print(key, counts[key])
+... 
+chuck 1
+annie 42
+jan 100
+```
 
+```python
+>>> counts = {'chuck' : 1, 'annie' : 42, 'jan' : 100}
+>>> for key in counts:
+...     if counts[key] > 10 :
+...         print(key, counts[key])
+... 
+jan 100
+annie 42
+```
+
+```python
+>>> counts = {'chuck' : 1, 'annie' : 42, 'jan' : 100}
+>>> lst = list(counts.keys())
+>>> print(lst)
+['chuck', 'annie', 'jan']
+>>> lst.sort()
+>>> for key in lst:
+...     print(key, counts[key])
+... 
+annie 42
+chuck 1
+jan 100
+```
+
+## 9.4 Advanced text parsing
+
+* **translate method : line.translate(str.maketrans(fromstr, tostr, deletestr))**
+
+```python
+>>> import string
+>>> string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+```
+
+```
+import string
+
+fname = input('Enter the file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+
+counts = dict()
+for line in fhand:
+    line = line.rstrip()
+    line = line.translate(line.maketrans('', '', string.punctuation))
+    line = line.lower()
+    words = line.split()
+    for word in words:
+        if word not in counts:
+            counts[word] = 1
+        else:
+            counts[word] += 1
+```            
 
 ## 9.5 Debugging
 
+Here are some suggestions for debugging large datasets:
 
+* Scale down the input
+
+* Check summaries and types
+
+* Write self-checks
+
+* Pretty print the output
 
 
 ## 9.6 Glossary
@@ -115,6 +244,23 @@ python dow.py
 Enter a file name: mbox-short.txt 
 {'Fri': 20, 'Thu': 6, 'Sat': 1}
 
+```python
+fname = input('Enter a file name: ')
+try: 
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+    
+days = dict()
+
+for line in fhand:
+    dayslist = line.split()
+    if line.startswith('From'):
+        day = line[2]
+        days[day] = days.get(day,0) + 1
+print(days)
+```
 
 
 **Exercise 3: Write a program to read through a mail log, build a his- togram using a dictionary to count how many messages have come from each email address, and print the dictionary.**

@@ -1,11 +1,9 @@
 """
 Python for Everybody: Exploring Data Using Python 3
 by Charles R. Severance
-"""
 
-"""Chapter 8: Lists"""
+Chapter 8: Lists
 
-"""
 Exercise 1: 
 Write a function called chop that takes a list and modifies it, removing the first 
 and last elements, and returns None. Then write a function called middle that takes 

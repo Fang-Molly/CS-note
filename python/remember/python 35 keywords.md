@@ -25,9 +25,10 @@
    * three chevrons : >>>
 * dot ---- .
    * three dots : ...
-* parenthesis ---- (hello)
-* round bracket ---- (hello)
-* square bracket --- [hello]
+* brackets
+   * round bracket / parenthesis ---- (hello)
+   * square bracket ---- [hello]
+   * curly bracket ---- {hello}
 * equal 
    * single equal ---- x=y （assignment operator)
    * double equal ---- x==y  (comparison operator)

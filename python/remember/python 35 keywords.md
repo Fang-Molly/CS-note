@@ -27,6 +27,7 @@
    * three dots : ...
 * parenthesis ---- (hello)
 * round bracket ---- (hello)
+* square bracket --- [hello]
 * equal 
    * single equal ---- x=y （assignment operator)
    * double equal ---- x==y  (comparison operator)

@@ -17,9 +17,9 @@
    * double quotes ---- "hello"
    * triple quotes ---- '''hello'''   
 * apostrophe ---- I'm
-* underscore ---- _
+* underscore ---- love_me
 * colon ---- :
-* octothorpe/hash ---- #
+* octothorpe/hash/pound ---- #
 * caret ---- ^
 * chevron ---- >, ^
    * three chevrons : >>>

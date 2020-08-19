@@ -1,3 +1,6 @@
+# format string
+# start the string with the letter f for "format", before the double-quote () and {} characters
+
 my_name = 'Zed A. Shaw'
 my_age = 35 # not a lie
 my_height = 74 # inches

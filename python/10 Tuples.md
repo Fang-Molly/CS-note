@@ -246,13 +246,16 @@ for key, val in lst[:10]:
 
 ## 10.7 Using tuples as keys in dictionaries
 
-use a tuple as a composite key in a dictionary
+* use a tuple as a composite key in a dictionary, because tuples are hashable and lists are not
+
+```python
+# create a telephone directory that maps from last-name, first-name pairs to telephone numbers
 
 directory[last,first] = number
 
 for last, first in directory:
     print(first, last, directory[last,first])
-
+```
 
 
 ## 10.8 Sequences: strings, lists, and tuples - Oh My!

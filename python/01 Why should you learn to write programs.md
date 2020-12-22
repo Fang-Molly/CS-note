@@ -2,11 +2,8 @@ Chapter 1  Why should you learn to write programs?
 ===========
 
 
-1.1 Creativity and motivation
-----------
+# 1.1 Computer hardwarre architecture
 
-1.2 Computer hardwarre architecture
-------------
 
 * **Central Processing Unit (CPU)**
 
@@ -37,21 +34,23 @@ Chapter 1  Why should you learn to write programs?
    * a slower and at times unreliable form of secondary memory.
 
 
-1.3 Understanding programming
---------
-
-* **Know the programming language (Python)**
-
-   * know the vocabulary and the grammar
-   * spell the words and construct sentences
-
-* **Tell a story**
+# 1.2 Understanding programming
 
 
-1.4 Words and sentences
----------
+## **Elements of Python**
 
-* **reserved words** - very special meaning to Python
+* Vocabulary / Words - variables and reserved words
+
+* Sentence structure - valid syntax patterns
+
+* Story structure - constructing a program for a purpose
+
+
+* **Python vocabulary**
+
+   * **Reserved words** - very special meaning to Python
+
+      *  you cannot use reserved words as variable names / identifiers
 
 ~~~
 and      as        assert      break     class     continue
@@ -59,13 +58,20 @@ def      del       elif        else      expect    finally
 for      from      global      if        import    in
 is       lambda    nonlocal    not       or        pass
 raise    return    try         while     with      yield
+False    None      True
 ~~~
 
-* **variables** - having meaning to you
+   * **variables** - having meaning to you
+   
+   
+* **Sentences or lines**
 
-   * can't use any of Python's reserved words
-   
-   
+~~~
+x = 2       # assignment statement
+x = x + 2   # assignment with expression
+print(x)    # print statement
+~~~
+
 **function** `print`
 
 * `print('Hello world!')`
@@ -77,7 +83,17 @@ raise    return    try         while     with      yield
       * print("It's a dog.")
       
       
-1.5 Conversing with Python
+* **programming paragraphs**
+
+* Interactive python is good for experiments and programs of 3-4 lines long.
+
+* python scrips
+
+   
+
+      
+      
+1.3 Conversing with Python
 -----------
 
 ## start python
@@ -98,7 +114,6 @@ Python 3.8.1 (v3.8.1:1b293b6006, Dec 18 2019, 14:08:53)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ~~~
-
 
 ## end python
 
@@ -154,12 +169,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 $ python hello.py
 Hello world!
 ```
-
-
-1.8 What is a program?
------------
-
-* program : a sequence of Python statements that have been crafted to do something
 
 
 1.9 The building blocks of programs

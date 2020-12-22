@@ -89,7 +89,7 @@ raise    return    try         while     with      yield
 
 * Execute **Python interpreter** in **interactive mode**.
    * The `>>>` prompt showed up
-   * pype python commands after >>> prompt
+   * pype python commands after `>>>` prompt
    
 ~~~python
 liufangdeMacBook-Pro:~ FangLiu$ python3
@@ -102,13 +102,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## end python
 
-* quit()
+* `quit()`
 
-* exit()
+* `exit()`
 
-* CTRL-Z
+* `CTRL-Z`
    
-* CTRL-D
+* `CTRL-D`
 
 
 1.6 Terminology: Interpreter and compiler
@@ -120,6 +120,7 @@ Type "help", "copyright", "credits" or "license" for more information.
    * include python, Java, C++, PHP, Ruby, Basic, Perl, JavaScript, and many more
 
 * **machine language**
+
    * a language the CPU can understand, it's hard to understand and write for human
    * represented all in zeros and ones
    * its syntax is more complex

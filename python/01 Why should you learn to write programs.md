@@ -33,6 +33,7 @@ Chapter 1  Why should you learn to write programs?
    * retrieve information over a network
    * a slower and at times unreliable form of secondary memory.
 
+----------
 
 # 1.2 Understanding programming
 
@@ -46,11 +47,11 @@ Chapter 1  Why should you learn to write programs?
 * Story structure - constructing a program for a purpose
 
 
-* **Python vocabulary**
+## **Python vocabulary**
 
-   * **Reserved words** - very special meaning to Python
+* **Reserved words** - very special meaning to Python
 
-      *  you cannot use reserved words as variable names / identifiers
+   *  you cannot use reserved words as variable names / identifiers
 
 ~~~
 and      as        assert      break     class     continue
@@ -61,10 +62,10 @@ raise    return    try         while     with      yield
 False    None      True
 ~~~
 
-   * **variables** - having meaning to you
+* **variables** - having meaning to you
    
    
-* **Sentences or lines**
+## **Sentences or lines**
 
 ~~~
 x = 2       # assignment statement
@@ -83,21 +84,31 @@ print(x)    # print statement
       * print("It's a dog.")
       
       
-* **programming paragraphs**
+## **programming paragraphs**
 
-* Interactive python is good for experiments and programs of 3-4 lines long.
+### Program steps or program flow
 
-* python scrips
+* **sequential execution** 
+   * Perform statements one after another in the order they are encountered in the script.
 
-   
+* **conditional execution** 
+   * Check for certain conditions and then execute or skip a sequence of statements.
 
+* **repeated execution** 
+   * Perform some set of statements repeatedly, usually with some variation.
+
+----------------
       
-      
-1.3 Conversing with Python
------------
+# 1.3 Conversing with Python
 
 ## start python
 
+### **Interactive mode**
+   
+   * You type directly to Python one line at a time and it responds.
+      
+   * Be good for programs of 3-4 lines long
+   
 * Open your **terminal** 
    * The "$" is the operating system prompt
    
@@ -115,6 +126,21 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ~~~
 
+### **Scrip mode**
+   
+You enter a sequence of statements(lines) into a file using a text editor and tell Python to execute the statements in the file
+   
+* use a **text editor** to write the Python instructions into a file
+
+* program file is called a **script**, name end with **.py**
+
+* start python in a command window, type `python hello.py`. There is no need to have quit() at the end of the Python program in the file
+
+```
+$ python hello.py
+Hello world!
+```
+
 ## end python
 
 * `quit()`
@@ -125,9 +151,10 @@ Type "help", "copyright", "credits" or "license" for more information.
    
 * `CTRL-D`
 
+-----------------
 
-1.6 Terminology: Interpreter and compiler
------------
+# 1.4 Terminology: Interpreter and compiler
+
 
 * **high-level language** 
 
@@ -154,49 +181,12 @@ Type "help", "copyright", "credits" or "license" for more information.
       * hand the entire program in a file
       * run a process to translate the high-level source code into machine language
       * put the resulting machine language into a file for later execution
-      
-      
-1.7 Writing a program
---------
 
-* use a **text editor** to write the Python instructions into a file
+----------------
 
-* program file is called a **script**, name end with **.py**
+# 1.5 Errors and debugging
 
-* start python in a command window, type `python hello.py`. There is no need to have quit() at the end of the Python program in the file
-
-```
-$ python hello.py
-Hello world!
-```
-
-
-1.9 The building blocks of programs
--------------
-
-* **input** 
-   * Get data from the “outside world”. 
-   * This might be reading data from a file, or even some kind of sensor like a microphone, GPS, or keyboard.
-
-* **output** 
-   * Display the results of the program on a screen or store them in a file or perhaps write them to a device like a speaker to play music or speak text.
-
-* **sequential execution** 
-   * Perform statements one after another in the order they are encountered in the script.
-
-* **conditional execution** 
-   * Check for certain conditions and then execute or skip a sequence of statements.
-
-* **repeated execution** 
-   * Perform some set of statements repeatedly, usually with some variation.
-
-* **reuse** 
-   * Write a set of instructions once and give them a name
-   * reuse those instructions as needed throughout your program.
-
-
-1.10 What could possibly go wrong?
----------
+## General types of errors:
 
 * **syntax errors**: 
 
@@ -211,8 +201,7 @@ A logic error is when your program has good syntax but there is a mistake in the
 A semantic error is when your description of the steps to take is syntactically perfect and in the right order, but there is simply a mistake in the program.   
    
 
-1.11 Debugging
--------------
+## Debugging
 
 * **reading** 
    * examine, read and check your code
@@ -223,15 +212,9 @@ A semantic error is when your description of the steps to take is syntactically 
 
 * **retreating**
 
+------------
 
-1.12 The learning journey
-----------
-
-
-
-
-1.13 Glossary
-----------
+# Glossary
 
 * **bug**
    * An error in a program.
@@ -290,11 +273,12 @@ A semantic error is when your description of the steps to take is syntactically 
 * **source code**
    * A program in a high-level language.
 
+----------------
 
-1.14 Exercises
----------------
+# Exercises
 
-**Exercise 1: What is the function of the secondary memory in a computer?**  
+## Exercise 1: What is the function of the secondary memory in a computer?
+
 a) Execute all of the computation and logic of the program  
 b) Retrieve web pages over the Internet  
 c) Store information for the long term, even beyond a power cycle  
@@ -304,20 +288,20 @@ d) Take input from the user
 C
 
 
-**Exercise 2: What is a program?**
+## Exercise 2: What is a program?
 
 **Answer:**   
 A program is a sequence of Python statements that have been crafted to do something.
 
 
-**Exercise 3: What is the difference between a compiler and an interpreter?**  
+## Exercise 3: What is the difference between a compiler and an interpreter?
 
 **Answer:**   
 An interpreter reads the source code of the program as written by the programmer, parses the source code, and interprets the instructions on the fly.
 A compiler needs to be handed the entire program in a file, and then it runs a process to translate the high-level source code into machine language and then the compiler puts the rusulting machine language into a file for later execution.
 
 
-**Exercise 4: Which of the following contains “machine code”?**  
+## Exercise 4: Which of the following contains “machine code”?
 a) The Python interpreter  
 b) The keyboard  
 c) Python source file  
@@ -327,7 +311,7 @@ d) A word processing document
 A
 
 
-**Exercise 5: What is wrong with the following code:**
+## Exercise 5: What is wrong with the following code:
 
 ```python
 >>> primt 'Hello world!'  
@@ -341,7 +325,7 @@ SyntaxError: invalid syntax
 The function print() wasn't writen correctly. It was written by "Primt". The print statement should enclosed in quotes and in parentheses. print('Hello world!')
 
   
-**Exercise 6: Where in the computer is a variable such as “x” stored after the following Python line finishes?**
+## Exercise 6: Where in the computer is a variable such as “x” stored after the following Python line finishes?
 
 x = 123
 
@@ -355,7 +339,7 @@ e) Output Devices
 B
 
 
-**Exercise 7: What will the following program print out:**  
+## Exercise 7: What will the following program print out:  
 
 x = 43  
 x=x+1  
@@ -368,19 +352,25 @@ d) Error because x = x + 1 is not possible mathematically
 
 **Answer: B**
 
-**Exercise 8: Explain each of the following using an example of a human capability: (1) Central processing unit, (2) Main Memory, (3) Secondary Memory, (4) Input Device, and (5) Output Device. For example, “What is the human equivalent to a Central Processing Unit”?**
+## Exercise 8: Explain each of the following using an example of a human capability: (1) Central processing unit, (2) Main Memory, (3) Secondary Memory, (4) Input Device, and (5) Output Device. For example, “What is the human equivalent to a Central Processing Unit”?
 
 **Answer:**
 (1) Central processing unit likes human brain; (2) Main Memory likes our short-term memory; (3) Secondary Memory likes our long-term memory; (4) Input Device likes our ears when listening and (5) Output Device likes our mouth when speaking
 
 
-**Exercise 9: How do you fix a “Syntax Error”?**\
+## Exercise 9: How do you fix a “Syntax Error”?
 
 **Answer:**  
 Examine your code, read it back to yourself, and check that it says what you meant to say. Check your python grammer.
 
 
 ----------
+
+
+
+
+
+
 
 
 * comma-separated sequence print with space between

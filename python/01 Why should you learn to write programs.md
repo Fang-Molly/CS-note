@@ -1,43 +1,60 @@
+Chapter 1  Why should you learn to write programs?
+-------
+
 # 1.1 Creativity and motivation
+
 
 # 1.2 Computer hardwarre architecture
 
 * **Central Processing Unit (CPU)**
-   * CPU is built to be obsessed with “what is next?”
+
+   * CPU does the thinking and runs the program
+   * very fast
    
 * **Main Memory**
-   * Store information that the CPU needs in a hurry.
-   * Nearly as fast as the CPU
-   * The information stored in the main memory vanishes when the computer is turned off.
+
+   * fast small temporary storage
+   * fast as the CPU
+   * lost on reboot
    
 * **Secondary Memory**
-   * Store information
-   * Much slower than the main memory
-   * It can store information even when there is no power to the computer.
-   * Disk drives or flash memory 
+
+   * slower large permanent storage
+   * slower than the main memory
+   * lasts until deleted
+   * disk drives, flash memory, memory stick
 
 * **Input and Output Devices**
-   * screen, keyboard, mouse, microphone, speaker, touchpad, etc.
+
+   * Input: keyboard, mouse, touchpad
+   * Output: screen, speakers, printer, DVD burner
    
 * **Network Connection**
-   * retrieve information
+
+   * retrieve information over a network
    * a slower and at times unreliable form of secondary memory.
+
 
 # 1.3 Understanding programming
 
-* First, you need to know the programming language (Python) - you need to know the vocabulary and the grammar. You can spell the words and construct sentences.
+* **Know the programming language (Python)**
 
-* Second, you need to tell a story.
+   * know the vocabulary and the grammar
+   * spell the words and construct sentences
+
+* **Tell a story**
+
 
 # 1.4 Words and sentences
 
-* **reserved words**
+* **reserved words** - very special meaning to Python
 
-and; as; assert; break; class; continue; def; del; elif; else; expect; inally; for; from; global; if; import; in;       
-is; lambda; nonlocal; not; or; pass; raise; return; try; while; with; yield    
+and; as; assert; break; class; continue; def; del; elif; else; expect; finally; for; from; global; if; import; in; is; lambda; nonlocal; not; or; pass; raise; return; try; while; with; yield    
+* **variables** - having meaning to you
 
-* **variables**
-
+   * can't use any of Python's reserved words
+   
+   
 # 1.5 Conversing with Python
 
 ## start python
@@ -68,14 +85,17 @@ Hello world!
    
 * Hit CTRL-D(^D)
 
-## **print() function**
+---------------
 
-* print( )
-* enclosed in quotes, single quotes and double quotes do the same thing
-   * print('Hello world!') or print("Hello world!")
-* most people use single quotes
-* use double quotes when apostrophe appears in the string
-   * print("It's a dog.")
+## **function** `print`
+
+* `print('Hello world!')`
+
+   * enclosed in quotes, single quotes or double quotes
+      * print('Hello world!') or print("Hello world!")
+   * most people use single quotes
+   * use double quotes when apostrophe appears in the string
+      * print("It's a dog.")
 ------------------------------------
 
 * comma-separated sequence print with space between

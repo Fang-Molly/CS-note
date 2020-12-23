@@ -1,8 +1,8 @@
 Chapter 1  Why should you learn to write programs?
-===========
+===================================================
 
 
-# 1.1 Computer hardwarre architecture
+# 1. Computer hardwarre architecture
 
 
 * **Central Processing Unit (CPU)**
@@ -35,7 +35,72 @@ Chapter 1  Why should you learn to write programs?
 
 ----------
 
-# 1.2 Understanding programming
+# 2. Getting started with Python on a Macintosh
+
+
+## 2.1 Download and install Python 3
+
+* Check Python version on MacOS
+
+~~~python
+GDT01:~ user$ python3 --version
+Python 3.8.1
+~~~~~~
+
+
+## 2.2 Writing a Python 3 program with Atom on MacOS
+
+* Please download and install Atom from this site: http://atom.io
+
+
+## 2.3 Starting Terminal on MacOS
+
+* Where are you?  
+
+   * `pwd` command
+
+```python
+udhcp-macvpn-624:~ csev$ pwd
+/Users/csev
+udhcp-macvpn-624:~ csev$
+```
+
+* Where can you go?  
+
+   * `cd` command
+
+```python
+udhcp-macvpn-624:~ csev$ pwd
+/Users/csev
+udhcp-macvpn-624:~ csev$ cd Desktop
+udhcp-macvpn-624:Desktop csev$ pwd
+/Users/csev/Desktop
+udhcp-macvpn-624:Desktop csev$
+```
+
+   * `cd ..` command
+   
+```python
+udhcp-macvpn-624:Desktop csev$ pwd
+/Users/csev/Desktop
+udhcp-macvpn-624:Desktop csev$ cd ..
+udhcp-macvpn-624:~ csev$ pwd
+/Users/csev
+udhcp-macvpn-624:~ csev$ 
+```
+   
+   * `ls -l` command
+
+```python
+udhcp-macvpn-624:Desktop csev$ pwd
+/Users/csev/Desktop
+udhcp-macvpn-624:Desktop csev$ ls -l 
+total 8
+-rw-r--r--  1 csev  staff   15 Sep 16 15:17 hello.py
+udhcp-macvpn-624:Desktop csev$ 
+```
+
+# 3. Understanding programming
 
 
 ## **Elements of Python**
@@ -99,7 +164,7 @@ print(x)    # print statement
 
 ----------------
       
-# 1.3 Conversing with Python
+# 4. Conversing with Python
 
 ## start python
 
@@ -153,7 +218,7 @@ Hello world!
 
 -----------------
 
-# 1.4 Terminology: Interpreter and compiler
+# 5. Terminology: Interpreter and compiler
 
 
 * **high-level language** 
@@ -184,7 +249,7 @@ Hello world!
 
 ----------------
 
-# 1.5 Errors and debugging
+# 6. Errors and debugging
 
 ## General types of errors:
 
@@ -201,7 +266,7 @@ A logic error is when your program has good syntax but there is a mistake in the
 A semantic error is when your description of the steps to take is syntactically perfect and in the right order, but there is simply a mistake in the program.   
    
 
-## Debugging
+## 7. Debugging
 
 * **reading** 
    * examine, read and check your code
@@ -212,7 +277,7 @@ A semantic error is when your description of the steps to take is syntactically 
 
 * **retreating**
 
-------------
+=========================================================================
 
 # Glossary
 
@@ -273,7 +338,7 @@ A semantic error is when your description of the steps to take is syntactically 
 * **source code**
    * A program in a high-level language.
 
-----------------
+=====================================================
 
 # Exercises
 

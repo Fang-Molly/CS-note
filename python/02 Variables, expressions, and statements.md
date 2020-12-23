@@ -3,22 +3,22 @@ Chapter 2  Variables, expressions, and statements
 
 # 1. Constants
 
-* **Constants: fixed value** - such as numbers, letters, and strings, their value doesn't change
+**Constants: fixed value** - such as numbers, letters, and strings, their value doesn't change
 
-   * **Numeric constants**
+* **Numeric constants**
    
-      + **integer**
-         * type `int`
-         * such as 2
+   + **integer**
+      * type `int`
+      * such as 2
       
-      + **floating point**
-         * type `float`
-         * such as 3.2
+   + **floating point**
+      * type `float`
+      * such as 3.2
 
-   + **string constants**
-      * type `str`
-      * enclosed in quotation marks, single quotes(') or double quotes(")
-      * such as "Hello, World!", "17", "3.2"
+* **String constants**
+   * type `str`
+   * enclosed in quotation marks, single quotes(') or double quotes(")
+   * such as "Hello, World!", "17", "3.2"
    
 ```
 # print() for integers/float

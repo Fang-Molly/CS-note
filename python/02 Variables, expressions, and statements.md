@@ -7,13 +7,13 @@ Chapter 2  Variables, expressions, and statements
 
 * **Numeric constants**
    
-   + **integer**
+   + **integer**: whole numbers
       * type `int`
-      * such as 2
+      * such as 2, 100, -2
       
-   + **floating point**
+   + **floating point numbers**: have decimal parts
       * type `float`
-      * such as 3.2
+      * such as 3.2, -2.5, 0.0
 
 * **String constants**
    * type `str`
@@ -32,7 +32,7 @@ Chapter 2  Variables, expressions, and statements
 Hello, World!
 ```
 
-## 1.2  type(), int(), round(), float(), str()
+## 1.2  Type Conversions
 
 > **type()** can tell you what type a value has
 
@@ -158,10 +158,12 @@ print(x)    # print statement
 | %        | Remainder 
 
 ```
-# the division result is a floating point
+# Integer division result is a floating point
 >>> division = 7 / 3
 >>> print(division)
 2.3333333333333335
+>>> print(10 / 2)
+5.0
 
 # floored (// integer) division
 >>> quotient = 7 // 3
@@ -180,7 +182,7 @@ print(x)    # print statement
    
 ## 4.3 String operations
 
-+ The ** + operator** performs **concatenation**, join the strings by linking them end to end
++ The ** `+` operator** performs **concatenation**, join the strings by linking them end to end
 
 ```
 >>> first = 10
@@ -191,9 +193,12 @@ print(x)    # print statement
 >>> second = '150'
 >>> print(first + second) 
 100150
+>>> eee = 'hello ' + 'world'
+>>> print(eee)
+hello world
 ```
 
-+ the ** * operator** multiplies the content of a string by an integer
++ the ** `*` operator** multiplies the content of a string by an integer
 
 ```
 >>> first = 'Test'
@@ -202,11 +207,11 @@ print(x)    # print statement
 Test Test Test
 ```
 
-# 5. Asking the user for input
+# 5. User Input
 
-* input() : built-in function
+* `input()` : built-in function
    * take the value for a variable from the user
-   * the type of user typed is a **string**
+   * The `input()` function returns a string
 
 ```
 >>> inp = input() 

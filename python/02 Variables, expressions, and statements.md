@@ -1,19 +1,24 @@
-# 2.1 Values and types
+Chapter 2  Variables, expressions, and statements
+=================================================
 
-* **value**
-   * one of the basic things a program works with, like a letter or a number
+# 1. Constants
+
+* **Constants: fixed value** - such as numbers, letters, and strings, their value doesn't change
+
+   * **Numeric constants**
    
-* **types**
-   + **integer**
-      * type **int**
-      * 2
-   + **floating point**
-      * type **float**
-      * 3.2
-   + **string**: 
-      * type **str**
-      * enclosed in quotation marks, " double-quotes or ' single-quotes
-      * "Hello, World!"; "17"; "3.2"
+      + **integer**
+         * type `int`
+         * such as 2
+      
+      + **floating point**
+         * type `float`
+         * such as 3.2
+
+   + **string constants**
+      * type `str`
+      * enclosed in quotation marks, single quotes(') or double quotes(")
+      * such as "Hello, World!", "17", "3.2"
    
 ```
 # print() for integers/float

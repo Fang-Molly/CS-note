@@ -147,24 +147,16 @@ print(x)    # print statement
 
 ## 4.1 Numeric Expressions
 
-# 2.5 Operators and operands
-
 | Operator | Operation
-| :--:     |:--:
+| :--:     | :--:
 | +        | Addition 
 | -        | Subtraction
 | *        | Multiplication 
-| /        | Division 
 | **       | Exponentiation (Power)
+| /        | Division 
+| //       | Floored division
 | %        | Remainder 
 
-+ **operators**
-   * special symbols represent computations
-   * computations : + addition, - subtraction, * multiplication, / division and ** exponentiation
-   * You should add space around operators like x = 100 so that it’s easier to read.
-+ **operands** 
-   * the values the operator is applied to
-
 ```
 # the division result is a floating point
 >>> division = 7 / 3
@@ -181,56 +173,12 @@ print(x)    # print statement
 >>> print(remainder)
 1
 ```
+## 4.2 Order of operations
 
-# 2.6 Expressions
+* **rules of precedence** : (PEMDAS) parentheses, exponentiation, multiplication, division, addtion, subtraction
 
-+ **expression** : a combination of values, variables, and operators
-
-```
->>> x = 5
->>> x + 1
-6
-```
    
-# 2.7 Order of operations
-
-+ **rules of precedence** : (PEMDAS) parentheses, exponents, multiplication, division, addtion, subtraction
-   + **Parentheses** have the highest precedence
-   + **Exponentiation** has the next highest precedence
-   + **Multiplication** and **Division** have the same precedence, higher than **Addition** and **Subtraction**
-   + Operators with the same precedence are evaluated from left to right
-   
-# 2.8 Modulus operator
-
-+ **modulus operator** : 
-   + works on **integers** and yields the **remainder** when the first operand is divided by the second.
-   + a percent sign (%) 
-   
-```
-# the division result is a floating point
->>> division = 7 / 3
->>> print(division)
-2.3333333333333335
-
-# floored (// integer) division
->>> quotient = 7 // 3
->>> print(quotient)
-2
-
-#
->>> remainder = 7 % 3
->>> print(remainder)
-1
-
-# So 7 divided by 3 is 2 with 1 left over.
-```
-+ check whether one number is divisible by another
-   + if x % y is zero, then x is divisible by y
-+ extract the right-most digit or digits from a number
-   + x % 10 yields the right-most digit of x (in base 10)
-   + x % 100 yields the last two digits
-   
-# 2.9 String operations
+## 4.3 String operations
 
 + The ** + operator** performs **concatenation**, join the strings by linking them end to end
 
@@ -254,7 +202,7 @@ print(x)    # print statement
 Test Test Test
 ```
 
-# 2.10 Asking the user for input
+# 5. Asking the user for input
 
 * input() : built-in function
    * take the value for a variable from the user
@@ -296,7 +244,7 @@ What...is the airspeed velocity of an unladen swallow?
 22
 ```
 
-# 2.11 Comments
+# 6. Comments
 
 * add notes to your programs to explain in natural language what the program is doing
 * start with the **# symbol**
@@ -304,14 +252,9 @@ What...is the airspeed velocity of an unladen swallow?
 * can put comments at the end of a line
 * it has no effect on the program
 
-# 2.12 Choosing mnemonic variable names
+====================================
 
-
-# 2.13 Debugging
-
-* illegal variable name
-
-# 2.14 Glossary
+# Glossary
 
 * assignment 
    * A statement that assigns a value to a variable.
@@ -364,9 +307,9 @@ What...is the airspeed velocity of an unladen swallow?
 * variable 
    * A name that refers to a value.
 
--------------
+==============================================
 
-# 2.15 Exercises
+# Exercises
 
 **Exercise 1: Type the following statements in the Python interpreter to see what they do:**
 

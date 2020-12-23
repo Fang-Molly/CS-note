@@ -1,9 +1,9 @@
 Chapter 2  Variables, expressions, and statements
 =================================================
 
-# 1. Constants
+# 1. Constants, fixed value
 
-**Constants: fixed value** - such as numbers, letters, and strings, their value doesn't change
+## 1.1 **Constants: fixed value** - such as numbers, letters, and strings, their value doesn't change
 
 * **Numeric constants**
    
@@ -20,7 +20,7 @@ Chapter 2  Variables, expressions, and statements
    * enclosed in quotation marks, single quotes(') or double quotes(")
    * such as "Hello, World!", "17", "3.2"
    
-```
+```python
 # print() for integers/float
 >>> print(4)
 4
@@ -32,9 +32,11 @@ Chapter 2  Variables, expressions, and statements
 Hello, World!
 ```
 
-* **type()** can tell you what type a value has
+## 1.2  type(), int(), round(), float(), str()
 
-```
+> **type()** can tell you what type a value has
+
+```python
 >>> type(17)
 <class 'int'>
 >>> type(3.2) 
@@ -47,41 +49,76 @@ Hello, World!
 <class 'str'>
 ```
 
-* **int()** function can convert value to integer
+> **int()** function can convert value to integer
 
-```
+```python
 >>> int(3.9)
 3
 ```
 
-* **round()** function can round value
+> **round()** function can round value
    
-```
+```python
 >>> round(3.9)
 4
 ```
 
-* **float()** function can convert value to float
+> **float()** function can convert value to float
 
-```
+```python
 >>> float(9)
 9.9
 ```
    
-* **str()** function can convert value to string
+> **str()** function can convert value to string
 
-```
+```python
 >>> print('the number is : ' + str(3))
 the number is : 3
 ```
 
-# 2.2 Variables
+# 2. Variables
 
-+ **variale** : a name refers to a value
+## 2.1 **variale**
 
-+ **assignment statement** : create new variables and give them values
-   * **operator**: **=**
+A variable is a name refers to a value, place in the memory where a programmer can store data and later retrieve the data using the variable name.
 
+## 2.2 Python variable name rules
+
+* Must start with a letter or underscore_; Cannot start with a number
+
+   + avoid starting with an underscore character unless we are writing library code for others to use
+
+* Must consist of letters, numbers, and underscores_
+
+* Case sensitive, can contain a uppercase letters, but better to begin with a lowercase letter 
+
+* Cannot use reserved words
+
+* popular variable names include i ,x and j.
+
+```python
+Good: spam, eggs, spam23, _speed
+Bad: 23spam, #sign, var.12
+Different: spam, Spam, SPAM
+```
+## 2.3 Mnemonic variable names
+
+* We name variables to help us remember what we intend to store in them
+
+
+# 3. Statements
+
+## 3.1 **assignment statement**
+
+* We assign a value to a variable using the operator `=`
+* Consist of an expression on the right-hand side and a variable to store the result
+
+```python
+x = 2       # assignment statement
+x = x + 2   # assignment with expression
+print(x)    # print statement
+```
 ```
 # assign a string to a new variable named message
 >>> message = 'And now for something completely different' 
@@ -106,32 +143,20 @@ the number is : 3
 <class 'float'>
 ```
 
-# 2.3 Variable names and keywords
+# 4 Expression
 
-+ **variable names**
-   + can contain both letters and numbers
-   + can't start with a number
-   + case sensitive, can contain a uppercase letters, but better to begin with a lowercase letter 
-   + can contain the underscore character ( _ ) 
-   + avoid starting with an underscore character unless we are writing library code for others to use
-   + can't use Python keywords
-   + case sensitive
-   + popular variable names include i ,x and j.
-   
-+ **Python reserves 35 keywords**
-   + and as assert break class continue def 
-   + del elif else except False finally for 
-   + from global if import in is lambda 
-   + None nonlocal not or pass raise return
-   + True try while with yield async await
-   
-# 2.4 Statements
-
-+ **statement**: a unit of code that the Python interpreter can execute
-   * expression statement : print()
-   * assignment: produce no output
+## 4.1 Numeric Expressions
 
 # 2.5 Operators and operands
+
+Operator | Operation
+:--:     |:--:
++        | Addition 
+-        | Subtraction
+*        | Multiplication 
+/        | Division 
+**       |Exponentiation (Power)
+%        | Remainder 
 
 + **operators**
    * special symbols represent computations

@@ -149,14 +149,14 @@ print(x)    # print statement
 
 # 2.5 Operators and operands
 
-Operator | Operation
-:--:     |:--:
-+        | Addition 
--        | Subtraction
-*        | Multiplication 
-/        | Division 
-**       |Exponentiation (Power)
-%        | Remainder 
+| Operator | Operation
+| :--:     |:--:
+| +        | Addition 
+| -        | Subtraction
+| *        | Multiplication 
+| /        | Division 
+| **       | Exponentiation (Power)
+| %        | Remainder 
 
 + **operators**
    * special symbols represent computations

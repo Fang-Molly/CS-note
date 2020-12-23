@@ -57,7 +57,7 @@ Python 3.8.1
 
 * Where are you?  
 
-   * `pwd` command
+> * `pwd` command
 
 ```python
 udhcp-macvpn-624:~ csev$ pwd
@@ -67,7 +67,7 @@ udhcp-macvpn-624:~ csev$
 
 * Where can you go?  
 
-   * `cd` command
+> * `cd` command
 
 ```python
 udhcp-macvpn-624:~ csev$ pwd
@@ -78,7 +78,7 @@ udhcp-macvpn-624:Desktop csev$ pwd
 udhcp-macvpn-624:Desktop csev$
 ```
 
-   * `cd ..` command
+> * `cd ..` command
    
 ```python
 udhcp-macvpn-624:Desktop csev$ pwd
@@ -89,7 +89,7 @@ udhcp-macvpn-624:~ csev$ pwd
 udhcp-macvpn-624:~ csev$ 
 ```
    
-   * `ls -l` command
+> * `ls -l` command
 
 ```python
 udhcp-macvpn-624:Desktop csev$ pwd

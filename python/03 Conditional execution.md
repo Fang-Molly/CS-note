@@ -2,7 +2,10 @@
 
 ## 3.1 Boolean expressions
 
-* **Boolean expression: either true or false**
+* **Boolean expression**
+
+   * ask a question and produce a Yes or No result which we use to control program flow 
+   * either true or false**
 
 ```python
 >>> 5 == 5 
@@ -10,7 +13,7 @@ True
 >>> 5 == 6 
 False
 ```
-* **True and False belong to the class bool**
+* **True and False belong to the class `bool`**
 
 ```python
 >>> type(True) 
@@ -20,25 +23,28 @@ False
 ```
 * **comparison operators**: compare two operands and produce True if they are equal and False otherwise
 
-   * x==y ------ x is equal to y
-   * x!=y------ x is not equal to y
-   * x>y ------ x is greater than y
-   * x<y ------  x is less than y
-   * x>=y ------  x is greater than or equal to y
-   * x<=y  ------  x is less than or equeal to y
-   * x is y ------  x is the same as y
-   * x is not y ------ x is not the same as y
-   
+| Python | Meaning                  |
+| :--:   | :--:                     |
+| ==     | equal to                 |
+| <      | less than                |
+| <=     | less than or equal to    |
+| >      | greater than             |
+| >=     | greater than or equal to |
+| !=     | not equal to             |
+
+* **Remember: `=` is used for assignment**
+
 ## 3.2 Logical operators
 
 * **logical operators : and, or and not**
+
    * and : both are true
    * or : either is true
    * not : false
    
 * **any nonzero number is interpreted as "true"**
 
-```
+```python
 >>> 17 and True
 True
 ```
@@ -50,7 +56,7 @@ True
    * if it is true, thestatement gets executed.
    * if it is false, the statement is skipped.
 
-* **if statement**
+* **`if` statement**
 
    * head line
       * start with if
@@ -59,12 +65,12 @@ True
    * body
       * indented block : the line(s) after the if statement
       * the number of statements : no limit, at least one
-      * pass statement: no statement, as a place holder, does nothing
+      * `pass` statement: no statement, as a place holder, does nothing
    
 ```python
 # syntax of the if statement
-if x > 0 :
-    print('x is positive')
+if x > 0 :                   # head line
+    print('x is positive')   # body
 ```
 
 ```python
@@ -82,7 +88,7 @@ if x < 0:
 ```python
 >>> x = 3
 >>> if x < 10:
-...    print('Small') 
+...    print('Small') 11
 ...
 Small
 >>>

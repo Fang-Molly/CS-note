@@ -1,26 +1,24 @@
 Chapter 2  Variables, expressions, and statements
-=================================================
+-----------
 
-# 1. Constants, fixed value
+# 2.1 Values and types
 
-## 1.1 **Constants: fixed value** - such as numbers, letters, and strings, their value doesn't change
-
-* **Numeric constants**
+* **value**
+   * one of the basic things a program works with, like a letter or a number
    
-   + **integer**: whole numbers
-      * type `int`
-      * such as 2, 100, -2
-      
-   + **floating point numbers**: have decimal parts
-      * type `float`
-      * such as 3.2, -2.5, 0.0
-
-* **String constants**
-   * type `str`
-   * enclosed in quotation marks, single quotes(') or double quotes(")
-   * such as "Hello, World!", "17", "3.2"
+* **types**
+   + **integer**
+      * type **int**
+      * 2
+   + **floating point**
+      * type **float**
+      * 3.2
+   + **string**: 
+      * type **str**
+      * enclosed in quotation marks, " double-quotes or ' single-quotes
+      * "Hello, World!"; "17"; "3.2"
    
-```python
+```
 # print() for integers/float
 >>> print(4)
 4
@@ -32,11 +30,9 @@ Chapter 2  Variables, expressions, and statements
 Hello, World!
 ```
 
-## 1.2  Type Conversions
+* **type()** can tell you what type a value has
 
-> **type()** can tell you what type a value has
-
-```python
+```
 >>> type(17)
 <class 'int'>
 >>> type(3.2) 
@@ -49,76 +45,41 @@ Hello, World!
 <class 'str'>
 ```
 
-> **int()** function can convert value to integer
+* **int()** function can convert value to integer
 
-```python
+```
 >>> int(3.9)
 3
 ```
 
-> **round()** function can round value
+* **round()** function can round value
    
-```python
+```
 >>> round(3.9)
 4
 ```
 
-> **float()** function can convert value to float
+* **float()** function can convert value to float
 
-```python
+```
 >>> float(9)
 9.9
 ```
    
-> **str()** function can convert value to string
+* **str()** function can convert value to string
 
-```python
+```
 >>> print('the number is : ' + str(3))
 the number is : 3
 ```
 
-# 2. Variables
+# 2.2 Variables
 
-## 2.1 **variale**
++ **variale** : a name refers to a value
 
-A variable is a name refers to a value, place in the memory where a programmer can store data and later retrieve the data using the variable name.
++ **assignment statement** : create new variables and give them values
+   * **operator**: **=**
 
-## 2.2 Python variable name rules
-
-* Must start with a letter or underscore_; Cannot start with a number
-
-   + avoid starting with an underscore character unless we are writing library code for others to use
-
-* Must consist of letters, numbers, and underscores_
-
-* Case sensitive, can contain a uppercase letters, but better to begin with a lowercase letter 
-
-* Cannot use reserved words
-
-* popular variable names include i ,x and j.
-
-```python
-Good: spam, eggs, spam23, _speed
-Bad: 23spam, #sign, var.12
-Different: spam, Spam, SPAM
-```
-## 2.3 Mnemonic variable names
-
-* We name variables to help us remember what we intend to store in them
-
-
-# 3. Statements
-
-## 3.1 **assignment statement**
-
-* We assign a value to a variable using the operator `=`
-* Consist of an expression on the right-hand side and a variable to store the result
-
-```python
-x = 2       # assignment statement
-x = x + 2   # assignment with expression
-print(x)    # print statement
-```
 ```
 # assign a string to a new variable named message
 >>> message = 'And now for something completely different' 
@@ -143,27 +104,45 @@ print(x)    # print statement
 <class 'float'>
 ```
 
-# 4 Expression
+# 2.3 Variable names and keywords
 
-## 4.1 Numeric Expressions
++ **variable names**
+   + can contain both letters and numbers
+   + can't start with a number
+   + case sensitive, can contain a uppercase letters, but better to begin with a lowercase letter 
+   + can contain the underscore character ( _ ) 
+   + avoid starting with an underscore character unless we are writing library code for others to use
+   + can't use Python keywords
+   + case sensitive
+   + popular variable names include i ,x and j.
+   
++ **Python reserves 35 keywords**
+   + and as assert break class continue def 
+   + del elif else except False finally for 
+   + from global if import in is lambda 
+   + None nonlocal not or pass raise return
+   + True try while with yield async await
+   
+# 2.4 Statements
 
-| Operator | Operation
-| :--:     | :--:
-| +        | Addition 
-| -        | Subtraction
-| *        | Multiplication 
-| **       | Exponentiation (Power)
-| /        | Division 
-| //       | Floored division
-| %        | Remainder 
++ **statement**: a unit of code that the Python interpreter can execute
+   * expression statement : print()
+   * assignment: produce no output
+
+# 2.5 Operators and operands
+
++ **operators**
+   * special symbols represent computations
+   * computations : + addition, - subtraction, * multiplication, / division and ** exponentiation
+   * You should add space around operators like x = 100 so that it’s easier to read.
++ **operands** 
+   * the values the operator is applied to
 
 ```
-# Integer division result is a floating point
+# the division result is a floating point
 >>> division = 7 / 3
 >>> print(division)
 2.3333333333333335
->>> print(10 / 2)
-5.0
 
 # floored (// integer) division
 >>> quotient = 7 // 3
@@ -175,14 +154,58 @@ print(x)    # print statement
 >>> print(remainder)
 1
 ```
-## 4.2 Order of operations
 
-* **rules of precedence** : (PEMDAS) parentheses, exponentiation, multiplication, division, addtion, subtraction
+# 2.6 Expressions
 
++ **expression** : a combination of values, variables, and operators
+
+```
+>>> x = 5
+>>> x + 1
+6
+```
    
-## 4.3 String operations
+# 2.7 Order of operations
 
-+ The ** `+` operator** performs **concatenation**, join the strings by linking them end to end
++ **rules of precedence** : (PEMDAS) parentheses, exponents, multiplication, division, addtion, subtraction
+   + **Parentheses** have the highest precedence
+   + **Exponentiation** has the next highest precedence
+   + **Multiplication** and **Division** have the same precedence, higher than **Addition** and **Subtraction**
+   + Operators with the same precedence are evaluated from left to right
+   
+# 2.8 Modulus operator
+
++ **modulus operator** : 
+   + works on **integers** and yields the **remainder** when the first operand is divided by the second.
+   + a percent sign (%) 
+   
+```
+# the division result is a floating point
+>>> division = 7 / 3
+>>> print(division)
+2.3333333333333335
+
+# floored (// integer) division
+>>> quotient = 7 // 3
+>>> print(quotient)
+2
+
+#
+>>> remainder = 7 % 3
+>>> print(remainder)
+1
+
+# So 7 divided by 3 is 2 with 1 left over.
+```
++ check whether one number is divisible by another
+   + if x % y is zero, then x is divisible by y
++ extract the right-most digit or digits from a number
+   + x % 10 yields the right-most digit of x (in base 10)
+   + x % 100 yields the last two digits
+   
+# 2.9 String operations
+
++ The ** + operator** performs **concatenation**, join the strings by linking them end to end
 
 ```
 >>> first = 10
@@ -193,12 +216,9 @@ print(x)    # print statement
 >>> second = '150'
 >>> print(first + second) 
 100150
->>> eee = 'hello ' + 'world'
->>> print(eee)
-hello world
 ```
 
-+ the ** `*` operator** multiplies the content of a string by an integer
++ the ** * operator** multiplies the content of a string by an integer
 
 ```
 >>> first = 'Test'
@@ -207,11 +227,11 @@ hello world
 Test Test Test
 ```
 
-# 5. User Input
+# 2.10 Asking the user for input
 
-* `input()` : built-in function
+* input() : built-in function
    * take the value for a variable from the user
-   * The `input()` function returns a string
+   * the type of user typed is a **string**
 
 ```
 >>> inp = input() 
@@ -249,7 +269,7 @@ What...is the airspeed velocity of an unladen swallow?
 22
 ```
 
-# 6. Comments
+# 2.11 Comments
 
 * add notes to your programs to explain in natural language what the program is doing
 * start with the **# symbol**
@@ -257,9 +277,14 @@ What...is the airspeed velocity of an unladen swallow?
 * can put comments at the end of a line
 * it has no effect on the program
 
-====================================
+# 2.12 Choosing mnemonic variable names
 
-# Glossary
+
+# 2.13 Debugging
+
+* illegal variable name
+
+# 2.14 Glossary
 
 * assignment 
    * A statement that assigns a value to a variable.
@@ -312,9 +337,9 @@ What...is the airspeed velocity of an unladen swallow?
 * variable 
    * A name that refers to a value.
 
-==============================================
+-------------
 
-# Exercises
+# 2.15 Exercises
 
 **Exercise 1: Type the following statements in the Python interpreter to see what they do:**
 
@@ -360,7 +385,7 @@ We won’t worry about making sure our pay has exactly two digits after the deci
 ```python
 hour = input('Enter Hours: ')
 rate = input('Enter Rates: ')
-pay = int(hour) * float(rate)
+pay = float(hour) * float(rate)
 print('Pay:',pay)
 ```
 
@@ -382,12 +407,12 @@ Use the Python interpreter to check your answers.
 **Answer:**
 1. 8;  2. 8.5;  3. 4.0;  4. 11
 
-**Exercise 5: Write a program which prompts the user for a Celsius tem- perature, convert the temperature to Fahrenheit, and print out the converted temperature.**
+**Exercise 5: Write a program which prompts the user for a Celsius temperature, convert the temperature to Fahrenheit, and print out the converted temperature.**
 
 **Answer: **  
 
 ```python
-cel = input('Enter the Celsius temperature : ')
+cel = input('Enter the Celsius temperature: ')
 fah = float(cel) * 1.8 + 32
-print('The Fahrenheit temperature : ',fah)
+print('The Fahrenheit temperature: ',fah)
 ```

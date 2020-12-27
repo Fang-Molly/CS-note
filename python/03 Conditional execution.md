@@ -100,14 +100,43 @@ Small
 ... 
 >>> 
 ```
-   
+
+* **One-way Decisions**
+
+```python
+x = 5
+print('Before 5')
+if x == 5 :
+    print('Is 5')
+    print('Is Still 5')
+    print('Third 5')
+print('Afterwards 5')
+print('Before 6')
+if x == 6 :
+    print('Is 6')
+    print('Is Still 6')
+    print('Third 6')
+print('Afterwards 6')
+```
+```python
+Before 5
+Is 5
+Is Still 5
+Third 5
+Afterwards 5
+Before 6
+Afterwards 6
+```
+
 ## 3.4 Alternative execution
 
 * **Alternative execution**: there are two possibilities and the condition determines which one gets executed
-* **if statement**: if...else...
+* **if statement**: `if`...`else`...
 * **branches**: the alternatives
 
-```
+* **Two-way Decisions**
+
+```python
 # syntax of the if statement for alternative execution
 if x%2 == 0 :
    print('x is even')
@@ -118,9 +147,11 @@ else :
 ## 3.5 Chained conditionals
 
 * **Chained conditionals**: there are more than two possibilities
-* **if statement**: if...elif(else if)...else...
+* **if statement**: `if`...`elif`(else if)...`else`...
    * no limit on the number of elif statements
    * else clause is at the end, but there doesn't have to be done.
+
+* **Multi-way Decisions**
 
 ```
 if x < y:
@@ -135,7 +166,9 @@ else:
 
 ## 3.6 Nested conditionals
 
-```
+* **Nested Decisions**
+
+```python
 if x == y:
    print('x and y are equal')
 else:
@@ -147,7 +180,7 @@ else:
 
 ## 3.7 Catching exceptions using try and except
 
-* **try / except** : "insurance policy"
+* **`try` / `except`** : "insurance policy"
 
 
 * Handling an exception with a try statement is called catching an exception.
@@ -190,7 +223,9 @@ When Python detects that there is nothing to be gained by evaluating the rest of
    * error messages indicate where the problem was discovered, but that is often not where it was caused.
    * the actual error might be earlier in the code, sometimes on a previous line.
 
-## 3.10 Glossary
+------------------------------
+
+# Glossary
 
 * **body** 
    * The sequence of statements within a compound statement.
@@ -233,7 +268,7 @@ When Python detects that there is nothing to be gained by evaluating the rest of
 
 ----------------
 
-## 3.11 Exercises
+# Exercises
 
 **Exercise 1: Rewrite your pay computation to give the employee 1.5 times the hourly rate for hours worked above 40 hours.**
 

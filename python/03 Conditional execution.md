@@ -128,13 +128,11 @@ Before 6
 Afterwards 6
 ```
 
-## 3.4 Alternative execution
+## 3.4 Alternative execution / Two-way Decisions
 
 * **Alternative execution**: there are two possibilities and the condition determines which one gets executed
 * **if statement**: `if`...`else`...
 * **branches**: the alternatives
-
-* **Two-way Decisions**
 
 ```python
 # syntax of the if statement for alternative execution
@@ -144,14 +142,12 @@ else :
    print('x is odd')
 ```
 
-## 3.5 Chained conditionals
+## 3.5 Chained conditionals / Multi-way Decisions
 
 * **Chained conditionals**: there are more than two possibilities
 * **if statement**: `if`...`elif`(else if)...`else`...
    * no limit on the number of elif statements
    * else clause is at the end, but there doesn't have to be done.
-
-* **Multi-way Decisions**
 
 ```
 if x < y:
@@ -163,6 +159,19 @@ else:
 ```
 
 * Each condition is checked in order. If the first is false, the next is checked, and so on. If one of them is true, the corresponding branch executes, and the statement ends. Even if more than one condition is true, only the first true branch executes.
+
+* No `else`
+
+```python
+# no else
+x = 5
+if x < 2 :
+    print('Small')
+elif x < 10 :
+    print('Medium')
+
+print('All done')
+```
 
 ## 3.6 Nested conditionals
 

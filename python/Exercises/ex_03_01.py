@@ -3,6 +3,7 @@
 # Enter Rate: 10  
 # Pay: 475.0
 
+
 hour = input('Enter Hours: ')
 hour = float(hour)
 rate = input('Enter Rate: ')

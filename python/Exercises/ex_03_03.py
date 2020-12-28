@@ -26,6 +26,7 @@ F
 Run the program repeatedly as shown above to test the various different values for input.
 """
 
+
 score = input('Please enter a score between 0.0 and 1.0: ')
 
 try:

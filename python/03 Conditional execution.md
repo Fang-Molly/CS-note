@@ -288,18 +288,16 @@ Pay: 475.0
 **Answer:**
 
 ```python
-
-inp_hour = input('Enter Hours: ')
-hour = int(inp_hour)
-inp_rate = input('Enter Rate: ')
-rate = int(inp_rate)
+hour = input('Enter Hours: ')
+hour = float(hour)
+rate = input('Enter Rate: ')
+rate = float(rate)
 if hour <= 40:
     pay = hour * rate
-    print('Pay: ', pay)
+    print('Pay:', pay)
 else:
     pay = 40 * rate + (hour - 40) * rate * 1.5
-    print('Pay: ', pay)
-    
+    print('Pay:', pay)
 ```
 
 **Exercise 2: Rewrite your pay program using try and except so that your program handles non-numeric input gracefully by printing a message and exiting the program. The following shows two executions of the program:**
@@ -316,10 +314,10 @@ Error, please enter numeric input
 ```python
 hour = input('Enter Hours: ')
 try:
-    int(hour)
+    hour = float(hour)
     rate = input('Enter Rate: ')
-    int(rate)
-    pay = int(hour) * int(rate)
+    rate = float(rate)
+    pay = hour * rate
     print('Pay: ', pay)
 except:
     print('Error, please enter numeric input')
@@ -356,17 +354,17 @@ Run the program repeatedly as shown above to test the various different values f
 ```python
 score = input('Please enter a score between 0.0 and 1.0: ')
 try:
-    float(score)
-    if float(score) >= 0.9 and float(score) <= 1.0:
-        print('A')
-    elif float(score) >= 0.8 and float(score) < 0.9:
-        print('B')
-    elif float(score) >= 0.7 and float(score) < 0.8:
-        print('C')
-    elif float(score) >= 0.6 and float(score) < 0.7:
-        print('D')
-    elif float(score) < 0.6 and float(score) >= 0.0:
-        print('F')
+    score = float(score)
+    if score >= 0.9 and score <= 1.0:
+        print("A")
+    elif score >= 0.8 and score < 0.9:
+        print("B")
+    elif score >= 0.7 and score < 0.8:
+        print("C")
+    elif score >= 0.6 and score < 0.7:
+        print("D")
+    elif score < 0.6 and score >= 0.0:
+        print("F")
     else:
         print('Bad score')
 except:

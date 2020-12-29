@@ -1,33 +1,43 @@
 # Chapter 4  Functions
 
-## 4.1 Function calls
+## 4.1 Function Definition
 
-* function: a named sequence of statements that performs a computation
-* define a function: specify the name and the sequence of statements
-```
->>> type(32) 
-<class 'int'>
-```
-* type() function
-   * function name: type
-   * function argument: 32
-   * function result: <class 'int'>, return value
+* **function**: some *reusable* code that takes *arguments* as input, does some computation, and then returns a result or results
+
+* define a function: using the `def` reserved word to specify the name and the sequence of statements
+
+* call/invoke the function: using the function name, parentheses, and arguments in an expression
+
+* **Function types:**
+
+   * Built-in functions: print(), input(), type(), float(), int()...
+      * We treat the built-in function names as "new" reserved words. (i.e., avoid them as variable names.)
+   
+   * New functions that we define ourselves
 
 ## 4.2 Built-in functions
 
-* max() tells the largest value in a list
-* min() tells the smallest value in a list
+* **type() function**
 
+```python
+>>> type(32) 
+<class 'int'>
 ```
+
+* **max() function** - tells the largest value in a list
+
+* **min() function** - tells the smallest value in a list
+
+```python
 >>> max('Hello world')
 'w'
 >>> min('Hello world')
 ' '
 ```
 
-* len() tells us how many items are in its argument
+* **len() function** - tells us how many items are in its argument
 
-```
+```python
 >>> len('Hello world')
 11
 ```
@@ -37,9 +47,9 @@
 
 ## 4.3 Type conversion functions
 
-* int() function: convert the value to an integer
+* **int() function** - convert the value to an integer
 
-```
+```python
 >>> int('32')
 32
 >>> int('Hello')
@@ -52,16 +62,20 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 3
 >>> int(-2.3)
 -2
+```
 
-```
-* float() function: convert integers and strings to floating-point numbers
-```
+* **float() function** - convert integers and strings to floating-point numbers
+
+```python
 >>> float(32)
 32.0
->>> float('3.14159') 3.14159
+>>> float('3.14159') 
+3.14159
 ```
-* str() function: convert its argument to a string
-```
+
+* **str() function** - convert its argument to a string
+
+```python
 >>> str(32)
 '32'
 >>> str(3.14159) 
@@ -70,15 +84,22 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 ## 4.4 Math functions
 
-* Python has a math module that provides most of the familiar mathmatical functions.
-* **import math** before using the math module
-* **dot notation** : separate the module name and the function name by a dot(.)
+* **`math` module** - provides most of the familiar mathmatical functions in Python
+
+* **`import math`** - before using the math module
 
 ```
 >>> import math
+
 >>> print(math)
 <module 'math' (built-in)>
+```
 
+* **dot notation** - separate the module name and the function name by a dot(.)
+
+* `math.sqrt()`
+
+```
 # compute the square root of 5
 >>> math.sqrt(5)
 2.23606797749979

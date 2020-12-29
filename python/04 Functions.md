@@ -230,12 +230,6 @@ I sleep all night and I work all day.
 ```
 
 
-## 4.8 Flow of execution
-
-* **flow of execution** : the order in which statements are executed
-
-
-
 ## 4.9 Parameters and arguments
 
 * **parameter** : the arguments are assigned to variables

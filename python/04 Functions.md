@@ -178,29 +178,29 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 * The random module also provides functions to generate random values from continuous distributions including **Gaussian, exponential, gamma, and a few more**.
 
 
-## 4.6 Adding new functions
+## 4.6 Function Definition and Uses
 
 * **function definition** specifies the name of a new function
 
-* **def** is a keyword that indicates that this is a function definition.
+   * **`def`** is a keyword that indicates that this is a function definition.
 
-* function name
-   * letters, numbers and some punctuation marks
-   * first character can't be a number
-   * can't use a keyword
-   * can't use the same name for variable and function
+   * **function name**
+      * letters, numbers and some punctuation marks
+      * first character can't be a number
+      * can't use a keyword
+      * can't use the same name for variable and function
    
-* header: the first line of the function definition; 
-   * the empty parentheses() after the name
-   * end with a colon(:)
+   * **header** - the first line of the function definition; 
+      * the empty parentheses() after the name
+      * end with a colon(:)
    
-* body: the rest of the function definition; 
-   * be indented, indentation is four spaces.
-   * can contain any number of statements.
+   * **body** - the rest of the function definition; 
+      * be indented by four spaces
+      * can contain any number of statements
    
 * the interpreter prints ellipses (...) to let you know the definition isn't complete
 
-```
+```python
 >>> def print_lyrics():
 ...     print("I'm a lumberjack, and I'm okay.") 
 ...     print('I sleep all night and I work all day.')
@@ -208,7 +208,16 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 >>> print_lyrics()
 I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
->>> 
+>>>
+>>> print(print_lyrics)
+<function print_lyrics at 0x7fb050a30c10>
+>>>
+>>> type(print_lyrics)
+<class 'function'>
+>>>
+>>> print(type(print_lyrics))
+<class 'function'>
+>>>
 >>> def repeat_lyrics(): 
 ...    print_lyrics() 
 ...    print_lyrics()
@@ -220,23 +229,6 @@ I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
 ```
 
-## 4.7 Definitions and uses
-
-```
->>> def print_lyrics():
-...     print("I'm a lumberjack, and I'm okay.")
-...     print('I sleep all night and I work all day.')
-... 
->>> def repeat_lyrics():
-...     print_lyrics()
-...     print_lyrics()
-... 
->>> repeat_lyrics()
-I'm a lumberjack, and I'm okay.
-I sleep all night and I work all day.
-I'm a lumberjack, and I'm okay.
-I sleep all night and I work all day.
-```
 
 ## 4.8 Flow of execution
 

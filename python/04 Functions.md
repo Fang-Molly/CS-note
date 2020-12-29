@@ -87,6 +87,8 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 * **`math` module** - provides most of the familiar mathmatical functions in Python
 
    * **`import math`** - before using the math module
+   
+   * **dot notation** - separate the module name and the function name by a dot(.)
 
 ```python
 >>> import math
@@ -94,8 +96,6 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 >>> print(math)
 <module 'math' (built-in)>
 ```
-
-   * **dot notation** - separate the module name and the function name by a dot(.)
 
 * `math.log10()`
 
@@ -122,7 +122,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 * `math.pi`
 
-```pyton
+```python
 >>> degrees = 45
 >>> radians = degrees / 360.0 * 2 * math.pi >>> math.sin(radians)
 0.7071067811865476
@@ -130,9 +130,13 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 ## 4.5 Random numbers
 
-* Function random generate a random float between 0.0 and 1.0, including 0.0 but not 1.0.
-```
+* **`random` module** - provides functions that generate pseudorandom numbers
+
+* **Function `random`** -  returns a random float between 0.0 and 1.0, including 0.0 but not 1.0.
+
+```python
 >>> import random
+
 >>> for i in range(10):
 ...    x = random.random()
 ...    print(x)
@@ -148,42 +152,52 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 0.7907418415244969
 0.4643079930602618
 ```
-* Function **randint** takes the parameters low and high, and returns an integer between low and high (including both)
 
-```
+* **Function `randint`** - takes the parameters low and high, and returns an integer between low and high (including both)
+
+```python
 >>> import random
+
 >>> random.randint(5,10)
 6
 >>> random.randint(5,10)
 7
 ```
-* Function **choice** choose an element from a sequence at random
+* **Function `choice`** - choose an element from a sequence at random
 
-```
+```python
 >>> import random
+
 >>> t=[1,2,3]
 >>> random.choice(t)
 3
 >>> random.choice(t)
 2
 ```
+
 * The random module also provides functions to generate random values from continuous distributions including **Gaussian, exponential, gamma, and a few more**.
+
 
 ## 4.6 Adding new functions
 
 * **function definition** specifies the name of a new function
+
 * **def** is a keyword that indicates that this is a function definition.
+
 * function name
    * letters, numbers and some punctuation marks
    * first character can't be a number
    * can't use a keyword
    * can't use the same name for variable and function
+   
 * header: the first line of the function definition; 
    * the empty parentheses() after the name
    * end with a colon(:)
+   
 * body: the rest of the function definition; 
    * be indented, indentation is four spaces.
    * can contain any number of statements.
+   
 * the interpreter prints ellipses (...) to let you know the definition isn't complete
 
 ```

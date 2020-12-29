@@ -86,7 +86,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 * **`math` module** - provides most of the familiar mathmatical functions in Python
 
-* **`import math`** - before using the math module
+   * **`import math`** - before using the math module
 
 ```python
 >>> import math
@@ -95,9 +95,9 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 <module 'math' (built-in)>
 ```
 
-* **dot notation** - separate the module name and the function name by a dot(.)
+   * **dot notation** - separate the module name and the function name by a dot(.)
 
-> `math.log10()`
+* `math.log10()`
 
 ```python
 >>> ratio = signal_power / noise_power

@@ -88,7 +88,7 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 * **`import math`** - before using the math module
 
-```
+```python
 >>> import math
 
 >>> print(math)
@@ -97,18 +97,32 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 
 * **dot notation** - separate the module name and the function name by a dot(.)
 
+> `math.log10()`
+
+```python
+>>> ratio = signal_power / noise_power
+>>> decibels = 10 * math.log10(ratio)
+```
+
 * `math.sqrt()`
 
-```
+```python
 # compute the square root of 5
 >>> math.sqrt(5)
 2.23606797749979
+```
+* `math.sin()`
 
+```python
 >>> radians = 0.7
 >>> height = math.sin(radians)
 >>> print(height)
 0.644217687237691
+```
 
+* `math.pi`
+
+```pyton
 >>> degrees = 45
 >>> radians = degrees / 360.0 * 2 * math.pi >>> math.sin(radians)
 0.7071067811865476

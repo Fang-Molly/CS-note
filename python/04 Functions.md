@@ -10,10 +10,10 @@
 
 * **Function types:**
 
-   * Built-in functions: print(), input(), type(), float(), int()...
+   * **Built-in functions**: print(), input(), type(), float(), int()...
       * We treat the built-in function names as "new" reserved words. (i.e., avoid them as variable names.)
    
-   * New functions that we define ourselves
+   * **User-defined functions**: New functions that we define ourselves
 
 ## 4.2 Built-in functions
 
@@ -128,6 +128,15 @@ ValueError: invalid literal for int() with base 10: 'Hello'
 0.7071067811865476
 ```
 
+* `math.pow()`
+
+```python
+>>> import math
+>>> math.pow(2,2)   # base and exponent
+4.0
+>>>
+```
+
 ## 4.5 Random numbers
 
 * **`random` module** - provides functions that generate pseudorandom numbers
@@ -229,23 +238,26 @@ I'm a lumberjack, and I'm okay.
 I sleep all night and I work all day.
 ```
 
+## 4.7 Parameters and arguments
 
-## 4.9 Parameters and arguments
+* **parameter** : A parameter is a variable which we use in the function definition.  It is a “handle” that allows the code in the function to access the arguments for a particular function invocation.
 
-* **parameter** : the arguments are assigned to variables
+* **argument**: An argument is a value we pass into the function as its input when we call the function
 
-```
->>> def print_twice(bruce):
+```python
+>>> def print_twice(bruce):   # parameter: bruce
 ...     print(bruce)
 ...     print(bruce)
 ... 
->>> print_twice('Spam')
+>>> print_twice('Spam')      # argument: spam
 Spam
 Spam
 >>> print_twice(17)
 17
 17
+```
 
+```python
 >>> import math
 >>> print_twice(math.pi)
 3.141592653589793
@@ -264,15 +276,37 @@ Spam Spam Spam Spam
 Eric, the half a bee.
 Eric, the half a bee.
 ```
+* **Multiple parameters / arguments**
 
-## 4.10 Fruitful functions and void functions
+```python
+def addtwo(a, b):
+    added = a + b
+    return added
+    
+x = addtwo(3, 5)
+print(x)
 
-* **fruitful functions**: such as the math functions, yield results
+8
+```
 
-* **void functions**: perform an action but don't return a value
+* **`return` values** - return a result from a function
+
+```python
+def greet():
+    return "Hello"
+    
+print(greet(), "Glenn")
+print(greet(), "Sally")
+```
+
+## 4.8 Fruitful functions and void functions
+
+* **fruitful functions**: yield results, such as the math functions
+
+* **void functions**: perform an action but don't return a value, such as print()
    * assign the result to a variable, you get a special value called None
    
-   ```
+   ```python
    >>> result = print_twice('Bing')
    Bing
    Bing
@@ -282,34 +316,21 @@ Eric, the half a bee.
    <class 'NoneType'>
    ```
 
-* **return** : return a result from a function
-
-```
->>> def addtwo(a, b):
-...     added = a + b
-...     return added
-... 
->>> x = addtwo(3, 5)
->>> print(x)
-8
-```
-
-## 4.11 Why functions?
+## 4.9 Why functions?
 
 * the reasons to divide a program into functions:
 
-   1. It makes your program easier to read, understand and debug
-   2. It makes your program smaller by eliminating repetitive code
-   3. It makes earier to dubug the parts one at a time and assemble them into a working whole
-   4. It makes earier to write, debug and reuse
+   1. Organize your code into “paragraphs” - capture a complete thought and “name it”. It makes your program easier to read, understand and debug
+   
+   2. Don’t repeat yourself - make it work once and then reuse it. It makes your program smaller by eliminating repetitive code
+   
+   3. If something gets too long or complex, break it up into logical chunks and put those chunks in functions. It makes earier to dubug the parts one at a time and assemble them into a working whole
+   
+   4. Make a library of common stuff that you do over and over - perhaps share this with your friends...It makes earier to write, debug and reuse
 
-## 4.12 Debugging
+-----------------------
 
-* ues spaces exclusively (no tabs) to avoid problems with spaces and tabs.
-
-* Don't forget to save your program before you run it.
-
-## 4.13 Glossary
+# Glossary
 
 * **algorithm** A general process for solving a category of problems.
 
@@ -349,7 +370,9 @@ Eric, the half a bee.
 
 **void function** A function that does not return a value.
 
-## 4.14 Exercises
+-------------
+
+# Exercises
 
 **Exercise 1: Run the program on your system and see what numbers you get. Run the program more than once and see what numbers you get.**
 
@@ -471,21 +494,21 @@ Pay: 475.0
 **Answer:**
 
 ```python
-hours = input("Enter Hours: ")
-rate = input("Enter Rate: ")
+def computepay(hour, rate):
+    if hour <= 40:
+        pay = hour * rate
+    else:
+        pay = 40 * rate + (hour - 40) * (rate * 1.5)
+    return pay
 
-if int(hours) <= 40:
-    def computepay(hours, rate):
-        wages = int(hours) * int(rate)
-        return wages
-    x = computepay(hours, rare)
-    print('Pay: ', x)
-else:
-    def computepay(hours, rate):
-        wages =(int(hours)-40) * int(rate) * 1.5 + 40 * int(rate)
-        return wages
-    x = computepay(hours, rate)
-    print('Pay: ', x)
+hour = input("Enter Hours: ")
+hour = float(hour)
+rate = input("Enter Rate: ")
+rate = float(rate)
+
+pay = computepay(hour, rate)
+
+print("Pay:", pay)
 ```
 
 
@@ -518,21 +541,26 @@ Run the program repeatedly to test the various different values for input.
 
 ```python
 score = input('Please enter a score between 0.0 and 1.0: ')
+
 try:
-    def computegrade():
-        if float(score) >= 0.9 and float(score) <= 1.0:
-            print('A')
-        elif float(score) >= 0.8 and float(score) < 0.9:
-            print('B')
-        elif float(score) >= 0.7 and float(score) < 0.8:
-            print('C')
-        elif float(score) >= 0.6 and float(score) < 0.7:
-            print('D')
-        elif float(score) < 0.6 and float(score) >= 0.0:
-            print('F')
-        else:
-            print('Bad score')
-    computegrade()
+    score = float(score)
 except:
     print('Bad score')
+    quit()
+
+def computegrade():
+    if score >= 0.9 and score <= 1.0:
+        print("A")
+    elif score >= 0.8 and score < 0.9:
+        print("B")
+    elif score >= 0.7 and score < 0.8:
+        print("C")
+    elif score >= 0.6 and score < 0.7:
+        print("D")
+    elif score < 0.6 and score >= 0.0:
+        print("F")
+    else:
+        print('Bad score')
+        
+computegrade()
 ```

@@ -2,26 +2,26 @@
 
 ## 5.1 Updating variables
 
-* **initialize** a variable
+* **initialize** - assign a variable
 
-* **update** a variable
+* **update** - reassign a variable
    * **increment** : by adding 1
    * **decrement** : by subtracting 1
 
 ```python
->>> x = 0
->>> x = x + 1
+>>> x = 0     # initialize
+>>> x = x + 1    # updating by increment
 ```
 
-## 5.2 The while statement
+## 5.2 The `while` statement
 
-* **while** statement
+* **`while` statement** - one form of iteration
 
 ```python
-n=5
+n = 5
 while n > 0:
     print(n)
-    n=n-1 
+    n = n - 1 
 print('Blastoff!')
 ```
 * **the flow of execution for a while statement**
@@ -29,12 +29,13 @@ print('Blastoff!')
       * False: exit the while statement and continue execution at the next statement
       * True: execute the body and then go back to step 1
       
-* the type of flow is a loop
+* **loop** - this type of flow
    * iteration：each time we execute the body of the loop
-   * iteration variable
-   * infinite loop : there is no iteration variable, the loop will repeat forever
+   * iteration variable: change each time through a loop
 
-## 5.3 Infinite loops
+## 5.3 Infinite loops 
+
+### Ending infinite loop with `break`
 
 * **infinite loop**: there is no iteration variable telling you how many times to execute the loop
 
@@ -45,7 +46,7 @@ while True:
     n=n-1 
 print('Done!')
 ```
-* **break statement**: to exit the loop when we have reached the exit condition**
+* **`break` statement**: to exit the loop when we have reached the exit condition**
 
 ```python
 while True:
@@ -62,7 +63,7 @@ finished
 > done Done!
 ```
 
-## 5.4 Finishing iterations with continue
+### Finishing iterations with `continue`
 
 * **continue statement: to end the current iteration and jump back to the while statement to start the next iteration
 
@@ -85,14 +86,26 @@ print this!
 Done!
 ```
 
-## 5.5 Definite loops using for
+## 5.4 Definite loops using `for`
 
-* **for statement: to construct a definite loop**
+* **`for` loop** - to construct a definite loop
 
-* **the syntax of a for loop**
-   * for statement
+   * **`for` statement**
       * iteration variable: friend
-   * loop body
+   * **loop body**
+
+```python
+for i in [5, 4, 3, 2, 1]:
+    print(i)
+print('Blastoff!')
+
+5
+4
+3
+2
+1
+Blastoff!
+```
 
 ```python
 friends = ['Joseph', 'Glenn', 'Sally']

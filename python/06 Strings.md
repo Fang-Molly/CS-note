@@ -2,34 +2,81 @@
 
 ## 6.1 A string is a sequence
 
-* **string** : a sequence of characters
-* **extract the character** at index position n with the bracket operator [n]
-   * index : the expression in brackets [ ], 
-      * any expression, including variables and operators
+* **String** : a sequence of characters
+
+```python
+# a string literal uses quotes:' ' or " "
+>>> str1 = "Hello"
+>>> str2 = 'there'
+
+# concatenate strings using +
+>>> bob = str1 + str2
+>>> print(bob)
+Hellothere
+
+# When a string contains numbers, it is still a string
+>>> str3 = '123'
+>>> str4 = str3 + 1
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+
+# convert numbers in a string into a number using int()
+>>> str4 = int(str3) + 1
+>>> print(str4)
+124
+
+# Input numbers must be converted from strings
+>>> apple = input('Enter: ')
+Enter: 100
+>>> x = apple - 10
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+>>> x = int(apple) - 10
+>>> print(x)
+90
+```
+
+* **String Index** - the expression in brackets[ ]
+   * any expression, including variables and operators
       * the value has to be an integer, not 1.5
-      * index[0] is the first letter, index[1] is the second
-      * index[-1] is the last letter, index[-2] is the second to last
-      
+   * index[0] is the first letter, index[1] is the second
+   * index[-1] is the last letter, index[-2] is the second to last
+        
+b---a---n---a---n---a    
+[0]-[1]-[2]-[3]-[4]-[5]     
+[-6][-5][-4][-3][-2][-1]
+ 
+* **extract the character** at index position n with the bracket operator [n]
+
 ```python
 >>> fruit = 'banana'
->>> letter = fruit[1]
+
+# get the first letter of a string
+>>> letter = fruit[0]
 >>> print(letter)
-a
+b
+
+# get the last letter of a string
+>>> last = fruit[-1]
+>>> print(last)
+>>> a
 ```
-* b | a | n | a | n | a    
- [0] [1] [2] [3] [4] [5]   
- [-6][-5][-4][-3][-2][-1]
 
-## 6.2 Getting the length of a string using len
+## 6.2 Getting the length of a string using `len`
 
-* **len()** : show the number of characters in a string
+* **`len()`** : built-in function, returns the number of characters in a string
 
 ```python
+# get the number of characters in a string
 >>> fruit = 'banana'
 >>> len(fruit)
 >>> 6
+
+# get the last letter of a string
 >>> length = len(fruit)
->>> last = fruit[length-1]
+>>> last = fruit[length-1]   # last = fruit[-1]
 >>> print(last)
 a
 ```

@@ -138,17 +138,79 @@ x = x + 2   # assignment with expression
 print(x)    # print statement
 ~~~
 
-**function** `print`
+**`print` function**
 
-* `print('Hello world!')`
-
-   * enclosed in quotes, single quotes or double quotes
-      * print('Hello world!') or print("Hello world!")
    * most people use single quotes
    * use double quotes when apostrophe appears in the string
       * print("It's a dog.")
-      
-      
+```python
+
+# enclosed in single or double quotes, mostly prefer single quotes
+>>> print('Hello World!')
+Hello World!
+>>> print("Hello World!")
+Hello World!
+>>> print("It's a dog.")
+It's a dog.
+
+# comma-separated sequence print with space between
+>>> print("Hello""World")
+HelloWorld
+>>> print("Hello","World!")
+Hello World!
+>>> print(1,000,000)
+1 0 0
+
+# print in one line using end=' '
+print("Hello", end = ' ')
+print("World")
+Hello World
+
+# print multiple lines in, each line end with ","
+>>> print(
+...     "I had this thing.",
+...     "That you could type up right.",
+...     "But it didn't sing.",
+...     "So I said goodnight."
+... )
+I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
+
+# start a new line using newline character \n (backslash n)
+>>> days = "\nMon\nTue\nWed\nThu\nFri\nSat\nSun"
+>>> print("Here are the days: ", days)
+Here are the days:  
+Mon
+Tue
+Wed
+Thu
+Fri
+Sat
+Sun
+
+# start a new line using three double-quotes(triple-quotes, """)
+>>> days = """
+... Mon
+... Tue
+... Wed
+... """
+>>> print("Here are the days: ", days)
+Here are the days:  
+Mon
+Tue
+Wed
+
+# escape sequences
+>>> print("I'm 6'2\" tall.")                     # \" print "
+I'm 6'2" tall.
+>>> print('Let\'s go!')                          # \' print '
+Let's go!
+>>> print("Can you type \\ ?")                   # \\ print\
+Can you type \ ?
+>>> print("What's your name? \nI'm Alice.")      # \n start a new line
+What's your name? 
+I'm Alice.
+```
+  
 ## **programming paragraphs**
 
 ### Program steps or program flow
@@ -191,7 +253,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ~~~
 
-### **Scrip mode**
+### **Script mode**
    
 You enter a sequence of statements(lines) into a file using a text editor and tell Python to execute the statements in the file
    
@@ -428,101 +490,3 @@ d) Error because x = x + 1 is not possible mathematically
 **Answer:**  
 Examine your code, read it back to yourself, and check that it says what you meant to say. Check your python grammer.
 
-
-----------
-
-
-
-
-
-
-
-
-* comma-separated sequence print with space between
-
-```
->>> print("Hello","World!")
-Hello World!
->>> print("Hello""World")
-HelloWorld
->>> print(1,000,000)
-1 0 0
-```
-
-* print in one line
-
-   * put **end=' '** at the end of print line to tell us not end the line with a newline character and go to the next line.
-
-```
-print("Hello", end = ' ')
-print("World")
-Hello World
-```
-   * print multiple lines, each line end with ","
-
-```
->>> print(
-...     "I had this thing.",
-...     "That you could type up right.",
-...     "But it didn't sing.",
-...     "So I said goodnight."
-... )
-I had this thing. That you could type up right. But it didn't sing. So I said goodnight.
-```
-
-* newline character
-
-   * \n (backslash n): start a new line, cause a line break
-   
-```
->>> days = "\nMon\nTue\nWed\nThu\nFri\nSat\nSun"
->>> print("Here are the days: ", days)
-Here are the days:  
-Mon
-Tue
-Wed
-Thu
-Fri
-Sat
-Sun
-```
-
-   * three double-quotes(triple-quotes, """): start a new line
-   
-```
->>> days = """
-... Mon
-... Tue
-... Wed
-... """
->>> print("Here are the days: ", days)
-Here are the days:  
-Mon
-Tue
-Wed
-```
-
-* escape sequences
-   
-Escape | What it does
-|:---|:---|
-\\ | Backslash (\)
-\' | Single-quote (')
-\" | Double-quote (")   
-\a | ASCII bell (BEL)
-\b | ASCII backspace (BS)
-\f | ASCII formfeed (FF)
-\n | ASCII linefeed (LF)
-\N{name} | Character named name in the Unicode database (Unicode only) 
-\r | ASCII carriage return (CR)
-\t | ASCII horizontal tab (TAB)
-\uxxxx | Character with 16-bit hex value xxxx (Unicode only) 
-\Uxxxxxxxx | Character with 32-bit hex value xxxxxxxx (Unicode  only) 
-\v | ASCII vertical tab (VT)
-\ooo | Character with octal value oo
-\xhh | Character with hex value hh
-   
-```
->>> print("I am 6'2\" tall.")
-I am 6'2" tall.
-```

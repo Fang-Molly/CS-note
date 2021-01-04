@@ -140,9 +140,6 @@ print(x)    # print statement
 
 **`print` function**
 
-   * most people use single quotes
-   * use double quotes when apostrophe appears in the string
-      * print("It's a dog.")
 ```python
 
 # enclosed in single or double quotes, mostly prefer single quotes

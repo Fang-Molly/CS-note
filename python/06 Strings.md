@@ -5,14 +5,17 @@
 * **String** : a sequence of characters
 
 ```python
-# a string literal uses quotes:' ' or " "
+# a string literal uses single or double quotes
 >>> str1 = "Hello"
 >>> str2 = 'there'
 
-# concatenate strings using +
+# concatenate strings using + operator
 >>> bob = str1 + str2
 >>> print(bob)
 Hellothere
+>>> bob = str1 + ' ' + str2
+>>> print(bob)
+Hello there
 
 # When a string contains numbers, it is still a string
 >>> str3 = '123'
@@ -38,12 +41,14 @@ TypeError: unsupported operand type(s) for -: 'str' and 'int'
 90
 ```
 
-* **String Index** - the expression in brackets[ ]
-   * any expression, including variables and operators
-      * the value has to be an integer, not 1.5
-   * index[0] is the first letter, index[1] is the second
-   * index[-1] is the last letter, index[-2] is the second to last
-        
+* **String Index** - the expression in square brackets[ ]      
+
+   * The index value must be an integer and starts at zero.
+      * index[0] is the first letter, index[1] is the second
+      * index[-1] is the last letter, index[-2] is the second to last
+      
+   * The index value can be an expression that is computed, including variables and operators     
+   
 b---a---n---a---n---a    
 [0]-[1]-[2]-[3]-[4]-[5]     
 [-6][-5][-4][-3][-2][-1]
@@ -62,6 +67,19 @@ b
 >>> last = fruit[-1]
 >>> print(last)
 >>> a
+
+# the index is an expression
+>>> x = 3
+>>> w = fruit[x - 1]
+>>> print(w)
+n
+
+# you can't index beyond the length of the string
+>>> print(fruit[6])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: string index out of range
+>>> 
 ```
 
 ## 6.2 Getting the length of a string using `len`
@@ -81,99 +99,47 @@ b
 a
 ```
 
-## 6.3 Traversal through a string with a loop
+## 6.3 Traversal through a string with `while` and `for` loop
 
 * **traversal**: A lot of computations involve processing a string one character at a time. Often they start at the beginning, select each character in turn, do something to it, and continue until the end. This pattern of processing is called a traversal.   
 
-    * **while loop**
-
-   ```python
-   >>> fruit = 'banana'
-   >>> index = 0
-   >>> while index < len(fruit):
-   ...    letter = fruit[index]
-   ...    print(letter)
-   ...    index = index + 1
-   ... 
-   b
-   a
-   n
-   a
-   n
-   a
-   >>> 
-   ```
-  
-   * **for loop**
-   
-   ```python
-   >>> fruit = 'banana'
-   >>> for char in fruit:
-   ...     print(char)
-   ... 
-   b
-   a
-   n
-   a
-   n
-   a
-   >>>
-   ```
-
-## 6.4 String slices
-
-* **slice : a segment of a string**
-
-* The operator returns the part of the string from the “n-th” character to the “m-th” character, including the first but excluding the last
-
-```python
->>> s = 'Monty Python'
->>> print(s[0:5])
-Monty
->>> print(s[6:12])
-Python
-```
-* omit the first index, the slice starts at the beginning
-* omit the second index, the slice goes to the end
-* omit the first and second index, the slice starts at the beginning and goes to the end
+* **`while` loop** - indeterminate loop
 
 ```python
 >>> fruit = 'banana'
->>> fruit[:3]
-'ban'
->>> fruit[3:]
-'ana'
->>> fruit[:]
-'banana'
+>>> index = 0
+>>> while index < len(fruit):
+...    letter = fruit[index]
+...    print(letter)
+...    index = index + 1
+... 
+b
+a
+n
+a
+n
+a
+>>> 
 ```
-
-* if the first index >= the second, the result is an empty string, represented by two quotation marks.
-* empty string 
-   * contain no characters
-   * length 0
-
+  
+* **`for` loop** - determinant loop
+   
 ```python
->>> fruit = 'banana' 
->>> fruit[3:3]
-''
+>>> fruit = 'banana'
+>>> for letter in fruit:
+...     print(letter)
+... 
+b
+a
+n
+a
+n
+a
+>>>
 ```
+* `while` and `for` loop is equal, we generally prefer a `for` loop
 
-## 6.5 Strings are immutable
-
-* Strings are immutable, you can't change an existing string.
-
-```python
->>> greeting = 'Hello, world!'
->>> greeting[0] = 'J'
-TypeError: 'str' object does not support item assignment
-
->>> greeting = 'Hello, world!'
->>> new_greeting = 'J' + greeting[1:]
->>> print(new_greeting)
-Jello, world!
-```
-
-## 6.6 Looping and counting
+## 6.4 Looping and counting
 
 * count the number of times the letter appears in a string
 
@@ -185,23 +151,88 @@ for letter in word:
         count = count + 1
 print(count)
 ```
+   
+## 6.5 String slices
 
-## 6.7 The in operator
+* **slice : a segment of a string**
 
-* The word in is a boolean operator that takes two strings and returns True if the first appears as a substring in the second
+* The **colon(`:`) operator** returns any continuous section of a string
+   * **up to but not including** - start at posion the first number, but not including the last number position.
 
 ```python
->>> 'a' in 'banana'
+>>> s = 'Monty Python'
+
+# The second number is one up to but not including.
+>>> print(s[0:4])
+Mont
+>>> print(s[6:7])
+P
+
+# If the second number is beyond the end of the string, it stops at the end.
+>>> print(s[6:20])
+Python
+
+# omit the first index, the slice starts at the beginning
+>>> print(s[:2])
+Mo
+
+# omit the second index, the slice goes to the end
+>>> print(s[8:])
+thon
+
+# omit the first and second index, the slice starts at the beginning and goes to the end
+>>> print(s[:])
+Monty Python
+
+# if the first index >= the second, the result is an empty string, represented by two quotation marks.
+# empty string: contain no characters; length is 0
+>>> print(s[3:3])
+''
+```
+
+## 6.6 Strings are immutable
+
+* Strings are immutable, you can't change an existing string.
+
+```python
+>>> greeting = 'Hello, world!'
+>>> greeting[0] = 'J'
+TypeError: 'str' object does not support item assignment
+
+# strings concatenation generates new strings
+>>> greeting = 'Hello, world!'
+>>> new_greeting = 'J' + greeting[1:]
+>>> print(new_greeting)
+Jello, world!
+```
+
+## 6.7 Using `in` as a logical operator
+
+* The keyword `in` is a boolean operator that takes two strings and returns `True` if the first appears as a substring in the second
+* can be used in `if` statement
+
+```python
+>>> fruit = 'banana'
+
+# boolean operator, returns True or False
+>>> 'a' in fruit
 True
->>> 'seed' in 'banana'
+>>> 'seed' in fruit
 False
+
+# in can be used in if statement
+>>> if 'a' in fruit:
+...    print('Found it!')
+...
+Found it!
+>>>
 ```
 
 ## 6.8 String comparison
 
 * The comparison operators work on strings. Be useful for putting words in alphabetical order
 
-* thon does not handle uppercase and lowercase letters the same way that people do. All the uppercase letters come before all the lowercase letters
+* Python does not handle uppercase and lowercase letters the same way that people do. **All the uppercase letters come before all the lowercase letters**
 
 ```python
 word = input('Enter your word: ')
@@ -219,16 +250,18 @@ else:
 
 * **object** : Strings are an example of Python objects. An object contains both data and methods, which are effectively functions that are built into the object and are available to any instance of the object.
 
-* **dir function** : show the availabel methods of an object
-
-* **type function** : show the type of an object
-
 ```python
 >>> stuff = 'Hello world'
+
+# type function shows the type of an object
 >>> type(stuff)
 <class 'str'>
+
+# dir function shows the a  vailable methods
 >>> dir(stuff)
 ['capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+# help function shows some simple documentation on a method
 >>> help(str.capitalize) 
 
 Help on method_descriptor:
@@ -237,12 +270,13 @@ capitalize(self, /)
     Return a capitalized version of the string.
     
     More specifically, make the first character have upper case and the rest lower
-    case.
+    case.    
 ```
 
 * **method upper/lower** takes a string and returns a new string with all uppercase or lowercase letters
 
 ```python
+# string.upper(), string.lower()
 >>> word = 'banana'
 >>> new_word = word.upper()
 >>> print(new_word)
@@ -251,31 +285,66 @@ BANANA
 * **methond find** search for the position of one string within another
 
 ```python
+# string.find()
 >>> word = 'banana'
 >>> index = word.find('a')
 >>> print(index)
 1
+
 # find substring
 >>> word.find('na')
 2
+
+# If the substring is not found, retruns -1
+>>> aa = word.find('z')
+>>> print(aa)
+-1
+
 # take as a second argument the index where it should start
 >>> word.find('na', 3)
 4
 ```
 
+* **method replace** - like a "search and replace" operation in a word processor
+
+```python
+>>> greet = 'Hello Bob'
+>>> nstr = greet.replace('Bob','Jane')
+>>> print(nstr)
+Hello Jane
+>>> nstr = greet.replace('o','x')
+>>> print(nstr)
+Hellx Bxb
+>>> 
+```
+
 * **method strip** remove white space (space, tabs, or newlines) from the beginning and end or a string
 
 ```python
->>>line=' Here we go ' 
->>> line.strip()
-'Here we go'
+>>> greet = '  Hello Bob  '
+
+# string.lstrip() remove whitespace at the left 
+>>> greet.lstrip()
+'Hello Bob  '
+
+# string.rstrip() remove whitespace at the right
+>>> greet.rstrip()
+'  Hello Bob'
+
+# string.strip() remove both beginning and ending whitespace
+>>> greet.strip()
+'Hello Bob'
+>>> 
 ```
+
 * **method startswith** : return boolean values, require case to match
 
 ```python
+# string.startswith()
 >>> line = 'Have a nice day' 
 >>> line.startswith('Have') 
 True
+# case sensitive
 >>> line.startswith('h') 
 False
 >>> line.lower()
@@ -296,7 +365,7 @@ True
 >>> sppos = data.find(' ', atpos)
 >>> print(sppos)
 31
->>> host = data[atpos+1:sppos]
+>>> host = data[atpos+1 : sppos]
 >>> print(host)
 uct.ac.za
 >>> 
@@ -304,32 +373,43 @@ uct.ac.za
 
 ## 6.11 Format operator
 
-* **format operator (%)** : construct strings, replacing parts of the strings with the data stored in variables.
+* **format operator (`%`)** : construct strings, replacing parts of the strings with the data stored in variables.
 
-   * **%d : format an integer, d stands for decimal.**
+   * **`%d` format an integer, d stands for decimal.**
    
-   * **%g format a floating-point number**
+   * **`%g` format a floating-point number**
    
-   * **%s format a string**
+   * **`%s` format a string**
    
-   * **%r format any you type**
+   * **`%r` format any you type**
    
 * **Format syntax** :
    
-   * first operand: a string, the format string, specify how the second operand is formmated
-   * second operand: can be an integer, a floating-point number, a string, any type, or a tuple ()
-      * multiple formats: a tuple, put in parentheses (), separated by commas(,)
-      * the number and types of elements must match the format sequences in the string.  
-   * result : a string
+   * **first operand**: a string, the format string, specify how the second operand is formmated
+   * **second operand**: can be an integer, a floating-point number, a string, any type, or a tuple ()
+   * **result**: a string
    
-   ```python
-   >>> camels = 42
-   >>> "I have spotted %d camels." % camels
-   'I have spotted 42 camels.'
+```python
+>>> camels = 42
+>>> "I have spotted %d camels." % camels
+'I have spotted 42 camels.'
 
-   >>> "In %d years I have spotted %g %s." % (3, 0.1, 'camels')
-   'In 3 years I have spotted 0.1 camels.'
-   ```
+# multiple formats: a tuple, put in parentheses (), separated by commas (,)
+>>> "In %d years I have spotted %g %s." % (3, 0.1, 'camels')
+'In 3 years I have spotted 0.1 camels.'
+
+# the number of elements in the tuple must match the number of format sequences in the string
+>>> '%d %d %d' % (1,2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: not enough arguments for format string
+
+# the types of the elements also must match the format sequences
+>>> '%d' % 'dollars'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: %d format: a number is required, not str
+```
 * **Anothe format type**
    * format string: special {} sequence
       * start the string with the letter f
@@ -338,12 +418,9 @@ uct.ac.za
 my_name = 'Alice'
 Print(f"Let's talk about {my_name}.")
 ```
+--------------------------
 
-## 6.12 Debugging
-
-Ask yourself, “What could go wrong here?” or “What crazy thing might our user do to crash our (seemingly) perfect program?”
-
-## 6.13 Glossary
+# Glossary
 
 * **counter** A variable used to count something, usually initialized to zero and then incremented.
 
@@ -377,8 +454,9 @@ Ask yourself, “What could go wrong here?” or “What crazy thing might our u
 
 * **traverse** To iterate through the items in a sequence, performing a similar operation on each.
 
+------------------
 
-## 6.14 Exercises
+# Exercises
 
 **Exercise 1: Write a while loop that starts at the last character in the string and works its way backwards to the first character in the string, printing each letter on a separate line, except backwards.**
 
@@ -386,9 +464,9 @@ Ask yourself, “What could go wrong here?” or “What crazy thing might our u
 
 ```python
 fruit = 'banana'
-index = -1
+index = 0
 while index >= (0 - len(fruit)):
-    letter = fruit[index]
+    letter = fruit[index-1]
     print(letter)
     index = index - 1   
 ```

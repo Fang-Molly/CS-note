@@ -324,7 +324,25 @@ Average spam confidence: 0.750718518519
 
 Test your file on the mbox.txt and mbox-short.txt files.
 
+```python
+fname = input('Enter the file name: ')
+fhand = open(fname)
 
+for line in fhand:
+    line = line.rstrip()
+    if line.startswith('X-DSPAM-Confidence:'):
+        # print(line)
+        atpos = line.find(':')
+        data = line[atpos+2:]
+
+count = 0
+sum = 0
+
+for value in data:
+    count = count + 1
+    sum = sum + float(value)
+    print("Average spam confidence:", sum / count)
+```
 
 **Exercise 3: Sometimes when programmers get bored or want to have a bit of fun, they add a harmless Easter Egg to their program. Modify the program that prompts the user for the file name so that it prints a funny message when the user types in the exact file name “na na boo boo”. The program should behave normally for all other files which exist and don’t exist. Here is a sample execution of the program:**
 

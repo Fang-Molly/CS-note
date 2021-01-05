@@ -480,6 +480,7 @@ while index >= (0 - len(fruit)):
 >>> fruit[:]
 'banana'
 ```
+
 **Exercise 3: Encapsulate this code in a function named count, and gen- eralize it so that it accepts the string and the letter as arguments.**
 
 **Answer:**
@@ -509,6 +510,7 @@ count(input_string, input_letter)
 >>> word.count('a', 1, 5)
 2
 ```
+
 **Exercise 5: Take the following Python code that stores a string:**
 
 str = 'X-DSPAM-Confidence:0.8475'
@@ -520,8 +522,9 @@ Use find and string slicing to extract the portion of the string after the colon
 ```python
 str = 'X-DSPAM-Confidence:0.8475'
 startpos = str.find(':')
-data = str[startpos+1:]
-print(float(data))
+piece = str[startpos+1:]
+value = float(piece)
+print(value)
 ```
 
 **Exercise 6: Read the documentation of the string methods at https://docs.python.org/library/stdtypes.html#string-methods You might want to experiment with some of them to make sure you understand how they work. strip and replace are particularly useful.**

@@ -3,13 +3,16 @@
 ## 8.1 A list is a sequence
 
 * **list** : a sequence of values
-   * element or item : the values can be any type, a string, a float, an integer, and anther list
-   * enclose the elements in square brackets([ ])
-      * [10, 20, 30, 40], ['crunchy frog', 'ram bladder', 'lark vomit'], ['spam', 2.0, 5, [10, 20]]
-   * nested : a list within another list
-   * empty list: a list contains no elements, with empty brackets []
 
-* assign list values to variables
+   * **element or item**
+      * the values can be any type, a string, a float, an integer, and another list
+      * separated by commas(,)
+   * create a new list: enclose the elements in square brackets([ ])
+      * [10, 20, 30, 40], ['crunchy frog', 'ram bladder', 'lark vomit'], ['spam', 2.0, 5, [10, 20]]
+   * **nested** : a list within another list
+   * **empty list**: a list contains no elements, with empty brackets []
+
+* **assign list values to variables**
 
 ```python
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']   
@@ -22,8 +25,9 @@
 ## 8.2 Lists are mutable
 
 * **access the elements of a list**
-   * bracket operator[]: the expression inside the brackets specifies the index
-   * the index of a list start at 0
+
+   * **bracket operator `[]`**: the expression inside the brackets specifies the index
+   * the indices start at 0
 
 ```python  
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']  
@@ -31,15 +35,30 @@
 Cheddar  
 ``` 
 
-* Lists are mutable because you can change the order of items in a list or reassign an item in a list.
+* **Lists are mutable 
 
-* reassign an item in a list
+   * change the order of items in a list
+   * reassign an item in a list
 
 ```python  
 >>> numbers = [17, 123]  
 >>> numbers[1] = 5  
 >>> print(numbers)  
 [17, 5]  
+
+# If an index has a negative value, it counts backward from the end of the list
+>>> numbers[-1]
+123
+
+# Any integer expression can be used as an index
+>>> numbers[1-1]
+17
+
+# If you try to read or write an element that does not exist, you get an IndexError.
+>>> numbers[3]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
 ```
 
 * **in operator**
@@ -52,18 +71,40 @@ True
 False  
 ```
 
-## 8.3 Traversing a list
-
-* **for loop** : read the elements of the list
+* **`range()` function** - returns a list of numbers that range from zero to one less than the parameter
 
 ```python
->>> cheeses = ['Cheddar', 'Edam', 'Gouda']
->>> for cheese in cheeses:
-...     print(cheese)
+>>> print(range(4))
+range(0, 4)            # [0, 1, 2, 3]
+
+>>> friends = ['Joseph', 'Glenn', 'Sally']
+>>> print(len(friends))
+3
+>>> print(range(len(friends)))
+range(0, 3)            # [0, 1, 2]     
+```
+
+## 8.3 Traversing a list
+
+* **`for` loop** : traverse the elements of a list
+
+```python
+>>> friends = ['Joseph', 'Glenn', 'Sally']
+>>> for friend in friends :
+...     print('Happy New Year:',  friend)
 ... 
-Cheddar
-Edam
-Gouda
+Happy New Year: Joseph
+Happy New Year: Glenn
+Happy New Year: Sally
+
+>>> friends = ['Joseph', 'Glenn', 'Sally']
+>>> for i in range(len(friends)) :
+...     friend = friends[i]
+...     print('Happy New Year:', friend)
+... 
+Happy New Year: Joseph
+Happy New Year: Glenn
+Happy New Year: Sally
 ```
 
 ```python
@@ -86,7 +127,7 @@ for x in empty:
 
 ## 8.4 List operations
 
-* **the + operator concatenates lists**
+* **Concatenating lists using the `+` operator **
 
 ```python
 >>> a = [1, 2, 3]
@@ -95,7 +136,7 @@ for x in empty:
 >>> print(c)
 [1, 2, 3, 4, 5, 6]
 ```
-* **the * operator repeats a list a given number of times**
+* **Repeating a list a given number of times using the `*` operator**
 
 ```python
 >>> [1, 2, 3] * 3
@@ -118,7 +159,7 @@ for x in empty:
 ['a', 'b', 'c', 'd', 'e', 'f'] 
 ```
 
-* **update elements**
+* **reassign elements**
    
 ```python
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f'] 
@@ -222,6 +263,9 @@ c
 >>> print(sum(nums)/len(nums))
 25.666666666666668
 ```
+
+
+
 * **compute the average of a list of numbers entered by the user**
 
 ```

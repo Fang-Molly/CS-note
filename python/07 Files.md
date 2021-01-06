@@ -306,7 +306,7 @@ fhand = open(fname)
 
 for line in fhand:
     line = line.rstrip().upper()
-print(line)
+    print(line)
 ```
 
 
@@ -328,20 +328,19 @@ Test your file on the mbox.txt and mbox-short.txt files.
 fname = input('Enter the file name: ')
 fhand = open(fname)
 
-for line in fhand:
-    line = line.rstrip()
-    if line.startswith('X-DSPAM-Confidence:'):
-        # print(line)
-        atpos = line.find(':')
-        data = line[atpos+2:]
-
 count = 0
 sum = 0
 
-for value in data:
-    count = count + 1
-    sum = sum + float(value)
-    print("Average spam confidence:", sum / count)
+for line in fhand:
+    line = line.rstrip()
+    if line.startswith('X-DSPAM-Confidence:'):
+        atpos = line.find(':')
+        data = float(line[atpos+2:])
+        count = count + 1
+        sum = sum + data
+        average = sum / count
+
+print('Average spam confidence:', average)
 ```
 
 **Exercise 3: Sometimes when programmers get bored or want to have a bit of fun, they add a harmless Easter Egg to their program. Modify the program that prompts the user for the file name so that it prints a funny message when the user types in the exact file name “na na boo boo”. The program should behave normally for all other files which exist and don’t exist. Here is a sample execution of the program:**
@@ -359,3 +358,23 @@ Enter the file name: na na boo boo
 NA NA BOO BOO TO YOU - You have been punk'd!
 
 We are not encouraging you to put Easter Eggs in your programs; this is just an exercise.
+
+```python
+fname = input('Enter the file name: ')
+
+try:
+    fhand = open(fname)
+except:
+    if fname == 'na na boo boo':
+        print("NA NA BOO BOO TO YOU - You have been punk'd!")
+        exit()
+    else:
+        print("File cannot be opened:", fname)
+        exit()
+
+count = 0
+for line in fhand:
+    if line.startswith('Subject:'):
+        count = count + 1
+print('There were', count, 'subject lines in', fname)
+```

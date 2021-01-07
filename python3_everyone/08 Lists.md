@@ -61,7 +61,7 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-* **in operator**
+* **`in` operator** - Is something in a list?
 
 ```python
 >>> cheeses = ['Cheddar', 'Edam', 'Gouda']
@@ -69,6 +69,8 @@ IndexError: list index out of range
 True  
 >>> 'Brie' in cheeses
 False  
+>>> 'Elf' not in cheeses
+True
 ```
 
 * **`range()` function** - returns a list of numbers that range from zero to one less than the parameter
@@ -170,18 +172,31 @@ for x in empty:
 
 ## 8.6 List methods
 
-* **append() method : add a new element to the end of a list**
+```python
+>>> x = list()
+>>> type(x)
+<class 'list'>
+>>> dir(x)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> 
+```
+
+* **`list.append()` method : add a new element to the end of a list**
 
 ```python
->>> t = ['a', 'b', 'c']
->>> t.append('d')
->>> print(t)
-['a', 'b', 'c', 'd']
+>>> stuff = list()         # create an empty list
+>>> stuff.append('book')   # add elements
+>>> stuff.append(99)       
+>>> print(stuff)
+['book', 99]
+>>> stuff.append('cookie') # list stays in order and add new elements at the end
+>>> print(stuff)
+['book', 99, 'cookie']
 ```
 
-* **extend() method : take a list as an argument and append all of the elements**
+* **`list.extend()` method : take a list as an argument and append all of the elements**
 
-```
+```python
 >>> t1 = ['a', 'b', 'c']
 >>> t2 = ['d', 'e']
 >>> t1.extend(t2)
@@ -189,20 +204,37 @@ for x in empty:
 ['a', 'b', 'c', 'd', 'e']
 ```
 
-* **sort() method : arrange the elements of the list from low to high**
+* **`list.sort()` method : arrange the elements of the list from low to high**
 
-```
+```python
+# list.sort()
 >>> t = ['d', 'c', 'e', 'b', 'a']
 >>> t.sort()
 >>> print(t)
 ['a', 'b', 'c', 'd', 'e']
+
+>>> t = ['d', 'c', 'e', 'b', 'a']
+>>> print(t.sort())
+None
+>>> type(t.list())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'list'
+
+# sorted(list)
+>>> t = ['d', 'c', 'e', 'b', 'a']
+>>> sorted(t)
+['a', 'b', 'c', 'd', 'e']
+
+>>> print(sorted(t))
+['a', 'b', 'c', 'd', 'e']
+>>> type(sorted(t))
+<class 'list'>
 ```
 
 ## 8.7 Deleting elements
 
-* **pop() method**
-
-   * if you know the index of the element you want
+* **`list.pop()` method**
       
 ```python
 >>> t = ['a', 'b', 'c']
@@ -211,10 +243,8 @@ for x in empty:
 ['a', 'c']
 >>> print(x)
 b
-```
-   * if you don't provide an index, it deletes and returns the last element
 
-```python
+# if you don't provide an index, it deletes and returns the last element
 >>> t = ['a', 'b', 'c']
 >>> x = t.pop()
 >>> print(t)
@@ -223,7 +253,7 @@ b
 c
 ```
 
-* **del() method : if you know the index and you don't need the removed value**
+* **`del()` method : if you know the index and you don't need the removed value**
 
 ```python
 >>> t = ['a', 'b', 'c']
@@ -237,7 +267,7 @@ c
 ['a', 'f']
 ```   
 
-* **remove() method : if you know the element you want to remove (but not the index)**
+* **`list.remove()` method : if you know the element you want to remove (but not the index)**
 
 ```
 >>> t = ['a', 'b', 'c']
@@ -248,9 +278,9 @@ c
 
 ## 8.8 Lists and functions
 
-* **built-in functions**
+* **Built-in functions**
 
-```
+```python
 >>> nums = [3, 41, 12, 9, 74, 15]
 >>> print(len(nums))
 6
@@ -264,14 +294,12 @@ c
 25.666666666666668
 ```
 
-
-
 * **compute the average of a list of numbers entered by the user**
 
-```
+```python
 total = 0  
 count = 0   
-while (True):  
+while True:  
     inp = input('Enter a number: ')   
     if inp == 'done': break  
     value = float(inp)  
@@ -281,20 +309,23 @@ while (True):
 average = total / count  
 print('Average:', average)  
 ```
+
 ```python
 numlist = list()   
-while (True):  
+while True:  
     inp = input('Enter a number: ')   
     if inp == 'done': break  
     value = float(inp)  
     numlist.append(value)  
+    
 average = sum(numlist) / len(numlist)  
 print('Average:', average)
 ```
 
 ## 8.9 Lists and strings
 
-* **list() : built-in function, convert from a string to a list of characters**
+* **`list()` : built-in function, convert from a string to a list of characters**
+   
    * break a string into individual letters
 
 ```python
@@ -304,18 +335,26 @@ print('Average:', average)
 ['s', 'p', 'a', 'm']
 ```
 
-* **split() : break a string into words**
+* **`string.split()` : break a string into parts and produces a list of strings.**
 
 ```python
->>> s = 'pining for the fjords'
->>> t = s.split()
->>> print(t)
-['pining', 'for', 'the', 'fjords']
->>> print(t[2])
-the
+>>> abc = 'with three words'
+>>> stuff = abc.split()
+>>> print(stuff)
+['with', 'three', 'words']
+>>> print(len(stuff))
+3
+>>> print(stuff[0])
+with
+>>> for w in stuff:       # for loop
+...     print(w)
+... 
+with
+three
+words
 ```
 
-* **split(delimiter): specifies which characters to use as word boundaries.**
+* **`string.split(delimiter)`: specifies which characters to use as word boundaries.**
 
 ```python
 >>> s = 'spam-spam-spam'
@@ -326,7 +365,30 @@ the
 ['spam', 'spam', 'spam']
 ```
 
-* **join() : take a list of strings and concatenate the elements. **
+```python
+# When you do not specify a delimiter, multiple spaces are treated like one delimiter
+>>> line = 'A lot            of spaces'
+>>> etc = line.split()
+>>> print(etc)
+['A', 'lot', 'of', 'spaces']
+>>> etc = line.split(' ')
+>>> print(etc)
+['A', 'lot', '', '', '', '', '', '', '', '', '', '', '', 'of', 'spaces']
+>>> 
+>>> line = 'first;second;third'
+>>> thing = line.split()
+>>> print(thing)
+['first;second;third']
+>>> print(len(thing))
+1
+>>> thing = line.split(';')
+>>> print(thing)
+['first', 'second', 'third']
+>>> print(len(thing))
+3
+```
+
+* **`join()` : take a list of strings and concatenate the elements. **
 
 ```python
 >>> t = ['pining', 'for', 'the', 'fjords']
@@ -343,16 +405,30 @@ From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
 fhand = open('mbox-short.txt')   
 for line in fhand:
     line = line.rstrip()   
-    if not line.startswith('From '):   
-        continue   
+    if not line.startswith('From ') : continue   
     words = line.split()   
-print(words[2])   
+    print(words[2])   
 
 Sat 
 Fri 
 Fri 
 Fri 
 ...
+```
+
+```python
+>>> line = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+>>> words = line.split()
+>>> print(words)
+['From', 'stephen.marquard@uct.ac.za', 'Sat', 'Jan', '5', '09:14:16', '2008']
+>>> email = words[1]
+>>> print(email)
+stephen.marquard@uct.ac.za
+>>> pieces = email.split('@')
+>>> print(pieces)
+['stephen.marquard', 'uct.ac.za']
+>>> print(pieces[1])
+uct.ac.za
 ```
 
 ## 8.11 Objects and values
@@ -482,7 +558,6 @@ False
 **Exercise 1: Write a function called chop that takes a list and modifies it, removing the first and last elements, and returns None. Then write a function called middle that takes a list and returns a new list that contains all but the first and last elements.**
 
 ```python
-
 def chop(list):
     del list[0]
     del list[-1]
@@ -497,33 +572,36 @@ list2 = [1, 2, 3, 4]
 
 print(chop(list1))
 print(middle(list2))
-```
 
+$ python3 ex_08_01.py
+None
+[2, 3]
+```
 
 **Exercise 2: Figure out which line of the above program is still not properly guarded. See if you can construct a text file which causes the program to fail and then modify the program so that the line is properly guarded and test it to make sure it handles your new text file.**
 
 ```python
-fhand = open('exercise8_2.txt')
+fhand = open('mbox-short.txt')
 for line in fhand:
     words = line.split()
 
     if len(words) < 3:
         continue
-    if word[0] != 'From':
+    if words[0] != 'From':
         continue
-    print(word[2])
+    print(words[2])
 ```
 
 
 **Exercise 3: Rewrite the guardian code in the above example without two if statements. Instead, use a compound logical expression using the or logical operator with a single if statement.**
 
 ```python
-fhand = open('exercise8_2.txt')
+fhand = open('mbox-short.txt')
 for line in fhand:
     words = line.split()
     if len(words) < 3 or words[0] != 'From':
         continue
-    print(word[2])
+    print(words[2])
 ```
 
 **Exercise 4: Download a copy of the file www.py4e.com/code3/romeo.txt. Write a program to open the file romeo.txt and read it line by line. For each line, split the line into a list of words using the split function. For each word, check to see if the word is already in a list. If the word is not in the list, add it to the list. When the program completes, sort and print the resulting words in alphabetical order.**   
@@ -534,12 +612,14 @@ Enter file: romeo.txt
 ```python
 list = []
 fhand = open ('romeo.txt')
+
 for line in fhand:
     words = line.split()     # split line into words
     for word in words:
         if word in list:
             continue         # discard duplicates
         list.append(word)    # update the list
+        
 print(sorted(list))          # alphabetical order
 ```
 
@@ -564,15 +644,22 @@ cwen@iupui.edu
 There were 27 lines in the file with From as the first word  
 
 ```python
-fhand = open('mbox-short.txt')
+fname = input('Enter a file name: ')
+fhand = open(fname)
 count = 0
+
 for line in fhand:
+    line = line.rstrip()
     words = line.split()
+    
     if len(words) < 3 or words[0] != 'From':
         continue
-    print(word[1])
+        
+    email = words[1]
+    print(email)
     count = count + 1
-print('There were %d lines in the file with From as the first word' % count)
+
+print('There were', count, 'lines in the file with From as the first word')
 ```
 
 **Exercise 6: Rewrite the program that prompts the user for a list of numbers and prints out the maximum and minimum of the numbers at the end when the user enters “done”. Write the program to store the numbers the user enters in a list and use the max() and min() functions to compute the maximum and minimum numbers after the loop completes.**  
@@ -588,20 +675,19 @@ Minimum: 2.0
 
 ```python
 list = []
-while True:
-    number = 0.0
-    input_number = input('Enter a number: ')
-    if input_number == 'done':
-        break
 
-    try: 
-        number = float(input_number)
-    except ValueError:
+while True:
+    num = input('Enter a number: ')
+    if num == 'done':
+        break
+    try:
+        value = float(num)
+    except:
         print('Invalid input')
         quit()
 
-    list.append(input_number)
+    list.append(value)
 
-print('Maximum: ', max(list))
-print('Minimum: ', min(list))
+print('Maximum:', max(list))
+print('Minimum:', min(list))
 ```

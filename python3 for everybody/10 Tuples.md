@@ -5,41 +5,52 @@
 * **tuple**
    * a sequence of values, much like a list
    * the values can be any type
+   * be indexed by integers, staring at 0
    * tuple can't be used as a variable name.
-   * be indexed by integers
    * be immutable
    * be comparable and hashable
       * can sort lists of them
       * can be used as key values in Python dictionaries
-      
-* **syntax of tuple**
-   * each element must be enclosed by ''
-   * enclose tuples in parentheses to help identify tuples quickly
    
 ```python
+# comma-separated list of values, each element must be enclosed by ''
 >>> t = 'a', 'b', 'c', 'd', 'e'
+>>> print(t)
+('a', 'b', 'c', 'd', 'e')
+>>> type(t)
+<class 'tuple'>
+
+# It is common to enclose tuples in parentheses ()
 >>> t = ('a', 'b', 'c', 'd', 'e')
+>>> print(t)
+('a', 'b', 'c', 'd', 'e')
+>>> type(t)
+<class 'tuple'>
 ```
-   * have to include the final comma when a tuple has a single element; Without comma, the type is string
 
 ```python
->>> t1 = ('a',)
->>> type(t1)
+# create a tuple with a single element, you have to include the final comma
+>>> m = ('a',)
+>>> type(m)
 <class 'tuple'>
->>> t2 = ('a')
->>> type(t2)
+
+# without the comma, the type is string
+>>> m = ('a')
+>>> type(m)
 <class 'str'>
 ```
 
-* **built-in function tuple**: another way to construct a tuple
+* **`tuple()`**: built-in function, to create a tuple
 
 ```python
 # create an empty tuple with no argument
 >>> t = tuple()
 >>> print(t)
 ()
-```
-```python
+>>> type(t)
+<class 'tuple'>
+
+# If the argument is a sequence(string, list, or tuple), the result of the call to tuple is a tuple with the elements of the sequence:
 >>> t = tuple('lupins')
 >>> print(t)
 ('l', 'u', 'p', 'i', 'n', 's')
@@ -53,28 +64,87 @@
 a
 >>> print(t[1:3])
 ('b', 'c')
+
+>>> y = (1, 9, 2)
+>>> print(y)
+(1, 9, 2)
+>>> print(max(y))
+9
+>>> for iter in y:
+...     print(iter)
+... 
+1
+9
+2
 ```
 
-* You can't modify the elements of a tuple, you can replace one tuple with another
+* Tuples are immutable. You can't modify the elements of a tuple, you can replace one tuple with another
 
 ```python
+# lists are mutable
+>>> x = [9, 8, 7]
+>>> x[2] = 6
+>>> print(x)
+[9, 8, 6]
+
+# strings are immutable
+>>> y = 'ABC'
+>>> y[2] = 'D'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+
+# tuples are immutable
 >>> t[0] = 'A'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'tuple' object does not support item assignment
-
+# replace one tuple with another
 >>> t = ('A',) + t[1:]
 >>> print(t)
 ('A', 'b', 'c', 'd', 'e')
 ```
 
+```python
+>>> l = list()
+>>> dir(l)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+
+>>> t = tuple()
+>>> dir(t)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+```
+
+```python
+>>> x = [3, 2, 1]
+>>> x.sort()
+>>> print(x)
+[1, 2, 3]
+>>> x.append(5)
+>>> print(x)
+[1, 2, 3, 5]
+>>> x.reverse()
+>>> print(x)
+[5, 3, 2, 1]
+
+>>> x = (3, 2, 1)
+>>> x.sort()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'sort'
+>>> x.append(5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'append'
+>>> x.reverse()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'reverse'
+
+```
 ## 10.2 Comparing tuples
 
-* The comparison operators work with tuples and other sequences. 
-
-   * Comparing starts by the first element from each sequence. If they are equal, it goes on to the next element, and so on, until it finds elements that differ. 
-   
-   * Subsuquent elements are not considered, even if they are really big.
+* Comparing starts by the first element from each sequence. If they are equal, it goes on to the next element, and so on, until it finds elements that differ. Subsuquent elements are not considered, even if they are really big.
 
 ```python
 >>> (0, 1, 2) < (0, 3, 4)
@@ -82,33 +152,35 @@ True
 >>> (0, 1, 2000000) < (0, 3, 4)
 True
 ```
-* sort function
+* **`sort` function**
 
    * primarily by first element, if it is equal, then by second element, and so on
    
-* DSU pattern
+* **DSU pattern**
 
-   * decorate: building a list of tuples with one or more sort keys preceding the elements from the sequence
+   * **decorate**: building a list of tuples with one or more sort keys preceding the elements from the sequence
    
-   * sort: using the Python built-in sort
+   * **sort**: using the Python built-in sort
    
-   * undecorate: by extracting the sorted elements of the sequence
+   * **undecorate**: by extracting the sorted elements of the sequence
 
 ```python
 # suppose you have a list of words and you want to sort them from longest to shortest
->>> txt = 'but soft what light in yonder window breaks'
->>> words = txt.split()
->>> t = list()
->>> for word in words:
-...     t.append((len(word), word))
-... 
->>> t.sort(reverse=True)
->>> 
->>> res = list()
->>> for length, word in t:
-...     res.append(word)
-... 
->>> print(res)
+txt = 'but soft what light in yonder window breaks'
+words = txt.split()
+t = list()
+for word in words:
+    t.append((len(word), word))
+
+t.sort(reverse=True)
+
+res = list()
+for length, word in t:
+    res.append(word)
+
+print(res)
+
+$ python3 tuple.sort.py
 ['yonder', 'window', 'breaks', 'light', 'what', 'soft', 'but', 'in']
 ```
 
@@ -117,20 +189,14 @@ True
 * have a tuple on the left side and assign more than one variable at a time in a single statement
 
 ```python
->>> m = [ 'have', 'fun' ]
->>> x, y = m
->>> x
-'have'
->>> y
-'fun'
->>>
-# omiting the parentheses is an equally valid syntax
->>> m = [ 'have', 'fun' ] 
->>> (x, y) = m
->>> x
-'have'
->>> y 'fun' >>>
+>>> (x, y) = (4, 'fred')
+>>> print(y)
+fred
 
+# omiting the parentheses is an equally valid syntax
+>>> x, y = 4, 'fred'
+>>> print(y)
+fred
 ```
 ```python
 >>> m = [ 'have', 'fun' ]
@@ -151,7 +217,9 @@ True
 ```python   
 >>> a, b = b, a
 >>> a, b = 1, 2, 3
-ValueError: too many values to unpack
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack (expected 2)
 ```
 ```python
 >>> addr = 'monty@python.org'
@@ -164,7 +232,7 @@ python.org
 
 ## 10.4 Dictionaries and tuples
 
-* ```items``` method : returns a list of tuples, each tuple is a key-value pair
+* `items()` method : returns a list of tuples, each tuple is a key-value pair
    * the items are in no particular order
    * sort a dictionary in ascending alphabetical by the key value
    
@@ -172,7 +240,7 @@ python.org
 >>> d = {'a':10, 'b':1, 'c':22}
 >>> t = list(d.items())
 >>> print(t)
-[('a', 10), ('b', 1), ('c', 22)]
+[('b', 1), ('a', 10), ('c', 22)]
 >>> t.sort()
 >>> t
 [('a', 10), ('b', 1), ('c', 22)]
@@ -181,7 +249,7 @@ python.org
 
 ## 10.5 Multiple assignment with dictionaries
 
-* combine ```items```, tuple assignment, and ```for``` to traverse the keys and values of a dictionary in a single loop
+* combine `items`, tuple assignment, and `for` to traverse the keys and values of a dictionary in a single loop
 
 ```python
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -231,6 +299,7 @@ lst.sort(reverse=True)
 for key, val in lst[:10]:
     print(key, val)
 
+$ pyhton3 common_words.py
 3 the
 3 is
 3 and

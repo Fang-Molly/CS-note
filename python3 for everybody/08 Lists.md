@@ -2,12 +2,12 @@
 
 ## 8.1 A list is a sequence
 
-* **list** : a sequence of values
+* **list** : a collection allows us to put many values in a single "variable"
 
    * **element or item**
       * the values can be any type, a string, a float, an integer, and another list
       * separated by commas(,)
-   * create a new list: enclose the elements in square brackets([ ])
+   * enclose the elements in square brackets([ ])
       * [10, 20, 30, 40], ['crunchy frog', 'ram bladder', 'lark vomit'], ['spam', 2.0, 5, [10, 20]]
    * **nested** : a list within another list
    * **empty list**: a list contains no elements, with empty brackets []

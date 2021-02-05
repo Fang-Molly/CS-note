@@ -27,6 +27,7 @@
 * **access the elements of a list**
 
    * **bracket operator `[]`**: the expression inside the brackets specifies the index
+   
    * the indices start at 0
 
 ```python  
@@ -34,6 +35,30 @@
 >>> print(cheeses[0])  
 Cheddar  
 ``` 
+
+   * If an index has a negative value, it counts backward from the end of the list
+   
+```python
+>>> cheeses = ['Cheddar', 'Edam', 'Gouda']
+>>> cheeses[-1]
+'Gouda'
+```
+
+   * Any integer expression can be used as an index
+
+```python
+>>> cheeses[1-1]
+'Cheddar'
+```
+
+   * If you try to read or write an element that does not exist, you get an IndexError.
+
+```python
+>>> cheeses[3]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+```
 
 * **Lists are mutable 
 
@@ -44,21 +69,31 @@ Cheddar
 >>> numbers = [17, 123]  
 >>> numbers[1] = 5  
 >>> print(numbers)  
-[17, 5]  
-
-# If an index has a negative value, it counts backward from the end of the list
->>> numbers[-1]
-123
-
-# Any integer expression can be used as an index
->>> numbers[1-1]
-17
-
-# If you try to read or write an element that does not exist, you get an IndexError.
->>> numbers[3]
+[17, 5]
+```
+   * strings are immutable
+   
+```python
+>>> fruit = 'Banana'
+>>> fruit[0] = 'b'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-IndexError: list index out of range
+TypeError: 'str' object does not support item assignment
+>>>
+>>> x = fruit.lower()
+>>> print(x)
+banana
+```
+
+* How long is a list?   `len()`
+
+```python
+>>> greet = 'Hello Bob'
+>>> len(greet)
+9
+>>> x = [1, 2, 'joe', 99]
+>>> len(x)
+4
 ```
 
 * **`in` operator** - Is something in a list?
@@ -73,17 +108,56 @@ False
 True
 ```
 
-* **`range()` function** - returns a list of numbers that range from zero to one less than the parameter
+* **`range()` function** - returns a list of numbers that range from zero to one less than the parameter  `range(3) == [0, 1, 2]`
 
 ```python
->>> print(range(4))
-range(0, 4)            # [0, 1, 2, 3]
-
->>> friends = ['Joseph', 'Glenn', 'Sally']
->>> print(len(friends))
+>>> # one parameter
+>>> for i in range(5):
+...     print(i)
+... 
+0
+1
+2
 3
->>> print(range(len(friends)))
-range(0, 3)            # [0, 1, 2]     
+4
+
+>>> # two parameters
+>>> for i in range(3, 6):
+...     print(i)
+... 
+3
+4
+5
+
+>>> # three parameters
+>>> for i in range(4, 10, 2):
+...     print(i)
+... 
+4
+6
+8
+
+>>> # Going backwards
+>>> for i in range(0, -10, -2):
+...     print(i)
+... 
+0
+-2
+-4
+-6
+-8
+
+>>> # Iterating lists
+>>> my_list = ['one', 'two', 'three', 'four', 'five']
+>>> my_list_len = len(my_list)
+>>> for i in range(0, my_list_len):
+...     print(my_list[i])
+... 
+one
+two
+three
+four
+five
 ```
 
 ## 8.3 Traversing a list
@@ -148,6 +222,8 @@ for x in empty:
 ## 8.5 List slices
 
 * **slice operator**
+
+   * Just like in strings, the second number is "up to but not including"
 
 ```python
 >>> t = ['a', 'b', 'c', 'd', 'e', 'f'] 

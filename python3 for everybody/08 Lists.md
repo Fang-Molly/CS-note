@@ -658,9 +658,11 @@ None
 
 ```python
 fhand = open('mbox-short.txt')
-for line in fhand:
-    words = line.split()
 
+for line in fhand:
+    line = line.rstrip()
+    words = line.split()
+    # guardian pattern
     if len(words) < 3:
         continue
     if words[0] != 'From':
@@ -673,8 +675,11 @@ for line in fhand:
 
 ```python
 fhand = open('mbox-short.txt')
+
 for line in fhand:
+    line = line.rstrip()
     words = line.split()
+    # guardian in a compound statement
     if len(words) < 3 or words[0] != 'From':
         continue
     print(words[2])

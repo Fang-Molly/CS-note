@@ -14,19 +14,18 @@
    
 ```python
 # create an empty dictionary
->>> eng2sp = dict()
+>>> eng2sp = dict()   # or eng2sp = {}
 >>> print(eng2sp)
 {}          
 
 # add items using square brackets []
 >>> eng2sp['one'] = 'uno'
->>> print(eng2sp)
-{'one': 'uno'}
-
-# look up the corresponding values using square brackets []
->>> eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
+>>> eng2sp['two'} = 'dos'
+>>> eng2sp['three'] = 'tres'
 >>> print(eng2sp)
 {'one': 'uno', 'two': 'dos', 'three': 'tres'}
+
+# look up the corresponding values using square brackets []
 >>> print(eng2sp['two'])
 dos
 
@@ -81,18 +80,18 @@ True
 >>> lst = list()
 >>> lst.append(21)
 >>> lst.append(183)
->>> print(lst)
+ >>> print(lst)
 [21, 183]
->>> lst[0] = 23
+>>> lst[0] = 23    # mutable
 >>> print(lst)
-[23, 183]
+[23, 183]   
 
 # dictionary: ['age']-23; ['course']-182
 >>> ddd['age'] = 21
 >>> ddd['course'] = 182
 >>> print(ddd)
 {'age': 21, 'course': 182}
->>> ddd['age'] = 23
+>>> ddd['age'] = 23    # mutable
 >>> print(ddd)
 {'age': 23, 'course': 182}
 ```

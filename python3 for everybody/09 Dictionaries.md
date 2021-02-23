@@ -1,5 +1,7 @@
 # Chapter 9  Dictionaries
 
+## 9.1 What is a collection?
+
 * **dictionaries** - Python's most powerful data collection
    * Enclosed by curly braces {}
    * Indices: can be any type, called keys 
@@ -96,7 +98,7 @@ True
 {'age': 23, 'course': 182}
 ```
 
-## 9.1 Dictionary as a set of counters
+## 9.2 Dictionary as a set of counters
 
 * **count how many times something appears**
 
@@ -184,7 +186,7 @@ Counting...
 Counts {'the': 7, 'clown': 2, 'ran': 2, 'after': 1, 'car': 3, 'and': 3, 'into': 1, 'tent': 2, 'fell': 1, 'down': 1, 'on': 1}
 ```
 
-## 9.2 Dictionaries and files
+## 9.3 Dictionaries and files
 
 ```python
 fname = input('Enter the file name: ')
@@ -209,7 +211,7 @@ print(counts)
    * -=, *=, /=
 
 
-## 9.3 Looping and dictionaries
+## 9.4 Looping and dictionaries
 
 * **`for` statement: traverse the keys of the dictionary**
 
@@ -247,6 +249,8 @@ chuck 1
 jan 100
 ```
 
+* **`counts.keys()`, `counts.values()`, `counts.items()`**
+
 ```python
 >>> counts = {'chuck' : 1, 'annie' : 42, 'jan' : 100}
 >>> list(counts)
@@ -259,17 +263,39 @@ dict_values([1, 42, 100])
 dict_items([('chuck', 1), ('annie', 42), ('jan', 100)])
 ```
 
+* **Loop through the key-value pairs using two iteration variables**
+
 ```python
 >>> counts = {'chuck' : 1, 'annie' : 42, 'jan' : 100}
 >>> for a,b in counts.items():
 ...     print(a,b)
-... 
+...         
 chuck 1
 annie 42
 jan 100
 ```
 
-## 9.4 Advanced text parsing
+```python
+name = input('Enter file:')
+handle = open(name)
+
+counts = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word,0) + 1
+        
+bigcount = None
+bigword = None
+for word,count in counts.items():
+    if bigcount is None or count > bigcount:
+        bigword = word
+        bigcount = count
+
+print(bigword, bigcount)
+```
+
+## 9.5 Advanced text parsing
 
 * **translate method : line.translate(str.maketrans(fromstr, tostr, deletestr))**
 
@@ -279,7 +305,7 @@ jan 100
 '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 ```
 
-```
+```python
 import string
 
 fname = input('Enter the file name: ')
@@ -302,35 +328,35 @@ for line in fhand:
             counts[word] += 1
 ```            
 
-## 9.5 Debugging
+------------------------
 
-Here are some suggestions for debugging large datasets:
-
-* Scale down the input
-
-* Check summaries and types
-
-* Write self-checks
-
-* Pretty print the output
-
-
-## 9.6 Glossary
+## Glossary
 
 * **dictionary** A mapping from a set of keys to their corresponding values. 
+
 * **hashtable** The algorithm used to implement Python dictionaries.
+
 * **hash function** A function used by a hashtable to compute the location for a key.
+
 * **histogram** A set of counters.
+
 * **implementation** A way of performing a computation.
+
 * **item** Another name for a key-value pair.
+
 * **key** An object that appears in a dictionary as the first part of a key-value pair. 
+
 * **key-value pair** The representation of the mapping from a key to a value. 
+
 * **lookup** A dictionary operation that takes a key and finds the corresponding value.
+
 * **nested loops** When there are one or more loops “inside” of another loop. The inner loop runs to completion each time the outer loop runs once.
+
 * **value** An object that appears in a dictionary as the second part of a key-value pair. This is more specific than our previous use of the word “value”.
 
+------------------
 
-## 9.7 Exercises
+## Exercises
 
 **Exercise 1: Download a copy of the file www.py4e.com/code3/words.txt
 
@@ -485,4 +511,26 @@ for line in fhand:
     domain_counts[domain] = domain_counts.get(domain,0) + 1
 
 print(domain_counts)
+```
+
+**Exercise 6: Counting word frequency using a Dictionary**
+
+```python
+fname = input('Enter File: ')
+hand = open(fname)
+
+di = dict()
+for line in hand:
+    line = line.rstrip()
+    words = line.split()
+    for word in words:
+    di[word] = di.get(word,0) + 1
+    
+largest = -1
+theword = None
+for a,b in di.items():
+    if b > largest:
+        largest = b
+        theword = a
+print('Done', theword, largest)
 ```

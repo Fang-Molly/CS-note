@@ -1,6 +1,6 @@
 # Chapter 10  Tuples
 
-## 10.1 Tuples are immutable
+## 10.1 What is a tuple
 
 * **tuple**
    * a sequence of values, much like a list
@@ -56,7 +56,7 @@
 ('l', 'u', 'p', 'i', 'n', 's')
 ```
 
-* Most list operator also works on tuples
+* **Most list operator also works on tuples**
 
 ```python
 >>> t = ('a', 'b', 'c', 'd', 'e')
@@ -78,7 +78,7 @@ a
 2
 ```
 
-* Tuples are immutable. You can't modify the elements of a tuple, you can replace one tuple with another
+* **Tuples are immutable**
 
 ```python
 # lists are mutable
@@ -94,7 +94,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'str' object does not support item assignment
 
-# tuples are immutable
+# tuples are immutable 
 >>> t[0] = 'A'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -105,14 +105,16 @@ TypeError: 'tuple' object does not support item assignment
 ('A', 'b', 'c', 'd', 'e')
 ```
 
+* **Things not to do with tuples**
+
 ```python
 >>> l = list()
 >>> dir(l)
-['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+['append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
 
 >>> t = tuple()
 >>> dir(t)
-['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+['count', 'index']
 ```
 
 ```python
@@ -140,22 +142,41 @@ AttributeError: 'tuple' object has no attribute 'append'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: 'tuple' object has no attribute 'reverse'
-
 ```
-## 10.2 Comparing tuples
 
-* Comparing starts by the first element from each sequence. If they are equal, it goes on to the next element, and so on, until it finds elements that differ. Subsuquent elements are not considered, even if they are really big.
+* **Why use Tuples: more efficient**
+
+   * Tuples are simpler and more efficient in memory use and performance than lists.
+
+   * We prefer tuples over lists when we are making "temporary variables"
+ 
+
+## 10.2 Tuples are comparable
+
+* **Comparison operators**
+
+   * Comparing starts by the first element from each sequence. If they are equal, it goes on to the next element, and so on, until it finds elements that differ. Subsuquent elements are not considered, even if they are really big.
 
 ```python
 >>> (0, 1, 2) < (0, 3, 4)
 True
 >>> (0, 1, 2000000) < (0, 3, 4)
 True
+>>> ('Jones', 'Sally') < ('Jones','Sam')
+True
 ```
-* **`sort` function**
+* **Sorting lists of tuples**
 
-   * primarily by first element, if it is equal, then by second element, and so on
+   * sort the dictionary by the key using the `items()` method and `sorted()` function
    
+```python
+>>> d = {'a':10, 'b':1, 'c':22}
+>>> d.items()
+dict_items([('a', 10), ('b', 1), ('c', 22)])
+>>> sorted(d.items())
+[('a', 10), ('b', 1), ('c', 22)]
+```
+
 * **DSU pattern**
 
    * **decorate**: building a list of tuples with one or more sort keys preceding the elements from the sequence
@@ -184,9 +205,9 @@ $ python3 tuple.sort.py
 ['yonder', 'window', 'breaks', 'light', 'what', 'soft', 'but', 'in']
 ```
 
-## 10.3 Tuple assignment
+## 10.3 Tuples and assignment
 
-* have a tuple on the left side and assign more than one variable at a time in a single statement
+* We can have a tuple on the left side and assign more than one variable at a time in a single statement
 
 ```python
 >>> (x, y) = (4, 'fred')
@@ -232,17 +253,20 @@ python.org
 
 ## 10.4 Dictionaries and tuples
 
-* `items()` method : returns a list of tuples, each tuple is a key-value pair
+* **`items()` method** : returns a list of tuples, each tuple is a key-value pair
    * the items are in no particular order
    * sort a dictionary in ascending alphabetical by the key value
    
 ```python
 >>> d = {'a':10, 'b':1, 'c':22}
->>> t = list(d.items())
+>>> t = d.items()
 >>> print(t)
-[('b', 1), ('a', 10), ('c', 22)]
->>> t.sort()
->>> t
+dict_items([('a', 10), ('b', 1), ('c', 22)])
+>>> l = list(t)
+>>> print(l)
+[('a', 10), ('b', 1), ('c', 22)]
+>>> l.sort()
+>>> l
 [('a', 10), ('b', 1), ('c', 22)]
 >>> 
 ```
@@ -269,27 +293,36 @@ python.org
 ... 
 >>> l
 [(10, 'a'), (1, 'b'), (22, 'c')]
->>> l.sort(reverse=True)
+>>> l.sort(reverse=True)    # or l = sorted(l, reverse=True)
 >>> l
-[(22, 'c'), (10, 'a'), (1, 'b')]
+[(22, 'c'), (10, 'a'), (1, 'b')]  
 >>> 
 ```
 
+* Shorter version
+
+```python
+>>> d = {'a':10, 'b':1, 'c':22}
+>>> print(sorted([(v,k) for k,v in d.items()]))
+[(1, 'b'), (10, 'a'), (22, 'c')]
+```
+
 ## 10.6 The most common words
+
+* The top 10 most common words
 
 ```python
 import string
 fhand = open('remeo.txt')
 counts = dict()
+
 for line in fhand:
     line = line.translate(str.maketrans('', '', string.punctuation))
     line = line.lower()
     words = line.split()
     for word in words:
-        if word not in counts:
-            counts[word] = 1
-        else:
-            counts[word] += 1
+        counts[word] = counts.get(word, 0) + 1
+        
 lst = list()
 for key, val in list(counts.items()):
     lst.append((val, key))
@@ -312,7 +345,6 @@ $ pyhton3 common_words.py
 1 through
 ```
 
-
 ## 10.7 Using tuples as keys in dictionaries
 
 * use a tuple as a composite key in a dictionary, because tuples are hashable and lists are not
@@ -326,18 +358,9 @@ for last, first in directory:
     print(first, last, directory[last,first])
 ```
 
+--------------------------
 
-## 10.8 Sequences: strings, lists, and tuples - Oh My!
-
-
-
-
-## 10.9 Debugging
-
-
-
-
-## 10.10 Glossary
+## Glossary
 
 * **comparable** : A type where one value can be checked to see if it is greater than, less than, or equal to another value of the same type. Types which are comparable can be put in a list and sorted.
 
@@ -359,9 +382,11 @@ for last, first in directory:
 
 * **tuple assignment** : An assignment with a sequence on the right side and a tuple of variables on the left. The right side is evaluated and then its elements are assigned to the variables on the left.
 
-## 10.11 Exercises
+-------------------------
 
-Exercise 1: Revise a previous program as follows: Read and parse the “From” lines and pull out the addresses from the line. Count the num- ber of messages from each person using a dictionary.
+## Exercises
+
+Exercise 1: Revise a previous program as follows: Read and parse the “From” lines and pull out the addresses from the line. Count the number of messages from each person using a dictionary.
 
 After all the data has been read, print the person with the most commits by creating a list of (count, email) tuples from the dictionary. Then sort the list in reverse order and print out the person who has the most commits.
 
@@ -373,6 +398,36 @@ cwen@iupui.edu 5
 
 Enter a file name: mbox.txt 
 zqian@umich.edu 195
+
+
+```python
+fname = input('Enter a file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+
+counts = dict()
+for line in fhand:
+    line = line.rstrip()
+    words = line.split()
+    if len(words) < 2 or words[0] != 'From':
+        continue
+    else:
+        counts[words[1]] = counts.get(words[1], 0) + 1
+
+lst = list()
+for email, count in list(counts.items()):
+    lst.append((count, email))
+
+lst.sort(reverse=True)
+# print(lst)
+
+for count, email in lst[:1]:
+    print(email, count)
+```
+
 
 Exercise 2: This program counts the distribution of the hour of the day for each of the messages. You can pull the hour from the “From” line by finding the time string and then splitting that string into parts using the colon character. Once you have accumulated the counts for each hour, print out the counts, one per line, sorted by hour as shown below.
 
@@ -391,6 +446,63 @@ Enter a file name: mbox-short.txt
 18 1
 19 1
 
+```python
+fname = input('Enter a file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+
+counts = dict()
+for line in fhand:
+    line = line.rstrip()
+    words = line.split()
+    if len(words) < 2 or words[0] != 'From':
+        continue
+    else:
+        time = words[5]
+        hour = time.split(':')
+        counts[hour[0]] = counts.get(hour[0], 0) + 1
+
+lst = list()
+for hour, count in list(counts.items()):
+    lst.append((hour, count))
+
+lst.sort()
+
+for hour, count in lst[:]:
+    print(hour, count)
+```
+
+
 Exercise 3: Write a program that reads a file and prints the letters in decreasing order of frequency. Your program should convert all the input to lower case and only count the letters a-z. Your program should not count spaces, digits, punctuation, or anything other than the letters a-z. Find text samples from several different languages and see how letter frequency varies between languages. Compare your results with the tables at https://wikipedia.org/wiki/Letter_frequencies.
 
+```python
+import string
 
+fname = input('Enter a file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+
+counts = 0
+counts = dict()
+for line in fhand:
+    line = line.translate(str.maketrans('', '', string.digits))
+    line = line.translate(str.maketrans('', '', string.punctuation))
+    line = line.lower()
+    words = line.split()
+    for word in words:
+        for letter in word:
+            counts[letter] = counts.get(letter, 0) + 1
+
+lst = list()
+for letter, count in list(counts.items()):
+    lst.append((count, letter))
+    lst.sort(reverse=True)
+for count, letter in lst:
+    print(letter, count)
+```

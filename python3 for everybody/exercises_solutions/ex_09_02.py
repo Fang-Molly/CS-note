@@ -12,6 +12,7 @@ Sample Execution:
 python dow.py Enter a file name: mbox-short.txt {'Fri': 20, 'Thu': 6, 'Sat': 1}
 '''
 
+'''Solution 1'''
 
 days_counts = dict()
 
@@ -28,7 +29,29 @@ for line in fhand:
         continue
     word = words[2]
     days_counts[word] = days_counts.get(word,0) + 1
-
+  
 print(days_counts)
 
 
+'''Solution 2'''
+
+days_counts = dict()
+
+fname = input('Enter a file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+
+for line in fhand:
+    words = line.split()
+    if len(words) < 3 or words[0] != 'From':
+        continue
+    else:
+        if words[2] not in days_counts:
+            days_counts[words[2]] = 1
+        else:
+            days_counts[words[2]] += 1
+
+print(days_counts)

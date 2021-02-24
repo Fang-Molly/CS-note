@@ -30,3 +30,5 @@ for line in fhand:
     days_counts[word] = days_counts.get(word,0) + 1
 
 print(days_counts)
+
+

@@ -45,3 +45,5 @@ lst.sort()
 
 for hour, count in lst[:]:
     print(hour, count)
+
+	

@@ -156,12 +156,73 @@ Events - Timestamps - User information
 
 ### 6. General Data Protection Regulation (GDPR)
 
+* Applied to all data inside of the EU
+
+* Give individuals control over their personal data
+
+* Regulates how long data can be stored
+
+* Mandates appropriate anonymization
+
+* Disclose data collection and gain consent
 
 ## Solicated data
 
+### 1. Why do we solicit data?
 
+* Create marketing collateral
+
+* De-risk decision making
+
+* Monitor quality
+
+### 2. Types of solicited data
+
+* Surveys
+
+* Customer reviews
+
+* In-app questionnaires
+
+* Focus groups
+
+Qualitative
+
+    * Conversations
+    * Open-ended questions
+    
+Quantitative
+
+    * Multiple choice
+    * Rating scale
+    
+### 3. Revealed and stated preferences
+
+* Stated perference
+
+    * Hypothetical
+    * Subjective
+
+* Revealed preference
+
+    * Actions
+    * Purchasing decisions
 
 ## Collecting additional data
+
+### 1. Even more data
+
+* APIs
+* Public records
+* Mechanical Turk
+
+### 2. Data APIs
+
+* Application Programming Interface
+* Request data over the internet
+* Twitter, Wikipedia, Google Maps
+
+### 3. Tracking a hashtag
 
 
 
